@@ -64,7 +64,7 @@ const Footer = () => {
 				</form>
 			</div>
 			<div className="px-4 md:px-10 max-w-7xl mx-auto mt-20 pt-8 border-t border-border-dark flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
-				<p>© 2023 Alex.Dev. All rights reserved.</p>
+				<p>© 2026 Bax. All rights reserved.</p>
 				<div className="flex gap-6 mt-4 md:mt-0">
 					<a className="hover:text-primary transition-colors" href="#">
 						Privacy Policy

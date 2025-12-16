@@ -8,7 +8,7 @@ const Header = () => {
 						terminal
 					</span>
 					<h2 className="text-xl font-bold tracking-tighter uppercase group-hover:text-primary transition-colors font-display">
-						Alex.Dev
+						BAX
 					</h2>
 				</div>
 				<nav className="hidden md:flex items-center gap-8">
