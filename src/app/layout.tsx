@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/shared/Header";
+import Footer from "@/components/shared/Footer";
 
 const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["cyrillic"]
-})
+	variable: "--font-inter",
+	subsets: ["cyrillic"],
+});
 
 export const metadata: Metadata = {
 	title: "Bax",
@@ -30,7 +32,11 @@ export default function RootLayout({
 			<body
 				className={`${inter.variable} ${inter.className} antialiased bg-background-light dark:bg-background-dark text-card-dark dark:text-white transition-colors duration-300`}
 			>
-				{children}
+				<div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+					<Header />
+					{children}
+					<Footer />
+				</div>
 			</body>
 		</html>
 	);
