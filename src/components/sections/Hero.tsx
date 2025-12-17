@@ -1,5 +1,5 @@
 "use client";
-
+import me from "../../../public/me.jpeg"
 import Image from "next/image";
 import { CometCard } from "@/components/ui/comet-card";
 import ScrambledText from "../ui/scramble-text";
@@ -9,7 +9,7 @@ const Hero = () => {
 		<section className="relative flex items-center pt-10 pb-16 px-4 md:px-10 min-h-[90vh] overflow-hidden">
 			<div className="absolute inset-0 z-0 opacity-20 pointer-events-none bg-grid-pattern" />
 			<div className="absolute top-1/4 right-1/4 w-125 h-125 bg-primary/20 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
-			<div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+			<div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
 				<div className="flex flex-col gap-8 text-center lg:text-left order-2 lg:order-1">
 					<div className="inline-flex items-center gap-2 self-center lg:self-start px-3 py-1 rounded-full border border-border-dark bg-card-dark backdrop-blur-sm">
 						<span className="relative flex h-2 w-2">
@@ -20,7 +20,7 @@ const Hero = () => {
 							Available for hire
 						</span>
 					</div>
-					<h1 className="text-5xl md:text-7xl xl:text-8xl font-black leading-[0.9] tracking-tighter cyber-glow-text">
+					<h1 className="text-5xl md:text-6xl xl:text-8xl font-black leading-[0.9] tracking-tighter cyber-glow-text">
 						Digital <br />{" "}
 						<span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-red-400">
 							Architect.
@@ -58,7 +58,7 @@ const Hero = () => {
 								height={750}
 								alt="Picture of the developer."
 								className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
-								src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb2PDzOHwIAdhLzhNNL-NDDojuehYu-jnMMbjr3lSxTz5jFASBAqJbNorsFGXlp8NFuJV53nye3DvR_Lmf76zq0VE3hSLvz4dbxtaDVFzwAffD43v4YfOfoAVc5uwjsBrMdDX7nzGkrUD7G6oTiQb-9o96VvHFQDkqZfKUdarNfBNsSw9OzqS8EDXPYcB50udQwA03VfEJHpN17SX1x4vA_GN-NqUtBkPViT-ii_R23q7CPCObM1w5SIAHx77Q7FG4VJiUemfZww"
+								src={me}
 							/>
 							<div className="absolute bottom-6 left-6 right-6 bg-black/70 backdrop-blur-md border border-border-dark p-4 rounded-xl z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
 								<div className="flex items-center gap-3">

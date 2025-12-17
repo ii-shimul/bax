@@ -1,11 +1,11 @@
-
 const Footer = () => {
+	const year = new Date().getFullYear();
 	return (
 		<footer
 			className="mt-auto border-t border-border-dark bg-[#050505] pt-24 pb-10"
 			id="contact"
 		>
-			<div className="px-4 md:px-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+			<div className="px-4 md:px-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
 				<div className="flex flex-col gap-6">
 					<h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-white font-display">
 						Let&apos;s work <br />
@@ -63,8 +63,8 @@ const Footer = () => {
 					</button>
 				</form>
 			</div>
-			<div className="px-4 md:px-10 max-w-7xl mx-auto mt-20 pt-8 border-t border-border-dark flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
-				<p>© 2026 Bax. All rights reserved.</p>
+			<div className="px-4 md:px-10 max-w-6xl mx-auto mt-20 pt-8 border-t border-border-dark flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+				<p>© {year} Bax. All rights reserved.</p>
 				<div className="flex gap-6 mt-4 md:mt-0">
 					<a className="hover:text-primary transition-colors" href="#">
 						Privacy Policy
