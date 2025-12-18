@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 
 export const HoverEffect = ({
 	items,
@@ -10,7 +10,9 @@ export const HoverEffect = ({
 }: {
 	items: {
 		title: string;
-		icon: string;
+		icon: ReactNode;
+		description?: string;
+		hoverColor?: string;
 		link?: string;
 	}[];
 	className?: string;
@@ -20,14 +22,14 @@ export const HoverEffect = ({
 	return (
 		<div
 			className={cn(
-				"grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8",
+				"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4",
 				className
 			)}
 		>
 			{items.map((item, idx) => (
 				<div
 					key={item.title}
-					className="relative group block p-2 h-full w-full"
+					className="relative group block  h-full w-full"
 					onMouseEnter={() => setHoveredIndex(idx)}
 					onMouseLeave={() => setHoveredIndex(null)}
 				>
@@ -49,8 +51,13 @@ export const HoverEffect = ({
 						)}
 					</AnimatePresence>
 					<Card>
-						<CardIcon>{item.icon}</CardIcon>
-						<CardTitle>{item.title}</CardTitle>
+						<CardIcon hoverColor={item.hoverColor}>{item.icon}</CardIcon>
+						<div className="flex flex-col">
+							<CardTitle>{item.title}</CardTitle>
+							{item.description && (
+								<CardDescription>{item.description}</CardDescription>
+							)}
+						</div>
 					</Card>
 				</div>
 			))}
@@ -72,7 +79,7 @@ export const Card = ({
 				className
 			)}
 		>
-			<div className="relative z-50 flex flex-col items-center justify-center gap-3 py-2">
+			<div className="relative z-50 flex flex-row items-center gap-4">
 				{children}
 			</div>
 		</div>
@@ -82,19 +89,28 @@ export const Card = ({
 export const CardIcon = ({
 	className,
 	children,
+	hoverColor,
 }: {
 	className?: string;
 	children: React.ReactNode;
+	hoverColor?: string;
 }) => {
 	return (
-		<span
+		<div
 			className={cn(
-				"material-symbols-outlined text-4xl text-gray-500 group-hover:text-primary transition-colors",
+				"text-4xl text-gray-500 transition-colors shrink-0",
 				className
 			)}
+			style={
+				hoverColor
+					? ({ "--hover-color": hoverColor } as React.CSSProperties)
+					: undefined
+			}
 		>
-			{children}
-		</span>
+			<span className="group-hover:text-(--hover-color) transition-colors">
+				{children}
+			</span>
+		</div>
 	);
 };
 
@@ -108,7 +124,7 @@ export const CardTitle = ({
 	return (
 		<h4
 			className={cn(
-				"text-xs font-bold text-gray-500 group-hover:text-white transition-colors",
+				"text-md font-semibold text-gray-500 group-hover:text-white transition-colors",
 				className
 			)}
 		>
@@ -124,14 +140,5 @@ export const CardDescription = ({
 	className?: string;
 	children: React.ReactNode;
 }) => {
-	return (
-		<p
-			className={cn(
-				"mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
-				className
-			)}
-		>
-			{children}
-		</p>
-	);
+	return <p className={cn("text-xs text-zinc-500", className)}>{children}</p>;
 };
