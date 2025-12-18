@@ -1,4 +1,5 @@
 import React from "react";
+import { BeforeEffectButton } from "../ui/before-effect-button";
 
 const Works = () => {
 	return (
@@ -12,15 +13,14 @@ const Works = () => {
 						A curation of my recent digital products.
 					</p>
 				</div>
-				<a
-					className="flex items-center gap-2 text-white font-bold hover:text-primary transition-colors group"
-					href="#"
+				<BeforeEffectButton
+					className="flex items-center cursor-pointer pt-1.5 gap-1 text-white font-bold hover:text-primary transition-colors group"
 				>
 					View All Projects{" "}
 					<span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
 						arrow_forward
 					</span>
-				</a>
+				</BeforeEffectButton>
 			</div>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-[minmax(320px,auto)]">
 				<article className="lg:col-span-2 group relative overflow-hidden rounded-xl bg-card-dark border border-border-dark cyber-glow-box transition-all duration-300">

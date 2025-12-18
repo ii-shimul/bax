@@ -1,3 +1,5 @@
+import { LiftButton } from "../ui/lift-button";
+
 const Footer = () => {
 	const year = new Date().getFullYear();
 	return (
@@ -55,12 +57,12 @@ const Footer = () => {
 						rows={4}
 						defaultValue={""}
 					/>
-					<button
-						className="mt-2 h-14 w-full md:w-auto self-start px-10 rounded-lg bg-primary text-white font-bold text-lg hover:bg-white hover:text-black hover:shadow-[0_0_20px_rgba(239,68,68,0.4)] transition-all duration-300"
+					<LiftButton
+						className="mt-2 h-12 w-full md:w-auto self-start px-6 rounded-lg text-white font-bold text-lg"
 						type="button"
 					>
 						Send Message
-					</button>
+					</LiftButton>
 				</form>
 			</div>
 			<div className="px-4 md:px-10 max-w-6xl mx-auto mt-20 pt-8 border-t border-border-dark flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">

@@ -1,3 +1,4 @@
+import { LiftButton } from "../ui/lift-button";
 import { Tooltip } from "../ui/tooltip-card";
 
 const Header = () => {
@@ -35,12 +36,12 @@ const Header = () => {
 					</a>
 				</nav>
 				<div className="flex items-center gap-4">
-					<a
+					<LiftButton
 						className="hidden sm:flex h-10 items-center justify-center rounded-md bg-primary px-6 text-sm font-bold text-white hover:bg-primary-dark hover:shadow-[0_0_15px_rgba(239,68,68,0.5)] transition-all duration-300"
 						href="#contact"
 					>
 						Contact Me
-					</a>
+					</LiftButton>
 					<button className="md:hidden text-white hover:text-primary transition-colors">
 						<span className="material-symbols-outlined">menu</span>
 					</button>

@@ -3,34 +3,54 @@ import me from "../../../public/me.jpeg";
 import Image from "next/image";
 import { CometCard } from "@/components/ui/comet-card";
 import ScrambledText from "../ui/scramble-text";
+import {
+	FaLocationCrosshairs,
+	FaFacebook,
+	FaLinkedin,
+	FaGithub,
+} from "react-icons/fa6";
+import { SiGmail } from "react-icons/si";
+import { BeforeEffectButton } from "../ui/before-effect-button";
+import { SocialButton } from "../ui/social-button";
+import { LiftButton } from "../ui/lift-button";
 
 const Hero = () => {
 	return (
 		<section className="relative flex items-center pt-10 pb-16 min-h-[90vh] overflow-hidden">
 			<div className="max-w-6xl mx-auto w-full px-4 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center relative z-10">
-				<div className="flex flex-col gap-8 text-center lg:text-left order-2 lg:order-1">
-					<div className="inline-flex items-center gap-2 self-center lg:self-start px-3 py-1 rounded-full border border-border-dark bg-card-dark backdrop-blur-sm">
-						<span className="relative flex h-2 w-2">
-							<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-							<span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-						</span>
-						<span className="text-xs font-medium text-gray-400 uppercase tracking-widest">
-							Available for hire
-						</span>
+				<div className="flex flex-col text-center lg:text-left order-2 lg:order-1">
+					<div className="flex flex-wrap mb-5 items-center gap-3 justify-center lg:justify-start">
+						<div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border-dark bg-card-dark backdrop-blur-sm">
+							<span className="relative flex h-2 w-2">
+								<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+								<span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+							</span>
+							<span className="text-xs font-medium text-gray-400 uppercase tracking-widest">
+								Available for hire
+							</span>
+						</div>
+						<div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border-dark bg-card-dark backdrop-blur-sm">
+							<span className="text-4px text-primary-dark">
+								<FaLocationCrosshairs />
+							</span>
+							<span className="text-xs font-medium text-gray-400 uppercase tracking-widest">
+								Sylhet, Bangladesh
+							</span>
+						</div>
 					</div>
-					<h1 className="text-3xl md:text-4xl xl:text-6xl font-black leading-tight tracking-tighter cyber-glow-text">
+					<h1 className="text-3xl md:text-4xl xl:text-6xl font-black mb-2 leading-tight tracking-tighter cyber-glow-text">
 						<span className="block text-xl md:text-2xl xl:text-3xl tracking-tight font-medium text-gray-400 mb-2">
 							Hey there, I&apos;m
 						</span>
 						<span className="block">Injamamul Islam</span>
-						<span className="block text-5xl md:text-6xl xl:text-8xl text-transparent bg-clip-text bg-linear-to-r from-primary to-red-400 mt-1">
+						<span className="block text-6xl md:text-7xl xl:text-9xl text-transparent bg-clip-text bg-linear-to-r from-primary to-red-400 mt-1">
 							Shimul{" "}
 							<span className="tracking-[-0.4em] animate-blink text-red-500 bg-none">
 								.........
 							</span>
 						</span>
 					</h1>
-					<ScrambledText className="">
+					<ScrambledText className="mb-5">
 						A{" "}
 						<span className="font-bold text-2xl md:text-3xl xl:text-4xl">
 							Full Stack Developer
@@ -40,21 +60,41 @@ const Hero = () => {
 						web.
 					</ScrambledText>
 					<div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
-						<a
-							className="h-12 px-8 flex items-center justify-center rounded-md bg-primary text-white font-bold text-base hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(239,68,68,0.3)]"
-							href="#contact"
-						>
+						<LiftButton className="h-12 px-8 flex items-center justify-center rounded-md bg-primary text-white font-bold text-base ">
 							Start a Project
-						</a>
-						<a
-							className="h-12 px-8 flex items-center justify-center rounded-md border border-primary text-white font-bold text-base hover:bg-primary/10 transition-all duration-300 group"
-							href="#"
-						>
-							<span className="material-symbols-outlined mr-2 text-xl group-hover:animate-bounce">
+						</LiftButton>
+						<BeforeEffectButton className="h-12 px-8 flex items-center justify-center rounded-md border border-primary text-white font-bold text-base hover:bg-primary/10 cursor-pointer">
+							<span className="material-symbols-outlined mr-2 text-xl">
 								download
 							</span>
 							Download Resume
-						</a>
+						</BeforeEffectButton>
+					</div>
+					<div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+						<SocialButton
+							icon={<FaFacebook />}
+							label="Facebook"
+							hoverBgColor="rgb(24, 119, 242)"
+							href="https://facebook.com/"
+						/>
+						<SocialButton
+							icon={<FaLinkedin />}
+							label="LinkedIn"
+							hoverBgColor="rgb(0, 119, 181)"
+							href="https://linkedin.com/in/"
+						/>
+						<SocialButton
+							icon={<FaGithub />}
+							label="GitHub"
+							hoverBgColor="rgb(36, 41, 47)"
+							href="https://github.com/"
+						/>
+						<SocialButton
+							icon={<SiGmail />}
+							label="Gmail"
+							hoverBgColor="rgb(234, 67, 53)"
+							href="mailto:your@email.com"
+						/>
 					</div>
 				</div>
 				<div className="relative order-1 lg:order-2 flex justify-center lg:justify-end">
@@ -92,6 +132,7 @@ const Hero = () => {
 					keyboard_arrow_down
 				</span>
 			</div>
+			<div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-size-[35px_34px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 		</section>
 	);
 };
