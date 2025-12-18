@@ -1,5 +1,5 @@
 "use client";
-import me from "../../../public/me.jpeg"
+import me from "../../../public/me.jpeg";
 import Image from "next/image";
 import { CometCard } from "@/components/ui/comet-card";
 import ScrambledText from "../ui/scramble-text";
@@ -20,16 +20,24 @@ const Hero = () => {
 							Available for hire
 						</span>
 					</div>
-					<h1 className="text-5xl md:text-6xl xl:text-8xl font-black leading-[0.9] tracking-tighter cyber-glow-text">
-						Digital <br />{" "}
-						<span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-red-400">
-							Architect.
+					<h1 className="text-3xl md:text-4xl xl:text-6xl font-black leading-tight tracking-tighter cyber-glow-text">
+						<span className="block text-xl md:text-2xl xl:text-3xl tracking-tight font-medium text-gray-400 mb-2">
+							Hey there, I&apos;m
+						</span>
+						<span className="block">Injamamul Islam</span>
+						<span className="block text-5xl md:text-6xl xl:text-8xl text-transparent bg-clip-text bg-linear-to-r from-primary to-red-400 mt-1">
+							Shimul{" "}
+							<span className="tracking-[-0.4em] animate-blink text-red-500 bg-none">.........</span>
 						</span>
 					</h1>
-					<ScrambledText>
-						I&apos;m Shimul, a creative developer crafting accessible,
-						pixel-perfect web experiences. I blend modern tech with
-						cyber-minimalist aesthetics to build the future of the web.
+					<ScrambledText className="">
+						A{" "}
+						<span className="font-bold text-2xl md:text-3xl xl:text-4xl">
+							Full Stack Developer
+						</span>{" "}
+						crafting accessible, pixel-perfect web experiences. I blend modern
+						tech with cyber-minimalist aesthetics to build the future of the
+						web.
 					</ScrambledText>
 					<div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
 						<a
