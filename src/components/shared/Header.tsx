@@ -1,3 +1,4 @@
+import { Tooltip } from "../ui/tooltip-card";
 
 const Header = () => {
 	return (
@@ -8,7 +9,9 @@ const Header = () => {
 						terminal
 					</span>
 					<h2 className="text-xl font-bold tracking-tighter uppercase group-hover:text-primary transition-colors font-display">
-						BAX
+						<Tooltip content="Bax: A codename extracted from Bombax ceiba, the scientific identity of the Shimul tree.">
+							Bax
+						</Tooltip>
 					</h2>
 				</div>
 				<nav className="hidden md:flex items-center gap-8">

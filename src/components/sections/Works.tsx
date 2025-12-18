@@ -2,7 +2,7 @@ import React from "react";
 
 const Works = () => {
 	return (
-		<section className="py-24 px-4 md:px-10 max-w-7xl mx-auto w-full" id="work">
+		<section className="py-24 px-4 md:px-10 max-w-6xl mx-auto w-full" id="work">
 			<div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
 				<div>
 					<h2 className="text-4xl md:text-5xl font-black tracking-tight mb-2 cyber-glow-text">
@@ -22,7 +22,7 @@ const Works = () => {
 					</span>
 				</a>
 			</div>
-			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[minmax(320px,auto)]">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-[minmax(320px,auto)]">
 				<article className="lg:col-span-2 group relative overflow-hidden rounded-xl bg-card-dark border border-border-dark cyber-glow-box transition-all duration-300">
 					<div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent z-10 pointer-events-none"></div>
 					<div
