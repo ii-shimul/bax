@@ -6,10 +6,8 @@ import ScrambledText from "../ui/scramble-text";
 
 const Hero = () => {
 	return (
-		<section className="relative flex items-center pt-10 pb-16 px-4 md:px-10 min-h-[90vh] overflow-hidden">
-			<div className="absolute inset-0 z-0 opacity-20 pointer-events-none bg-grid-pattern" />
-			<div className="absolute top-1/4 right-1/4 w-125 h-125 bg-primary/20 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
-			<div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+		<section className="relative flex items-center pt-10 pb-16 min-h-[90vh] overflow-hidden">
+			<div className="max-w-6xl mx-auto w-full px-4 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center relative z-10">
 				<div className="flex flex-col gap-8 text-center lg:text-left order-2 lg:order-1">
 					<div className="inline-flex items-center gap-2 self-center lg:self-start px-3 py-1 rounded-full border border-border-dark bg-card-dark backdrop-blur-sm">
 						<span className="relative flex h-2 w-2">
@@ -27,7 +25,9 @@ const Hero = () => {
 						<span className="block">Injamamul Islam</span>
 						<span className="block text-5xl md:text-6xl xl:text-8xl text-transparent bg-clip-text bg-linear-to-r from-primary to-red-400 mt-1">
 							Shimul{" "}
-							<span className="tracking-[-0.4em] animate-blink text-red-500 bg-none">.........</span>
+							<span className="tracking-[-0.4em] animate-blink text-red-500 bg-none">
+								.........
+							</span>
 						</span>
 					</h1>
 					<ScrambledText className="">
