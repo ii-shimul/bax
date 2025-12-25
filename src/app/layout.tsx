@@ -32,7 +32,7 @@ export default function RootLayout({
 			<body
 				className={`${inter.variable} ${inter.className} antialiased bg-background-light dark:bg-background-dark text-card-dark dark:text-white transition-colors duration-300`}
 			>
-				<div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+				<div className="relative flex min-h-screen w-full flex-col overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-100">
 					<Header />
 					{children}
 					<Footer />

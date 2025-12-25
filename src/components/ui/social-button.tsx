@@ -40,20 +40,23 @@ export const SocialButton = ({
 			<span className="social-button-label">{label}</span>
 			<style jsx>{`
 				.social-button {
-					width: 50px;
+					min-width: 50px;
 					height: 50px;
-					border-radius: 50%;
+					padding: 0 15px;
+					border-radius: 25px;
 					background-color: var(--bg-color);
 					border: none;
 					font-weight: 600;
 					display: flex;
 					align-items: center;
 					justify-content: center;
+					gap: 0;
 					box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
 					cursor: pointer;
-					transition-duration: 0.3s;
 					overflow: hidden;
 					position: relative;
+					transition: background-color 0.3s ease, gap 0.3s ease,
+						padding 0.3s ease;
 				}
 
 				.social-button-icon {
@@ -62,8 +65,8 @@ export const SocialButton = ({
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					transition-duration: 0.3s;
 					color: var(--text-color);
+					flex-shrink: 0;
 				}
 
 				.social-button-icon :global(svg) {
@@ -73,29 +76,24 @@ export const SocialButton = ({
 				}
 
 				.social-button-label {
-					position: absolute;
-					top: -20px;
 					color: var(--text-color);
-					transition-duration: 0.3s;
-					font-size: 2px;
+					font-size: 13px;
+					white-space: nowrap;
+					max-width: 0;
+					overflow: hidden;
 					opacity: 0;
+					transition: max-width 0.3s ease, opacity 0.3s ease;
 				}
 
 				.social-button:hover {
-					width: 140px;
-					border-radius: 50px;
+					gap: 8px;
+					padding: 0 20px;
 					background-color: var(--hover-bg-color);
 				}
 
-				.social-button:hover .social-button-icon {
-					width: 50px;
-					transform: translateY(60%);
-				}
-
 				.social-button:hover .social-button-label {
-					font-size: 13px;
 					opacity: 1;
-					transform: translateY(30px);
+					max-width: 150px;
 				}
 			`}</style>
 		</button>
