@@ -1,59 +1,53 @@
 [
 	{
-		"id": "shareplate",
-		"title": "SharePlate - Food Sharing Platform",
-		"description": "A platform that connects individuals to share excess food with those in need, aiming to reduce food waste and support communities.",
-		"technologies": ["React", "Node.js", "MongoDB", "Tailwind CSS"],
-		"image": "/assets/SharePlate.png",
-		"liveLink": "https://shareplate-72dea.web.app/",
-		"repoLink": "https://github.com/ii-shimul/project-shareplate",
-		"challenges": [
-			"Implementing real-time updates for food availability.",
-			"Ensuring secure user authentication and data privacy.",
-			"Designing an intuitive and responsive user interface."
-		],
-		"improvements": [
-			"Integrating geolocation features to facilitate local food sharing.",
-			"Developing a mobile application for broader accessibility.",
-			"Implementing a rating system to build trust among users."
-		]
-	},
-	{
 		"id": "hostelmate",
 		"title": "HostelMate",
 		"description": "A meal management system where users can browse, order, and review meals while admins can manage meals, track revenue, and handle upcoming meal requests. Features include user authentication, payments, meal filtering, and a dark mode UI.",
 		"technologies": ["React", "Firebase", "Material UI", "MongoDB", "Stripe"],
-		"image": "/assets/MealMaster.png",
+		"image": "/projects/hostelmate.png",
 		"liveLink": "https://hostelmate-b7e8e.web.app/",
 		"repoLink": "https://github.com/ii-shimul/project-hostelmate",
-		"challenges": [
-			"Implementing efficient server-side filtering and pagination.",
-			"Ensuring smooth dark mode compatibility with Material UI.",
-			"Handling secure payments and order management with Stripe."
-		],
-		"improvements": [
-			"Adding AI-based meal recommendations for users.",
-			"Enhancing the admin dashboard with real-time analytics.",
-			"Integrating a delivery tracking system for meal orders."
+		"keyFeatures": [
+			"Admins can add or edit meals, while students view, request, and leave reviews.",
+			"Students can manage profiles and meals in dashboard; admins oversee users and meal data.",
+			"Students purchase premium packages with Stripe for added perks like liking meals."
+		]
+	},
+	{
+		"id": "tourna",
+		"title": "Tourna - Tournament Manager",
+		"description": "This is a tournament management site, where users can create teams and tournaments. Also users can manage their created tournaments, determine the champion in the tournament.",
+		"technologies": ["React", "Express.js", "MySQL", "Motion"],
+		"image": "/projects/tourna.png",
+		"liveLink": "https://tourna-nine.vercel.app/",
+		"repoLink": "https://github.com/ii-shimul/project-tourna",
+		"keyFeatures": [
+			"In teams page, a user can search for teams or sort the teams.",
+			"Users can create or delete teams or tournaments.",
+			"Adding team member is dynamic, user can add members easily."
+		]
+	},
+	{
+		"id": "shareplate",
+		"title": "SharePlate - Food Sharing Platform",
+		"description": "A platform that connects individuals to share excess food with those in need, aiming to reduce food waste and support communities.",
+		"technologies": ["React", "Node.js", "MongoDB", "Tailwind CSS"],
+		"image": "/projects/shareplate.png",
+		"liveLink": "https://shareplate-72dea.web.app/",
+		"repoLink": "https://github.com/ii-shimul/project-shareplate",
+		"keyFeatures": [
+			"Users can add food to share with others, and people can request the food.",
+			"They can also update or delete the shared food from the database.",
+			"In Available Foods page, a user can change the grid layout, search for food or sort by expiry date."
 		]
 	},
 	{
 		"id": "ocean-xplorer",
 		"title": "Ocean Xplorer",
-		"description": "An educational platform that provides interactive learning experiences about ocean life, marine species, and environmental awareness.",
-		"technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-		"image": "/assets/OceanXplorer.png",
+		"description": "A frontend focused project with animations of all sorts.",
+		"technologies": ["React", "Tailwind CSS", "Motion"],
+		"image": "/projects/oceanxplorer.png",
 		"liveLink": "https://ocean-xplorer.web.app/",
-		"repoLink": "https://github.com/ii-shimul/project-ocean-xplorer",
-		"challenges": [
-			"Optimizing performance for interactive content.",
-			"Implementing real-time data fetching with Supabase.",
-			"Ensuring accessibility for a diverse audience."
-		],
-		"improvements": [
-			"Adding more interactive quizzes and learning modules.",
-			"Implementing an AI-powered chatbot for ocean-related questions.",
-			"Enhancing mobile responsiveness for a better user experience."
-		]
+		"repoLink": "https://github.com/ii-shimul/project-ocean-xplorer"
 	}
 ]
