@@ -15,7 +15,7 @@ type LiftButtonProps = {
 export const LiftButton = ({
 	children,
 	className,
-	bgColor = "#ef4444",
+	bgColor = "#e31116",
 	shadowColor1 = "#dc2626",
 	shadowColor2 = "#b91c1c",
 	href,

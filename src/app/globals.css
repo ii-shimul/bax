@@ -5,7 +5,7 @@
 
 @theme {
   /* Colors */
-  --color-primary: #ef4444;
+  --color-primary: #e31116;
   --color-primary-dark: #dc2626;
   --color-background-light: #f5f5f5;
   --color-background-dark: #0a0a0a;
@@ -132,7 +132,7 @@ h6 {
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
   --primary: oklch(0.637 0.237 25.331);
-  /* #ef4444 in oklch */
+  /* #e31116 in oklch */
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
