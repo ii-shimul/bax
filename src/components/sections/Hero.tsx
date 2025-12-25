@@ -88,15 +88,22 @@ const Hero = () => {
 						web.
 					</ScrambledText>
 					<div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
-						<LiftButton className="h-12 px-8 flex items-center justify-center rounded-md bg-primary text-white font-bold text-base ">
-							Start a Project
-						</LiftButton>
-						<BeforeEffectButton className="h-12 px-8 flex items-center justify-center rounded-md border border-primary text-white font-bold text-base hover:bg-primary/10 cursor-pointer">
-							<span className="material-symbols-outlined mr-2 text-xl">
-								download
-							</span>
-							Resume
-						</BeforeEffectButton>
+						<a href="#contact">
+							<LiftButton className="h-12 px-8 flex items-center justify-center rounded-md bg-primary text-white font-bold text-base ">
+								Start a Project
+							</LiftButton>
+						</a>
+						<a
+							href="https://drive.google.com/file/d/1dk8RWrHrERC_i12qk3q1Edy7iX9_x_9L/view?usp=sharing"
+							target="blank"
+						>
+							<BeforeEffectButton className="h-12 px-8 flex items-center justify-center rounded-md border border-primary text-white font-bold text-base hover:bg-primary/10 cursor-pointer">
+								<span className="material-symbols-outlined mr-2 text-xl">
+									download
+								</span>
+								Resume
+							</BeforeEffectButton>
+						</a>
 					</div>
 					<div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-3">
 						<SocialButton

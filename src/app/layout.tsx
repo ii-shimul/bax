@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import ReactLenis from "lenis/react";
 
 const inter = Inter({
 	variable: "--font-inter",
@@ -19,6 +20,13 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	const lenisOptions = {
+		lerp: 0.1,
+		duration: 1.5,
+		smoothWheel: true,
+		wheelMultiplier: 1,
+		touchMultiplier: 2,
+	};
 	return (
 		<html className="dark" lang="en">
 			<head>
@@ -34,7 +42,9 @@ export default function RootLayout({
 			>
 				<div className="relative flex min-h-screen w-full flex-col overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-100">
 					<Header />
-					{children}
+					<ReactLenis root options={lenisOptions}>
+						{children}
+					</ReactLenis>
 					<Footer />
 				</div>
 			</body>

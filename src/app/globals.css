@@ -22,6 +22,14 @@
   --radius-xl: 1.5rem;
 }
 
+html {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  scroll-behavior: smooth !important;
+}
+
 /* Custom utility for cyber-grid background */
 .bg-cyber-grid {
   background-image: radial-gradient(#262626 1px, transparent 1px);
