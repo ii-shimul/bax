@@ -1,3 +1,6 @@
+"use client";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { LiftButton } from "../ui/lift-button";
 import { SocialButton } from "../ui/social-button";
 import { FaFacebook, FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa6";
@@ -5,6 +8,32 @@ import { SiGmail } from "react-icons/si";
 
 const Footer = () => {
 	const year = new Date().getFullYear();
+	const form = useRef<HTMLFormElement>(null);
+	const [loading, setLoading] = useState(false);
+	const [status, setStatus] = useState<string | null>(null);
+
+	const sendEmail = (e: React.FormEvent) => {
+		e.preventDefault();
+		if (!form.current) return;
+		setLoading(true);
+		setStatus(null);
+
+		emailjs
+			.sendForm("portfolio", "portfolio-template", form.current, {
+				publicKey: "2R3alK2GIRs9GRCJF",
+			})
+			.then(() => {
+				setLoading(false);
+				setStatus("Message sent successfully!");
+				form.current?.reset();
+			})
+			.catch((err) => {
+				console.log(err);
+				setLoading(false);
+				setStatus("Failed to send message. Please try again.");
+			});
+	};
+
 	return (
 		<footer
 			className="mt-auto border-t border-border-dark bg-[#050505] pt-24 pb-10"
@@ -53,30 +82,52 @@ const Footer = () => {
 						/>
 					</div>
 				</div>
-				<form className="flex flex-col gap-4">
+				<form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
 					<div className="grid grid-cols-2 gap-4">
 						<input
+							name="user_name"
 							className="w-full h-14 bg-card-dark border border-border-dark rounded-lg px-6 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-gray-600"
 							placeholder="Name"
 							type="text"
+							required
 						/>
 						<input
+							name="user_email"
 							className="w-full h-14 bg-card-dark border border-border-dark rounded-lg px-6 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-gray-600"
 							placeholder="Email"
 							type="email"
+							required
 						/>
 					</div>
 					<textarea
+						name="message"
 						className="w-full bg-card-dark border border-border-dark rounded-xl p-6 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-gray-600 resize-none"
 						placeholder="Tell me about your project..."
 						rows={4}
-						defaultValue={""}
+						required
 					/>
+					{status && (
+						<p
+							className={`text-sm ${
+								status.includes("success") ? "text-green-500" : "text-red-500"
+							}`}
+						>
+							{status}
+						</p>
+					)}
 					<LiftButton
-						className="mt-2 h-12 w-full md:w-auto self-start px-6 rounded-lg text-white font-bold text-lg"
-						type="button"
+						className="mt-2 h-12 w-full md:w-auto self-start px-6 rounded-lg text-white font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+						type="submit"
+						disabled={loading}
 					>
-						Send Message
+						{loading ? (
+							<span className="flex items-center gap-2">
+								<span className="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+								Sending...
+							</span>
+						) : (
+							"Send Message"
+						)}
 					</LiftButton>
 				</form>
 			</div>
