@@ -8,6 +8,7 @@ import {
 	FaFacebook,
 	FaLinkedin,
 	FaGithub,
+	FaWhatsapp,
 } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
 import { BeforeEffectButton } from "../ui/before-effect-button";
@@ -94,33 +95,39 @@ const Hero = () => {
 							<span className="material-symbols-outlined mr-2 text-xl">
 								download
 							</span>
-							Download Resume
+							Resume
 						</BeforeEffectButton>
 					</div>
-					<div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+					<div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-3">
 						<SocialButton
-							icon={<FaFacebook />}
-							label="Facebook"
-							hoverBgColor="rgb(24, 119, 242)"
-							href="https://facebook.com/"
+							icon={<FaGithub />}
+							label="GitHub"
+							hoverBgColor="rgb(36, 41, 47)"
+							href="https://github.com/ii-shimul"
 						/>
 						<SocialButton
 							icon={<FaLinkedin />}
 							label="LinkedIn"
 							hoverBgColor="rgb(0, 119, 181)"
-							href="https://linkedin.com/in/"
-						/>
-						<SocialButton
-							icon={<FaGithub />}
-							label="GitHub"
-							hoverBgColor="rgb(36, 41, 47)"
-							href="https://github.com/"
+							href="https://linkedin.com/in/ii-shimul"
 						/>
 						<SocialButton
 							icon={<SiGmail />}
-							label="Gmail"
+							label="Email"
 							hoverBgColor="rgb(234, 67, 53)"
-							href="mailto:your@email.com"
+							href="mailto:islamshimul27@email.com"
+						/>
+						<SocialButton
+							icon={<FaWhatsapp />}
+							label="WhatsApp"
+							hoverBgColor="rgb(37, 211, 102)"
+							href="https://wa.me/8801756651557"
+						/>
+						<SocialButton
+							icon={<FaFacebook />}
+							label="Facebook"
+							hoverBgColor="rgb(24, 119, 242)"
+							href="https://facebook.com/zahannami"
 						/>
 					</div>
 				</div>

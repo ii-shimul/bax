@@ -1,4 +1,7 @@
 import { LiftButton } from "../ui/lift-button";
+import { SocialButton } from "../ui/social-button";
+import { FaFacebook, FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa6";
+import { SiGmail } from "react-icons/si";
 
 const Footer = () => {
 	const year = new Date().getFullYear();
@@ -17,25 +20,37 @@ const Footer = () => {
 						Have a project in mind? I&apos;m currently available for freelance
 						work and open to new opportunities.
 					</p>
-					<div className="flex gap-4 mt-8">
-						<a
-							className="h-12 w-12 rounded-full border border-border-dark bg-card-dark flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary hover:border-primary transition-all duration-300"
-							href="#"
-						>
-							<span className="font-bold text-sm">in</span>
-						</a>
-						<a
-							className="h-12 w-12 rounded-full border border-border-dark bg-card-dark flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary hover:border-primary transition-all duration-300"
-							href="#"
-						>
-							<span className="material-symbols-outlined text-xl">code</span>
-						</a>
-						<a
-							className="h-12 w-12 rounded-full border border-border-dark bg-card-dark flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary hover:border-primary transition-all duration-300"
-							href="#"
-						>
-							<span className="material-symbols-outlined text-xl">mail</span>
-						</a>
+					<div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-3">
+						<SocialButton
+							icon={<FaGithub />}
+							label="GitHub"
+							hoverBgColor="rgb(36, 41, 47)"
+							href="https://github.com/ii-shimul"
+						/>
+						<SocialButton
+							icon={<FaLinkedin />}
+							label="LinkedIn"
+							hoverBgColor="rgb(0, 119, 181)"
+							href="https://linkedin.com/in/ii-shimul"
+						/>
+						<SocialButton
+							icon={<SiGmail />}
+							label="Email"
+							hoverBgColor="rgb(234, 67, 53)"
+							href="mailto:islamshimul27@email.com"
+						/>
+						<SocialButton
+							icon={<FaWhatsapp />}
+							label="WhatsApp"
+							hoverBgColor="rgb(37, 211, 102)"
+							href="https://wa.me/8801756651557"
+						/>
+						<SocialButton
+							icon={<FaFacebook />}
+							label="Facebook"
+							hoverBgColor="rgb(24, 119, 242)"
+							href="https://facebook.com/zahannami"
+						/>
 					</div>
 				</div>
 				<form className="flex flex-col gap-4">
