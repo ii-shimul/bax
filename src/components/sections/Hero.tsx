@@ -13,8 +13,35 @@ import { SiGmail } from "react-icons/si";
 import { BeforeEffectButton } from "../ui/before-effect-button";
 import { SocialButton } from "../ui/social-button";
 import { LiftButton } from "../ui/lift-button";
+import { useEffect, useState } from "react";
+
+type GitHubPushEvent = {
+	type: string;
+	repo: { name: string };
+	created_at: string;
+};
 
 const Hero = () => {
+	const [latestCommit, setLatestCommit] = useState<string | null>(null);
+
+	useEffect(() => {
+		fetch("https://api.github.com/users/ii-shimul/events/public")
+			.then((res) => res.json())
+			.then((events: GitHubPushEvent[]) => {
+				const repoName = events.find((e) => e.type === "PushEvent")?.repo.name;
+				if (!repoName) return;
+				return fetch(
+					`https://api.github.com/repos/${repoName}/commits?per_page=1`
+				);
+			})
+			.then((res) => res?.json())
+			.then((data) => {
+				if (data?.[0]?.commit?.message) {
+					setLatestCommit(data[0].commit.message);
+				}
+			})
+			.catch(console.error);
+	}, []);
 	return (
 		<section className="relative flex items-center pt-10 pb-16 min-h-[90vh] overflow-hidden">
 			<div className="max-w-6xl mx-auto w-full px-4 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center relative z-10">
@@ -117,8 +144,8 @@ const Hero = () => {
 										<p className="text-sm font-bold text-white">
 											Latest Commit
 										</p>
-										<p className="text-xs text-gray-400">
-											Refactored core architecture
+										<p className="text-xs text-gray-400 line-clamp-1">
+											{latestCommit || "Loading..."}
 										</p>
 									</div>
 								</div>
