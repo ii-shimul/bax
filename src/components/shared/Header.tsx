@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import { LiftButton } from "../ui/lift-button";
 import { Tooltip } from "../ui/tooltip-card";
-import me from "../../app/favicon.ico";
+import logo from "../../app/favicon.ico";
+import logoRed from "../../../public/logo-red.png";
 import { AnimatedThemeToggler } from "../ui/theme-toggler";
 
 const Header = () => {
@@ -10,16 +13,31 @@ const Header = () => {
 			<div className="px-4 md:px-10 py-3 flex items-center justify-between max-w-6xl mx-auto w-full">
 				<Tooltip content="Bax: A codename extracted from Bombax ceiba, the scientific identity of the Shimul tree.">
 					<div className="flex justify-center items-center gap-2 group cursor-pointer">
-						<Image
-							src={me}
-							height={25}
-							width={25}
-							alt="developer logo"
-							className="block"
-						/>
-						<span className="text-xl font-bold tracking-tighter uppercase text-gray-900 dark:text-white group-hover:text-primary transition-colors font-display leading-none translate-y-0.5">
+						<div className="relative w-6.25 h-6.25 perspective-[1000px]">
+							<div className="relative w-full h-full transition-transform duration-500 transform-3d group-hover:transform-[rotateY(180deg)]">
+								<div className="absolute w-full h-full backface-hidden">
+									<Image
+										src={logo}
+										height={25}
+										width={25}
+										alt="developer logo"
+										className="block"
+									/>
+								</div>
+								<div className="absolute w-full h-full backface-hidden transform-[rotateY(180deg)]">
+									<Image
+										src={logoRed}
+										height={25}
+										width={25}
+										alt="developer logo hover"
+										className="block"
+									/>
+								</div>
+							</div>
+						</div>
+						<h1 className="text-xl font-extrabold tracking-tighter uppercase text-gray-900 dark:text-white group-hover:text-primary dark:group-hover:text-primary transition-colors font-display leading-none translate-y-0.5">
 							Bax
-						</span>
+						</h1>
 					</div>
 				</Tooltip>
 				<div className="flex items-center gap-4">
