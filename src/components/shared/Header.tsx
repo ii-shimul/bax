@@ -17,7 +17,7 @@ const Header = () => {
 							alt="developer logo"
 							className="block"
 						/>
-						<span className="text-xl font-bold tracking-tighter uppercase text-gray-900 dark:text-white group-hover:text-primary transition-colors font-display leading-none translate-y-[2px]">
+						<span className="text-xl font-bold tracking-tighter uppercase text-gray-900 dark:text-white group-hover:text-primary transition-colors font-display leading-none translate-y-0.5">
 							Bax
 						</span>
 					</div>

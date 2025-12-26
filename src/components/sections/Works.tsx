@@ -13,7 +13,7 @@ type Project = {
 };
 
 const FeaturedCard = ({ project }: { project: Project }) => (
-	<article className="lg:col-span-2 group relative overflow-hidden rounded-xl bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-all duration-300">
+	<article className="lg:col-span-2 group relative overflow-hidden rounded-xl bg-background-light dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-all duration-300">
 		<div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent z-10 pointer-events-none"></div>
 		<div
 			className="h-full w-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-transform duration-700 group-hover:scale-105"

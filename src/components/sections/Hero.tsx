@@ -15,6 +15,7 @@ import { BeforeEffectButton } from "../ui/before-effect-button";
 import { SocialButton } from "../ui/social-button";
 import { LiftButton } from "../ui/lift-button";
 import { useEffect, useState } from "react";
+import { Highlight } from "../ui/hero-highlight";
 
 type GitHubPushEvent = {
 	type: string;
@@ -23,13 +24,17 @@ type GitHubPushEvent = {
 };
 
 const Hero = () => {
-	const [latestCommit, setLatestCommit] = useState<string | null>(null);
+	const [latestCommit, setLatestCommit] = useState<{
+		repoName: string | undefined;
+		message: string;
+	} | null>(null);
 
 	useEffect(() => {
+		let repoName: string | undefined;
 		fetch("https://api.github.com/users/ii-shimul/events/public")
 			.then((res) => res.json())
 			.then((events: GitHubPushEvent[]) => {
-				const repoName = events.find((e) => e.type === "PushEvent")?.repo.name;
+				repoName = events.find((e) => e.type === "PushEvent")?.repo.name;
 				if (!repoName) return;
 				return fetch(
 					`https://api.github.com/repos/${repoName}/commits?per_page=1`
@@ -38,7 +43,10 @@ const Hero = () => {
 			.then((res) => res?.json())
 			.then((data) => {
 				if (data?.[0]?.commit?.message) {
-					setLatestCommit(data[0].commit.message);
+					setLatestCommit({
+						repoName: repoName,
+						message: data[0].commit.message,
+					});
 				}
 			})
 			.catch(console.error);
@@ -74,17 +82,15 @@ const Hero = () => {
 							Injamamul Islam
 						</span>
 						<span className="block text-6xl md:text-7xl xl:text-9xl text-transparent bg-clip-text bg-linear-to-r from-primary to-red-400 mt-1">
-							Shimul{" "}
-							<span className="tracking-[-0.4em] animate-blink text-red-500 bg-none">
-								.........
-							</span>
+							Shimul
+							<span className="inline-block w-8 h-2 lg:w-12 lg:h-3 ml-1 bg-red-400 rounded-full animate-blink align-baseline"></span>
 						</span>
 					</h1>
 					<ScrambledText className="mb-5 text-gray-700 dark:text-gray-300">
 						A{" "}
-						<span className="font-bold text-2xl md:text-3xl xl:text-4xl">
+						<Highlight className="font-bold text-2xl md:text-3xl xl:text-4xl">
 							Full Stack Developer
-						</span>{" "}
+						</Highlight>{" "}
 						crafting accessible, pixel-perfect web experiences. I blend modern
 						tech with cyber-minimalist aesthetics to build the future of the
 						web.
@@ -158,10 +164,11 @@ const Hero = () => {
 									</div>
 									<div>
 										<p className="text-sm font-bold text-gray-900 dark:text-white">
-											Latest Commit
+											Latest Commit{" "}
+											{latestCommit ? `in ${latestCommit.repoName}` : ""}
 										</p>
 										<p className="text-xs text-gray-600 dark:text-gray-400 line-clamp-1">
-											{latestCommit || "Loading..."}
+											{latestCommit?.message || "Loading..."}
 										</p>
 									</div>
 								</div>
@@ -175,7 +182,7 @@ const Hero = () => {
 					keyboard_arrow_down
 				</span>
 			</div>
-			<div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e52e_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e52e_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-size-[35px_34px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+			<div className="absolute inset-0 bg-[linear-gradient(to_right,#a0a0a040_1px,transparent_1px),linear-gradient(to_bottom,#a0a0a040_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-size-[35px_34px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 		</section>
 	);
 };

@@ -36,7 +36,7 @@ const Footer = () => {
 
 	return (
 		<footer
-			className="mt-auto border-t border-gray-200 dark:border-border-dark bg-gray-50 dark:bg-[#050505] pt-24 pb-10"
+			className="mt-auto border-t border-gray-200 dark:border-border-dark bg-background-light/50 dark:bg-[#050505] pt-24 pb-10"
 			id="contact"
 		>
 			<div className="px-4 md:px-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">

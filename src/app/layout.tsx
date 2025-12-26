@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import ReactLenis from "lenis/react";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
 	variable: "--font-inter",
@@ -40,7 +41,8 @@ export default function RootLayout({
 			<body
 				className={`${inter.variable} ${inter.className} antialiased bg-background-light dark:bg-background-dark text-card-dark dark:text-white transition-colors duration-300`}
 			>
-				<div className="relative flex min-h-screen w-full flex-col overflow-x-hidden selection:bg-primary/30 selection:text-gray-300">
+				<Analytics />
+				<div className="relative flex min-h-screen w-full flex-col overflow-x-hidden selection:bg-primary/50 selection:text-gray-600 dark:selection:bg-primary/30 dark:selection:text-gray-300">
 					<Header />
 					<ReactLenis root options={lenisOptions}>
 						{children}
