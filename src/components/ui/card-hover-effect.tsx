@@ -75,7 +75,7 @@ export const Card = ({
 	return (
 		<div
 			className={cn(
-				"rounded-xl h-full w-full p-4 overflow-hidden bg-background-dark border border-border-dark group-hover:border-primary/50 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.15)] relative z-20 transition-all duration-300",
+				"rounded-xl h-full w-full p-4 overflow-hidden bg-gray-200 dark:bg-background-dark border border-gray-200 dark:border-border-dark group-hover:border-primary/50 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.15)] relative z-20 transition-all duration-300",
 				className
 			)}
 		>
@@ -124,7 +124,7 @@ export const CardTitle = ({
 	return (
 		<h4
 			className={cn(
-				"text-md font-semibold text-gray-500 group-hover:text-white transition-colors",
+				"text-md font-semibold text-gray-500 group-hover:text-gray-900 dark:group-hover:text-white transition-colors",
 				className
 			)}
 		>

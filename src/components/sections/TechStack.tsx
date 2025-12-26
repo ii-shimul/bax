@@ -93,9 +93,9 @@ const techItems = [
 
 const TechStack = () => {
 	return (
-		<section className="w-full border-y border-border-dark bg-card-dark py-12 overflow-hidden">
+		<section className="w-full border-y border-gray-200 dark:border-border-dark bg-gray-50 dark:bg-card-dark py-12 overflow-hidden">
 			<div className="max-w-6xl mx-auto px-4 md:px-10">
-				<h3 className="text-sm font-bold mb-8 text-gray-500 uppercase tracking-widest font-display">
+				<h3 className="text-sm font-bold mb-8 text-gray-600 dark:text-gray-500 uppercase tracking-widest font-display">
 					Technological Arsenal
 				</h3>
 				<HoverEffect items={techItems} />

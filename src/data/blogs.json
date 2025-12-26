@@ -1,0 +1,20 @@
+[
+	{
+		"id": "serverless-components",
+		"date": "Oct 24, 2023",
+		"title": "The future of Serverless Components",
+		"excerpt": "Exploring the shift towards edge computing and how it impacts frontend architecture..."
+	},
+	{
+		"id": "tailwind-config",
+		"date": "Sep 12, 2023",
+		"title": "Mastering Tailwind CSS Config",
+		"excerpt": "How to set up a scalable design system using Tailwind's configuration file effectively..."
+	},
+	{
+		"id": "accessibility-web-apps",
+		"date": "Aug 05, 2023",
+		"title": "Accessibility in Modern Web Apps",
+		"excerpt": "Why a11y matters more than ever and how to implement it without sacrificing design..."
+	}
+]
