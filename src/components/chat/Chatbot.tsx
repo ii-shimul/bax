@@ -47,23 +47,27 @@ export default function Chatbot() {
 			<div
 				className={`${
 					isOpen ? "w-95 max-sm:w-[96%]" : "w-56 lg:w-95"
-				} bg-neutral-950 border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ease-in-out`}
+				} bg-background-light dark:bg-neutral-950 border border-gray-200 dark:border-neutral-800 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ease-in-out`}
 			>
 				<button
 					onClick={() => setIsOpen(!isOpen)}
-					className="w-full px-5 py-4 cursor-pointer flex justify-between items-center hover:bg-neutral-900 transition-colors"
+					className="w-full px-5 py-4 cursor-pointer flex justify-between items-center hover:bg-gray-200 dark:hover:bg-neutral-900 transition-colors"
 				>
 					<div className="flex flex-col items-start">
-						<span className="text-neutral-400 text-xs">Chat with</span>
+						<span className="text-gray-500 dark:text-neutral-400 text-xs">
+							Chat with
+						</span>
 						<div className="flex items-center gap-2">
 							<span className="relative flex h-2 w-2">
 								<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
 								<span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
 							</span>
-							<span className="text-white font-semibold">Bax Support</span>
+							<span className="text-gray-900 dark:text-white font-semibold">
+								Bax Support
+							</span>
 						</div>
 					</div>
-					<div className="text-neutral-400 hover:text-white transition-all p-1 hover:bg-neutral-800 rounded-lg">
+					<div className="text-gray-400 dark:text-neutral-400 hover:text-gray-900 dark:hover:text-white transition-all p-1 hover:bg-gray-100 dark:hover:bg-neutral-800 rounded-lg">
 						{isOpen ? (
 							<IoChevronUp className="text-xl transition-transform duration-300" />
 						) : (
@@ -78,10 +82,10 @@ export default function Chatbot() {
 					}`}
 				>
 					<div className="overflow-hidden">
-						<div className="border-t border-neutral-800">
+						<div className="border-t border-gray-200 dark:border-neutral-800">
 							<div
 								data-lenis-prevent
-								className="h-100 overflow-y-auto overscroll-contain no-scrollbar p-5"
+								className="h-100 overflow-y-auto overscroll-contain no-scrollbar p-5 bg-background-light dark:bg-neutral-950"
 							>
 								{messages.length === 0 && !isLoading ? (
 									<ChatEmptyState onSuggestionClick={handleSuggestionClick} />
@@ -93,10 +97,10 @@ export default function Chatbot() {
 										{isLoading && <TypingIndicator />}
 										{error && (
 											<div className="flex items-end justify-start">
-												<div className="shrink-0 w-7 h-7 rounded-full bg-neutral-800 flex items-center justify-center mr-2">
+												<div className="shrink-0 w-7 h-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center mr-2 border border-gray-200 dark:border-neutral-700">
 													<RiRobot2Line className="text-primary text-sm" />
 												</div>
-												<div className="max-w-[75%] rounded-2xl rounded-bl-none px-4 py-2.5 text-sm bg-red-900/50 text-red-200 border border-red-800">
+												<div className="max-w-[75%] rounded-2xl rounded-bl-none px-4 py-2.5 text-sm bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-200 border border-red-300 dark:border-red-800">
 													Oops! I&apos;m getting too many questions right now.
 													Please try again in a moment.
 												</div>
