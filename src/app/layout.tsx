@@ -5,6 +5,7 @@ import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import ReactLenis from "lenis/react";
 import { Analytics } from "@vercel/analytics/next";
+import Chatbot from "@/components/chat/Chatbot";
 
 const inter = Inter({
 	variable: "--font-inter",
@@ -49,6 +50,7 @@ export default function RootLayout({
 					</ReactLenis>
 					<Footer />
 				</div>
+				<Chatbot />
 			</body>
 		</html>
 	);

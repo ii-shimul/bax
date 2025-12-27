@@ -1,0 +1,313 @@
+{
+	"personal": {
+		"fullName": "Injamamul Islam Shimul",
+		"nickname": "Bax",
+		"nicknameOrigin": "Derived from Bombax ceiba, the scientific name of the Shimul tree",
+		"role": "Full Stack Developer",
+		"tagline": "Crafting accessible, pixel-perfect web experiences. I blend modern tech with cyber-minimalist aesthetics to build the future of the web.",
+		"location": {
+			"city": "Sylhet",
+			"country": "Bangladesh"
+		},
+		"availableForHire": true,
+		"openToFreelance": true,
+		"bio": "",
+		"story": "",
+		"languages": ["Bengali", "English"],
+		"hobbies": []
+	},
+	"contact": {
+		"email": "islamshimul27@gmail.com",
+		"phone": "+8801756651557",
+		"whatsapp": "+8801756651557",
+		"resumeLink": "https://drive.google.com/file/d/1dk8RWrHrERC_i12qk3q1Edy7iX9_x_9L/view"
+	},
+	"socialLinks": {
+		"github": "https://github.com/ii-shimul",
+		"linkedin": "https://linkedin.com/in/ii-shimul",
+		"facebook": "https://facebook.com/zahannami",
+		"twitter": "",
+		"instagram": "",
+		"youtube": "",
+		"portfolio": ""
+	},
+	"education": [
+		{
+			"institution": "",
+			"degree": "",
+			"field": "Computer Science",
+			"location": "Sylhet, Bangladesh",
+			"startYear": "",
+			"endYear": "",
+			"status": "Currently Studying",
+			"gpa": "",
+			"achievements": [],
+			"relevantCoursework": []
+		}
+	],
+	"experience": [
+		{
+			"company": "",
+			"position": "",
+			"type": "Full-time | Part-time | Internship | Freelance",
+			"location": "",
+			"remote": false,
+			"startDate": "",
+			"endDate": "",
+			"current": false,
+			"description": "",
+			"responsibilities": [],
+			"technologies": []
+		}
+	],
+	"skills": {
+		"frontend": [
+			{
+				"name": "JavaScript",
+				"level": "Advanced",
+				"yearsOfExperience": null
+			},
+			{
+				"name": "TypeScript",
+				"level": "Advanced",
+				"yearsOfExperience": null
+			},
+			{
+				"name": "React.js",
+				"level": "Advanced",
+				"yearsOfExperience": null
+			},
+			{
+				"name": "Next.js",
+				"level": "Advanced",
+				"yearsOfExperience": null
+			},
+			{
+				"name": "Tailwind CSS",
+				"level": "Advanced",
+				"yearsOfExperience": null
+			},
+			{
+				"name": "Motion/Framer Motion",
+				"level": "Intermediate",
+				"yearsOfExperience": null
+			},
+			{
+				"name": "Material UI",
+				"level": "Intermediate",
+				"yearsOfExperience": null
+			}
+		],
+		"backend": [
+			{
+				"name": "Node.js",
+				"level": "Advanced",
+				"yearsOfExperience": null
+			},
+			{
+				"name": "Express.js",
+				"level": "Advanced",
+				"yearsOfExperience": null
+			}
+		],
+		"databases": [
+			{
+				"name": "MongoDB",
+				"level": "Advanced",
+				"yearsOfExperience": null
+			},
+			{
+				"name": "Mongoose ODM",
+				"level": "Advanced",
+				"yearsOfExperience": null
+			},
+			{
+				"name": "PostgreSQL",
+				"level": "Intermediate",
+				"yearsOfExperience": null
+			},
+			{
+				"name": "MySQL",
+				"level": "Intermediate",
+				"yearsOfExperience": null
+			},
+			{
+				"name": "Supabase",
+				"level": "Intermediate",
+				"yearsOfExperience": null
+			},
+			{
+				"name": "Firebase",
+				"level": "Intermediate",
+				"yearsOfExperience": null
+			}
+		],
+		"tools": [
+			{
+				"name": "Git & GitHub",
+				"level": "Advanced",
+				"yearsOfExperience": null
+			},
+			{
+				"name": "Stripe",
+				"level": "Intermediate",
+				"yearsOfExperience": null
+			},
+			{
+				"name": "Vercel",
+				"level": "Advanced",
+				"yearsOfExperience": null
+			}
+		],
+		"other": []
+	},
+	"projects": [
+		{
+			"id": "hostelmate",
+			"title": "HostelMate",
+			"description": "A comprehensive meal management system for hostels where users can browse, order, and review meals while admins can manage meals, track revenue, and handle upcoming meal requests.",
+			"technologies": ["React", "Firebase", "Material UI", "MongoDB", "Stripe"],
+			"features": [
+				"User authentication and profile management",
+				"Meal browsing, ordering, and reviewing",
+				"Admin dashboard for meal management and revenue tracking",
+				"Premium packages with Stripe payment integration",
+				"Dark mode UI"
+			],
+			"liveLink": "https://hostelmate-b7e8e.web.app/",
+			"repoLink": "https://github.com/ii-shimul/project-hostelmate",
+			"image": "/projects/hostelmate.png",
+			"featured": true,
+			"startDate": "",
+			"endDate": "",
+			"role": "Full Stack Developer"
+		},
+		{
+			"id": "tourna",
+			"title": "Tourna - Tournament Manager",
+			"description": "A tournament management platform for creating and managing competitions where users can create teams and tournaments, and determine champions.",
+			"technologies": ["React", "Express.js", "MySQL", "Motion"],
+			"features": [
+				"Create and manage teams and tournaments",
+				"Search and sort functionality for teams",
+				"Dynamic team member management",
+				"Champion determination system"
+			],
+			"liveLink": "https://tourna-nine.vercel.app/",
+			"repoLink": "https://github.com/ii-shimul/project-tourna",
+			"image": "/projects/tourna.png",
+			"featured": true,
+			"startDate": "",
+			"endDate": "",
+			"role": "Full Stack Developer"
+		},
+		{
+			"id": "shareplate",
+			"title": "SharePlate - Food Sharing Platform",
+			"description": "A community platform to reduce food waste by connecting individuals to share excess food with those in need.",
+			"technologies": ["React", "Node.js", "MongoDB", "Tailwind CSS"],
+			"features": [
+				"Add, update, and delete food listings",
+				"Food request system",
+				"Grid layout toggle, search, and sorting by expiry date"
+			],
+			"liveLink": "https://shareplate-72dea.web.app/",
+			"repoLink": "https://github.com/ii-shimul/project-shareplate",
+			"image": "/projects/shareplate.png",
+			"featured": true,
+			"startDate": "",
+			"endDate": "",
+			"role": "Full Stack Developer"
+		},
+		{
+			"id": "ocean-xplorer",
+			"title": "Ocean Xplorer",
+			"description": "A frontend-focused project showcasing advanced animations and modern UI design.",
+			"technologies": ["React", "Tailwind CSS", "Motion"],
+			"features": [],
+			"liveLink": "https://ocean-xplorer.web.app/",
+			"repoLink": "https://github.com/ii-shimul/project-ocean-xplorer",
+			"image": "/projects/oceanxplorer.png",
+			"featured": false,
+			"startDate": "",
+			"endDate": "",
+			"role": "Frontend Developer"
+		}
+	],
+	"certifications": [
+		{
+			"name": "",
+			"issuer": "",
+			"date": "",
+			"credentialId": "",
+			"credentialUrl": "",
+			"skills": []
+		}
+	],
+	"services": {
+		"offered": [
+			{
+				"name": "Full Stack Web Development",
+				"description": "End-to-end web application development with React/Next.js frontend and Node.js backend",
+				"technologies": ["React", "Next.js", "Node.js", "MongoDB"]
+			},
+			{
+				"name": "Frontend Development",
+				"description": "Modern, responsive, and animated user interfaces",
+				"technologies": ["React", "TypeScript", "Tailwind CSS", "Motion"]
+			},
+			{
+				"name": "Backend Development",
+				"description": "RESTful APIs and database design",
+				"technologies": ["Node.js", "Express", "MongoDB", "PostgreSQL"]
+			}
+		],
+		"pricing": {
+			"hourlyRate": null,
+			"currency": "USD",
+			"projectBasedAvailable": true,
+			"negotiable": true
+		},
+		"availability": {
+			"hoursPerWeek": null,
+			"timezone": "Asia/Dhaka (GMT+6)",
+			"preferredWorkStyle": "Remote"
+		}
+	},
+	"interests": {
+		"currentlyLearning": [],
+		"wantToLearn": [],
+		"blogTopics": [
+			"Serverless architecture and edge computing",
+			"Tailwind CSS configuration and design systems",
+			"Web accessibility (a11y)"
+		],
+		"careerGoals": []
+	},
+	"testimonials": [
+		{
+			"name": "",
+			"role": "",
+			"company": "",
+			"text": "",
+			"image": "",
+			"linkedinUrl": ""
+		}
+	],
+	"achievements": [
+		{
+			"title": "",
+			"description": "",
+			"date": "",
+			"link": ""
+		}
+	],
+	"softSkills": [
+		"Problem Solving",
+		"Team Collaboration",
+		"Communication",
+		"Time Management",
+		"Attention to Detail"
+	],
+	"funFacts": []
+}
