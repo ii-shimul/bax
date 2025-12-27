@@ -145,8 +145,11 @@ const Works = () => {
 	const typedProjects = projects as Project[];
 
 	return (
-		<section className="py-24 px-4 md:px-10 max-w-6xl mx-auto w-full" id="work">
-			<div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+		<section
+			className="py-10 lg:pt-20 lg:pb-12 px-4 md:px-10 max-w-6xl mx-auto w-full"
+			id="work"
+		>
+			<div className="flex flex-col md:flex-row justify-between md:items-end mb-5 lg:mb-12 gap-4">
 				<div>
 					<h2 className="text-4xl md:text-5xl font-black tracking-tight mb-2 text-gray-900 dark:text-white cyber-glow-text">
 						Selected Works
@@ -155,7 +158,7 @@ const Works = () => {
 						A curation of my recent digital products.
 					</p>
 				</div>
-				<BeforeEffectButton className="flex items-center cursor-pointer pt-1.5 gap-1 text-gray-900 dark:text-white font-bold hover:text-primary transition-colors group">
+				<BeforeEffectButton className="flex items-center self-end cursor-pointer pt-1.5 gap-1 text-gray-900 dark:text-white font-bold hover:text-primary transition-colors group">
 					View All Projects{" "}
 					<span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
 						arrow_forward

@@ -2,9 +2,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { LiftButton } from "../ui/lift-button";
-import { SocialButton } from "../ui/social-button";
-import { FaFacebook, FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa6";
-import { SiGmail } from "react-icons/si";
+import Socials from "./Socials";
 
 const Footer = () => {
 	const year = new Date().getFullYear();
@@ -36,11 +34,11 @@ const Footer = () => {
 
 	return (
 		<footer
-			className="mt-auto border-t border-gray-200 dark:border-border-dark bg-background-light/50 dark:bg-[#050505] pt-24 pb-10"
+			className="mt-auto border-t border-gray-200 dark:border-border-dark bg-background-light/50 dark:bg-[#050505] py-6 md:pt-24 md:pb-10"
 			id="contact"
 		>
-			<div className="px-4 md:px-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
-				<div className="flex flex-col gap-6">
+			<div className="px-4 md:px-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16">
+				<div className="flex flex-col gap-4">
 					<h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-gray-900 dark:text-white font-display">
 						Let&apos;s work <br />
 						<span className="text-primary">together.</span>
@@ -49,38 +47,7 @@ const Footer = () => {
 						Have a project in mind? I&apos;m currently available for freelance
 						work and open to new opportunities.
 					</p>
-					<div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-3">
-						<SocialButton
-							icon={<FaGithub />}
-							label="GitHub"
-							hoverBgColor="rgb(36, 41, 47)"
-							href="https://github.com/ii-shimul"
-						/>
-						<SocialButton
-							icon={<FaLinkedin />}
-							label="LinkedIn"
-							hoverBgColor="rgb(0, 119, 181)"
-							href="https://linkedin.com/in/ii-shimul"
-						/>
-						<SocialButton
-							icon={<SiGmail />}
-							label="Email"
-							hoverBgColor="rgb(234, 67, 53)"
-							href="mailto:islamshimul27@email.com"
-						/>
-						<SocialButton
-							icon={<FaWhatsapp />}
-							label="WhatsApp"
-							hoverBgColor="rgb(37, 211, 102)"
-							href="https://wa.me/8801756651557"
-						/>
-						<SocialButton
-							icon={<FaFacebook />}
-							label="Facebook"
-							hoverBgColor="rgb(24, 119, 242)"
-							href="https://facebook.com/zahannami"
-						/>
-					</div>
+					<Socials />
 				</div>
 				<form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
 					<div className="grid grid-cols-2 gap-4">
@@ -131,7 +98,7 @@ const Footer = () => {
 					</LiftButton>
 				</form>
 			</div>
-			<div className="px-4 md:px-10 max-w-6xl mx-auto mt-20 pt-8 border-t border-gray-200 dark:border-border-dark flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-600">
+			<div className="px-4 md:px-10 max-w-6xl mx-auto mt-5 md:mt-20 pt-8 border-t border-gray-200 dark:border-border-dark flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-600">
 				<p>© {year} Bax. All rights reserved.</p>
 				<div className="flex gap-6 mt-4 md:mt-0">
 					<a className="hover:text-primary transition-colors" href="#">

@@ -43,14 +43,11 @@ const Header = () => {
 				<div className="flex items-center gap-4">
 					<AnimatedThemeToggler className="border-2 cursor-pointer bg-primary/15 rounded-full border-primary/60 p-2.5" />
 					<LiftButton
-						className="hidden sm:flex h-10 items-center justify-center rounded-md bg-primary px-6 text-sm font-bold text-white hover:bg-primary-dark hover:shadow-[0_0_15px_rgba(239,68,68,0.5)] transition-all duration-300"
+						className="flex h-10 items-center justify-center rounded-md bg-primary px-6 text-sm font-bold text-white hover:bg-primary-dark hover:shadow-[0_0_15px_rgba(239,68,68,0.5)] transition-all duration-300"
 						href="#contact"
 					>
 						Contact Me
 					</LiftButton>
-					<button className="md:hidden text-gray-900 dark:text-white hover:text-primary transition-colors">
-						<span className="material-symbols-outlined">menu</span>
-					</button>
 				</div>
 			</div>
 		</header>

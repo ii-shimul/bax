@@ -22,7 +22,7 @@ export const HoverEffect = ({
 	return (
 		<div
 			className={cn(
-				"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4",
+				"grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1.5 sm:gap-2.5 md:gap-4",
 				className
 			)}
 		>
@@ -55,7 +55,9 @@ export const HoverEffect = ({
 						<div className="flex flex-col">
 							<CardTitle>{item.title}</CardTitle>
 							{item.description && (
-								<CardDescription>{item.description}</CardDescription>
+								<CardDescription className="max-sm:hidden">
+									{item.description}
+								</CardDescription>
 							)}
 						</div>
 					</Card>
@@ -75,11 +77,11 @@ export const Card = ({
 	return (
 		<div
 			className={cn(
-				"rounded-xl h-full w-full p-4 overflow-hidden bg-gray-200 dark:bg-background-dark border border-gray-200 dark:border-border-dark group-hover:border-primary/50 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.15)] relative z-20 transition-all duration-300",
+				"rounded-xl h-full w-full p-4 sm:p-4 overflow-hidden bg-gray-200 dark:bg-background-dark border border-gray-200 dark:border-border-dark group-hover:border-primary/50 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.15)] relative z-20 transition-all duration-300",
 				className
 			)}
 		>
-			<div className="relative z-50 flex flex-row items-center gap-4">
+			<div className="relative z-50 flex flex-row items-center gap-3 sm:gap-4">
 				{children}
 			</div>
 		</div>
@@ -98,7 +100,7 @@ export const CardIcon = ({
 	return (
 		<div
 			className={cn(
-				"text-4xl text-gray-500 transition-colors shrink-0",
+				"text-3xl sm:text-4xl text-gray-500 transition-colors shrink-0",
 				className
 			)}
 			style={

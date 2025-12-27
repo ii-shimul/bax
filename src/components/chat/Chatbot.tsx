@@ -46,7 +46,7 @@ export default function Chatbot() {
 		<div className="fixed bottom-4 right-4 z-50 flex flex-col items-end">
 			<div
 				className={`${
-					isOpen ? "w-95" : "w-56 lg:w-95"
+					isOpen ? "w-95 max-sm:w-[96%]" : "w-56 lg:w-95"
 				} bg-neutral-950 border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ease-in-out`}
 			>
 				<button

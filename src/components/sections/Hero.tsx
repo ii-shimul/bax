@@ -3,19 +3,12 @@ import me from "../../../public/me.jpeg";
 import Image from "next/image";
 import { CometCard } from "@/components/ui/comet-card";
 import ScrambledText from "../ui/scramble-text";
-import {
-	FaLocationCrosshairs,
-	FaFacebook,
-	FaLinkedin,
-	FaGithub,
-	FaWhatsapp,
-} from "react-icons/fa6";
-import { SiGmail } from "react-icons/si";
+import { FaLocationCrosshairs } from "react-icons/fa6";
 import { BeforeEffectButton } from "../ui/before-effect-button";
-import { SocialButton } from "../ui/social-button";
 import { LiftButton } from "../ui/lift-button";
 import { useEffect, useState } from "react";
 import { Highlight } from "../ui/hero-highlight";
+import Socials from "../shared/Socials";
 
 type GitHubPushEvent = {
 	type: string;
@@ -52,11 +45,11 @@ const Hero = () => {
 			.catch(console.error);
 	}, []);
 	return (
-		<section className="relative flex items-center pt-10 pb-16 min-h-[90vh] overflow-hidden">
-			<div className="max-w-6xl mx-auto w-full px-4 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center relative z-10">
+		<section className="relative flex items-center pt-5 pb-5 md:pt-10 md:pb-16 min-h-[90vh] overflow-hidden">
+			<div className="max-w-6xl mx-auto w-full px-4 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10 items-center relative z-10">
 				<div className="flex flex-col text-center lg:text-left order-2 lg:order-1">
 					<div className="flex flex-wrap mb-5 items-center gap-3 justify-center lg:justify-start">
-						<div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-200 dark:border-border-dark bg-white dark:bg-card-dark backdrop-blur-sm">
+						<div className="inline-flex max-sm:hidden items-center gap-2 px-3 py-1 rounded-full border border-gray-200 dark:border-border-dark bg-white dark:bg-card-dark backdrop-blur-sm">
 							<span className="relative flex h-2 w-2">
 								<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
 								<span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
@@ -74,19 +67,19 @@ const Hero = () => {
 							</span>
 						</div>
 					</div>
-					<h1 className="text-3xl md:text-4xl xl:text-6xl font-black mb-2 leading-tight tracking-tighter cyber-glow-text">
+					<h1 className=" font-black mb-2 leading-tight tracking-tighter cyber-glow-text">
 						<span className="block text-xl md:text-2xl xl:text-3xl tracking-tight font-medium text-gray-600 dark:text-gray-400 mb-2">
 							Hey there, I&apos;m
 						</span>
-						<span className="block text-gray-900 dark:text-white">
+						<span className="block text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-gray-900 dark:text-white">
 							Injamamul Islam
 						</span>
-						<span className="block text-6xl md:text-7xl xl:text-9xl text-transparent bg-clip-text bg-linear-to-r from-primary to-red-400 mt-1">
-							Shimul
-							<span className="inline-block w-8 h-2 lg:w-12 lg:h-3 ml-1 bg-red-400 rounded-full animate-blink align-baseline"></span>
+						<span className="block text-7xl md:text-8xl xl:text-[110px] text-transparent bg-clip-text bg-linear-to-r from-primary to-red-400 mt-1">
+							SHIMUL
+							<span className="inline-block w-8 h-2 lg:w-10 xl:12 xl:h-3.5 md:h-2.5 lg:h-3 ml-1 bg-red-400 rounded-full translate-y-0.5  align-baseline"></span>
 						</span>
 					</h1>
-					<ScrambledText className="mb-5 text-gray-700 dark:text-gray-300">
+					<ScrambledText className="my-2 text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300">
 						A{" "}
 						<Highlight className="font-bold text-2xl md:text-3xl xl:text-4xl">
 							Full Stack Developer
@@ -95,9 +88,9 @@ const Hero = () => {
 						tech with cyber-minimalist aesthetics to build the future of the
 						web.
 					</ScrambledText>
-					<div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+					<div className="flex flex-wrap gap-4 justify-center lg:justify-start py-3">
 						<a href="#contact">
-							<LiftButton className="h-12 px-8 flex items-center justify-center rounded-md bg-primary text-white font-bold text-base ">
+							<LiftButton className=" h-12 px-8 flex items-center justify-center rounded-md bg-primary text-white font-bold text-base ">
 								Start a Project
 							</LiftButton>
 						</a>
@@ -113,41 +106,10 @@ const Hero = () => {
 							</BeforeEffectButton>
 						</a>
 					</div>
-					<div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-3">
-						<SocialButton
-							icon={<FaGithub />}
-							label="GitHub"
-							hoverBgColor="rgb(36, 41, 47)"
-							href="https://github.com/ii-shimul"
-						/>
-						<SocialButton
-							icon={<FaLinkedin />}
-							label="LinkedIn"
-							hoverBgColor="rgb(0, 119, 181)"
-							href="https://linkedin.com/in/ii-shimul"
-						/>
-						<SocialButton
-							icon={<SiGmail />}
-							label="Email"
-							hoverBgColor="rgb(234, 67, 53)"
-							href="mailto:islamshimul27@email.com"
-						/>
-						<SocialButton
-							icon={<FaWhatsapp />}
-							label="WhatsApp"
-							hoverBgColor="rgb(37, 211, 102)"
-							href="https://wa.me/8801756651557"
-						/>
-						<SocialButton
-							icon={<FaFacebook />}
-							label="Facebook"
-							hoverBgColor="rgb(24, 119, 242)"
-							href="https://facebook.com/zahannami"
-						/>
-					</div>
+					<Socials />
 				</div>
 				<div className="relative order-1 lg:order-2 flex justify-center lg:justify-end">
-					<CometCard className="w-full max-w-125">
+					<CometCard className="w-full max-w-125 lg:max-w-105">
 						<div className="relative w-full aspect-square lg:aspect-4/5 rounded-2xl overflow-hidden border border-gray-200 dark:border-border-dark group">
 							<div className="absolute inset-0 z-10"></div>
 							<Image
@@ -177,7 +139,7 @@ const Hero = () => {
 					</CometCard>
 				</div>
 			</div>
-			<div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block text-gray-400 dark:text-gray-500">
+			<div className="absolute max-lg:bottom-4 bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block text-gray-400 dark:text-gray-500">
 				<span className="material-symbols-outlined text-3xl">
 					keyboard_arrow_down
 				</span>

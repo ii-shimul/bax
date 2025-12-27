@@ -74,7 +74,7 @@ const ScrambledText: React.FC<ScrambledTextProps> = ({
 	return (
 		<div
 			ref={rootRef}
-			className={`max-w-xl text-lg text-gray-400 font-light leading-relaxed mx-auto lg:mx-0 ${className}`}
+			className={`max-w-xl text-gray-400 font-light leading-relaxed mx-auto lg:mx-0 ${className}`}
 			style={style}
 		>
 			<p>{children}</p>
