@@ -1,6 +1,7 @@
 "use client";
 
 import { HoverEffect } from "@/components/ui/card-hover-effect";
+import { useState } from "react";
 import {
 	SiJavascript,
 	SiTypescript,
@@ -92,13 +93,17 @@ const techItems = [
 ];
 
 const TechStack = () => {
+	const [codeWIth, setCodeWith] = useState<string | null>(null);
+	const updateCodeWith = (techTitle: string | null): void => {
+		setCodeWith(techTitle);
+	};
 	return (
 		<section className="w-full border-y border-gray-200 dark:border-border-dark bg-gray-50 dark:bg-card-dark pt-5 pb-5 md:pt-10 md:pb-16 overflow-hidden">
 			<div className="max-w-6xl mx-auto px-4 md:px-10">
 				<h3 className="text-sm font-bold mb-5 md:mb-8 text-gray-600 dark:text-gray-500 uppercase tracking-widest font-display">
-					Technological Arsenal
+					I code with {codeWIth ? codeWIth : "fingers"}
 				</h3>
-				<HoverEffect items={techItems} />
+				<HoverEffect items={techItems} updateCodeWith={updateCodeWith} />
 			</div>
 		</section>
 	);

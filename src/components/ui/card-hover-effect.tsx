@@ -7,6 +7,7 @@ import { useState, ReactNode } from "react";
 export const HoverEffect = ({
 	items,
 	className,
+	updateCodeWith,
 }: {
 	items: {
 		title: string;
@@ -16,6 +17,7 @@ export const HoverEffect = ({
 		link?: string;
 	}[];
 	className?: string;
+	updateCodeWith: (techTitle: string | null) => void;
 }) => {
 	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -50,40 +52,25 @@ export const HoverEffect = ({
 							/>
 						)}
 					</AnimatePresence>
-					<Card>
-						<CardIcon hoverColor={item.hoverColor}>{item.icon}</CardIcon>
-						<div className="flex flex-col">
-							<CardTitle>{item.title}</CardTitle>
-							{item.description && (
-								<CardDescription className="max-sm:hidden">
-									{item.description}
-								</CardDescription>
-							)}
+					<div
+						onMouseEnter={() => updateCodeWith(item.title)}
+						onMouseLeave={() => updateCodeWith(null)}
+						className="rounded-xl h-full w-full p-4 sm:p-4 overflow-hidden bg-gray-200 dark:bg-background-dark border border-gray-200 dark:border-border-dark group-hover:border-primary/50 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.15)] relative z-20 transition-all duration-300"
+					>
+						<div className="relative z-50 flex flex-row items-center gap-3 sm:gap-4">
+							<CardIcon hoverColor={item.hoverColor}>{item.icon}</CardIcon>
+							<div className="flex flex-col">
+								<CardTitle>{item.title}</CardTitle>
+								{item.description && (
+									<CardDescription className="max-sm:hidden">
+										{item.description}
+									</CardDescription>
+								)}
+							</div>
 						</div>
-					</Card>
+					</div>
 				</div>
 			))}
-		</div>
-	);
-};
-
-export const Card = ({
-	className,
-	children,
-}: {
-	className?: string;
-	children: React.ReactNode;
-}) => {
-	return (
-		<div
-			className={cn(
-				"rounded-xl h-full w-full p-4 sm:p-4 overflow-hidden bg-gray-200 dark:bg-background-dark border border-gray-200 dark:border-border-dark group-hover:border-primary/50 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.15)] relative z-20 transition-all duration-300",
-				className
-			)}
-		>
-			<div className="relative z-50 flex flex-row items-center gap-3 sm:gap-4">
-				{children}
-			</div>
 		</div>
 	);
 };
