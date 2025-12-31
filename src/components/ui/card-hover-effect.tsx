@@ -17,7 +17,7 @@ export const HoverEffect = ({
 		link?: string;
 	}[];
 	className?: string;
-	updateCodeWith: (techTitle: string | null) => void;
+	updateCodeWith: (techTitle: string[] | undefined) => void;
 }) => {
 	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -53,8 +53,8 @@ export const HoverEffect = ({
 						)}
 					</AnimatePresence>
 					<div
-						onMouseEnter={() => updateCodeWith(item.title)}
-						onMouseLeave={() => updateCodeWith(null)}
+						onMouseEnter={() => updateCodeWith([item.title])}
+						onMouseLeave={() => updateCodeWith(undefined)}
 						className="rounded-xl h-full w-full p-4 sm:p-4 overflow-hidden bg-gray-200 dark:bg-background-dark border border-gray-200 dark:border-border-dark group-hover:border-primary/50 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.15)] relative z-20 transition-all duration-300"
 					>
 						<div className="relative z-50 flex flex-row items-center gap-3 sm:gap-4">

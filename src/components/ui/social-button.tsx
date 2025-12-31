@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import type { ReactNode, AnchorHTMLAttributes } from "react";
 import { useEffect, useState } from "react";
 
 type SocialButtonProps = {
@@ -13,8 +13,8 @@ type SocialButtonProps = {
 	lightTextColor?: string;
 	darkTextColor?: string;
 	className?: string;
-	href?: string;
-} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children">;
+	href: string;
+} & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "children">;
 
 export const SocialButton = ({
 	icon,
@@ -50,9 +50,11 @@ export const SocialButton = ({
 	const textColor = isDark ? darkTextColor : lightTextColor;
 
 	const buttonContent = (
-		<button
+		<a
 			className={cn("social-button group", className)}
-			type="button"
+			href={href}
+			target="_blank"
+			rel="noopener noreferrer"
 			{...props}
 			style={
 				{
@@ -131,16 +133,8 @@ export const SocialButton = ({
 					fill: white;
 				}
 			`}</style>
-		</button>
+		</a>
 	);
-
-	if (href) {
-		return (
-			<a href={href} target="_blank" rel="noopener noreferrer">
-				{buttonContent}
-			</a>
-		);
-	}
 
 	return buttonContent;
 };

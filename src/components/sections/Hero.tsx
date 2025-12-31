@@ -76,7 +76,7 @@ const Hero = () => {
 						</span>
 						<span className="block text-7xl md:text-8xl xl:text-[110px] text-transparent bg-clip-text bg-linear-to-r from-primary to-red-400 mt-1">
 							SHIMUL
-							<span className="inline-block w-8 h-2 lg:w-10 xl:12 xl:h-3.5 md:h-2.5 lg:h-3 ml-1 bg-red-400 rounded-full translate-y-0.5  align-baseline"></span>
+							<span className="inline-block w-7 h-2 lg:w-10 xl:12 xl:h-3.5 md:h-2.5 lg:h-3 ml-1 bg-red-400 animate-caret-blink rounded-full translate-y-0.5  align-baseline"></span>
 						</span>
 					</h1>
 					<ScrambledText className="my-2 text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300">
