@@ -1,5 +1,5 @@
 "use client";
-import me from "../../../public/me.jpeg";
+import me from "../../../public/me.png";
 import Image from "next/image";
 import { CometCard } from "@/components/ui/comet-card";
 import ScrambledText from "../ui/scramble-text";

@@ -1,20 +1,14 @@
 [
 	{
-		"id": "serverless-components",
-		"date": "Oct 24, 2023",
-		"title": "The future of Serverless Components",
-		"excerpt": "Exploring the shift towards edge computing and how it impacts frontend architecture..."
+		"id": "practice",
+		"date": "July 13, 2024",
+		"title": "Importance of Practice",
+		"excerpt": "About a half-decade ago, one of my teachers told me “Practice makes a man perfect”. I didn't understand it very deeply then. But now, everything is different. I understand now. I understand how a person can go from knowing absolutely nothing to being a master. Practice is the key to that path.\n\nI was so overconfident a while ago. Every time I start to learn something, I think I don't have to practice because I understand the topic. I was smart enough to realise that I was wrong. If I don’t practice, no matter how brilliant I am, I will eventually lose it.\n\nBruce Lee once said, “I fear not the man who has practiced 10,000 kicks once, but I fear the man who has practiced one kick 10,000 times.“"
 	},
 	{
-		"id": "tailwind-config",
-		"date": "Sep 12, 2023",
-		"title": "Mastering Tailwind CSS Config",
-		"excerpt": "How to set up a scalable design system using Tailwind's configuration file effectively..."
-	},
-	{
-		"id": "accessibility-web-apps",
-		"date": "Aug 05, 2023",
-		"title": "Accessibility in Modern Web Apps",
-		"excerpt": "Why a11y matters more than ever and how to implement it without sacrificing design..."
+		"id": "programming",
+		"date": "June 4, 2024",
+		"title": "Programming: My understanding of it",
+		"excerpt": "To me, programming is more like math. At a first glance these two may seem like completely two different fields, but if you think about the similarities between these two sectors, they are not that much different.\n\nIn programming, there is a problem to solve. We, programmers, solve these kinds of problems by using basic topics of a programming language like loops, arrays, functions and so on. We have to think strategically where and when to use these topics to solve a particular problem. Now, let’s compare this to math. In math, we have a problem to solve too. How? With basic concepts of math obviously. Algebra, geometry, calculus, trigonometry etc. Like solving a programming problem, solving a math problem is just using the basic concepts of it at the right place and time.\n\nI think I have made my point of view very clear. I am not an expert in programming. In fact, I have just started walking in this field. I have a long way to run.\n\nI just wanted share my thoughts in this experimental website thats all.\n\nHappy Programming!!!"
 	}
 ]
