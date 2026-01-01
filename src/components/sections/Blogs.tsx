@@ -21,7 +21,7 @@ const Blogs = () => {
 					<Modal key={blog.id}>
 						<ModalTrigger>
 							<article className="group flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 py-1 md:p-6 rounded-xl hover:bg-gray-50 dark:hover:bg-card-dark transition-colors cursor-pointer border border-transparent hover:border-gray-200 dark:hover:border-border-dark">
-								<span className="text-primary font-mono text-sm font-bold min-w-25">
+								<span className="text-primary text-start font-mono text-sm font-bold min-w-25">
 									{blog.date}
 								</span>
 								<div className="flex-1">
@@ -51,7 +51,7 @@ const Blogs = () => {
 									</p>
 								</header>
 
-								<article className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed space-y-4">
+								<article className="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed space-y-4">
 									{blog.body.split("\n\n").map((para, idx) => (
 										<p key={idx}>{para}</p>
 									))}

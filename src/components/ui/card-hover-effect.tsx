@@ -113,7 +113,7 @@ export const CardTitle = ({
 	return (
 		<h4
 			className={cn(
-				"text-md font-semibold text-gray-500 group-hover:text-gray-900 dark:group-hover:text-white transition-colors",
+				"max-sm:text-sm text-md font-semibold text-gray-500 group-hover:text-gray-900 dark:group-hover:text-white transition-colors",
 				className
 			)}
 		>
