@@ -4,17 +4,17 @@
 		"nickname": "Bax",
 		"nicknameOrigin": "Derived from Bombax ceiba, the scientific name of the Shimul tree",
 		"role": "Full Stack Developer",
-		"tagline": "Crafting accessible, pixel-perfect web experiences. I blend modern tech with cyber-minimalist aesthetics to build the future of the web.",
+		"tagline": "A developer, who loves turning ideas into clean, functional websites. I care about the details and enjoy building things that actually work well for people.",
 		"location": {
 			"city": "Sylhet",
 			"country": "Bangladesh"
 		},
 		"availableForHire": true,
 		"openToFreelance": true,
-		"bio": "",
+		"bio": "Continuously learning",
 		"story": "",
-		"languages": ["Bengali", "English"],
-		"hobbies": []
+		"languages": ["Bengali", "English", "Hindi"],
+		"hobbies": ["Reading books", "Watching movies", "Playing video games"]
 	},
 	"contact": {
 		"email": "islamshimul27@gmail.com",
@@ -26,21 +26,21 @@
 		"github": "https://github.com/ii-shimul",
 		"linkedin": "https://linkedin.com/in/ii-shimul",
 		"facebook": "https://facebook.com/zahannami",
+		"portfolio": "https://ii-shimul.vercel.app/",
 		"twitter": "",
 		"instagram": "",
-		"youtube": "",
-		"portfolio": ""
+		"youtube": ""
 	},
 	"education": [
 		{
-			"institution": "",
-			"degree": "",
+			"institution": "Leading University",
+			"degree": "Bachelor's",
 			"field": "Computer Science",
 			"location": "Sylhet, Bangladesh",
-			"startYear": "",
-			"endYear": "",
+			"startYear": "2023",
+			"endYear": "2027",
 			"status": "Currently Studying",
-			"gpa": "",
+			"cgpa": "3.65",
 			"achievements": [],
 			"relevantCoursework": []
 		}
@@ -49,7 +49,7 @@
 		{
 			"company": "",
 			"position": "",
-			"type": "Full-time | Part-time | Internship | Freelance",
+			"type": "",
 			"location": "",
 			"remote": false,
 			"startDate": "",
@@ -89,11 +89,6 @@
 			},
 			{
 				"name": "Motion/Framer Motion",
-				"level": "Intermediate",
-				"yearsOfExperience": null
-			},
-			{
-				"name": "Material UI",
 				"level": "Intermediate",
 				"yearsOfExperience": null
 			}
@@ -159,6 +154,7 @@
 				"yearsOfExperience": null
 			}
 		],
+		"programmingLanguages": ["C", "C++", "Python", "Java"],
 		"other": []
 	},
 	"projects": [
@@ -176,8 +172,6 @@
 			],
 			"liveLink": "https://hostelmate-b7e8e.web.app/",
 			"repoLink": "https://github.com/ii-shimul/project-hostelmate",
-			"image": "/projects/hostelmate.png",
-			"featured": true,
 			"startDate": "",
 			"endDate": "",
 			"role": "Full Stack Developer"
@@ -195,8 +189,6 @@
 			],
 			"liveLink": "https://tourna-nine.vercel.app/",
 			"repoLink": "https://github.com/ii-shimul/project-tourna",
-			"image": "/projects/tourna.png",
-			"featured": true,
 			"startDate": "",
 			"endDate": "",
 			"role": "Full Stack Developer"
@@ -213,8 +205,6 @@
 			],
 			"liveLink": "https://shareplate-72dea.web.app/",
 			"repoLink": "https://github.com/ii-shimul/project-shareplate",
-			"image": "/projects/shareplate.png",
-			"featured": true,
 			"startDate": "",
 			"endDate": "",
 			"role": "Full Stack Developer"
@@ -227,8 +217,6 @@
 			"features": [],
 			"liveLink": "https://ocean-xplorer.web.app/",
 			"repoLink": "https://github.com/ii-shimul/project-ocean-xplorer",
-			"image": "/projects/oceanxplorer.png",
-			"featured": false,
 			"startDate": "",
 			"endDate": "",
 			"role": "Frontend Developer"
@@ -263,7 +251,7 @@
 			}
 		],
 		"pricing": {
-			"hourlyRate": null,
+			"hourlyRate": 10,
 			"currency": "USD",
 			"projectBasedAvailable": true,
 			"negotiable": true
@@ -275,13 +263,8 @@
 		}
 	},
 	"interests": {
-		"currentlyLearning": [],
-		"wantToLearn": [],
-		"blogTopics": [
-			"Serverless architecture and edge computing",
-			"Tailwind CSS configuration and design systems",
-			"Web accessibility (a11y)"
-		],
+		"currentlyLearning": ["Flutter"],
+		"wantToLearn": ["React Native"],
 		"careerGoals": []
 	},
 	"testimonials": [
@@ -303,11 +286,11 @@
 		}
 	],
 	"softSkills": [
+		"Attention to Detail",
 		"Problem Solving",
 		"Team Collaboration",
 		"Communication",
-		"Time Management",
-		"Attention to Detail"
+		"Time Management"
 	],
 	"funFacts": []
 }

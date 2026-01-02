@@ -76,7 +76,7 @@ const Hero = () => {
 						</span>
 						<span className="block text-7xl md:text-8xl xl:text-[110px] text-transparent bg-clip-text bg-linear-to-r from-primary to-red-400 mt-1">
 							SHIMUL
-							<span className="inline-block w-7 h-2 lg:w-10 xl:12 xl:h-3.5 md:h-2.5 lg:h-3 ml-1 bg-red-400 animate-caret-blink rounded-full translate-y-0.5  align-baseline"></span>
+							<span className="inline-block w-7 h-2 lg:w-10 xl:w-12 xl:h-3.5 md:h-2.5 lg:h-3 ml-1 bg-red-400 animate-caret-blink rounded-full translate-y-0.5  align-baseline"></span>
 						</span>
 					</h1>
 					<ScrambledText className="my-2 text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300">
@@ -84,9 +84,9 @@ const Hero = () => {
 						<Highlight className="font-bold text-2xl md:text-3xl xl:text-4xl">
 							Full Stack Developer
 						</Highlight>{" "}
-						crafting accessible, pixel-perfect web experiences. I blend modern
-						tech with cyber-minimalist aesthetics to build the future of the
-						web.
+						who loves turning ideas into clean, functional websites. I care
+						about the details and enjoy building things that actually work well
+						for people.
 					</ScrambledText>
 					<div className="flex flex-wrap gap-4 justify-center lg:justify-start py-3">
 						<a href="#contact">
@@ -119,17 +119,17 @@ const Hero = () => {
 								className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
 								src={me}
 							/>
-							<div className="absolute bottom-6 left-6 right-6 bg-white/80 dark:bg-black/70 backdrop-blur-md border border-gray-200 dark:border-border-dark p-4 rounded-xl z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+							<div className="absolute bottom-6 left-6 right-6 bg-white/80 dark:bg-black/70 backdrop-blur-md border border-gray-200 dark:border-border-dark max-sm:p-2.5 p-4 rounded-xl z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
 								<div className="flex items-center gap-3">
 									<div className="h-10 w-10 rounded-full bg-gray-100 dark:bg-card-dark flex items-center justify-center border border-gray-200 dark:border-border-dark text-primary">
 										<span className="material-symbols-outlined">code</span>
 									</div>
 									<div>
-										<p className="text-sm font-bold text-gray-900 dark:text-white">
-											Latest Commit{" "}
+										<p className="max-sm:text-xs text-sm font-bold text-gray-900 dark:text-white">
+											Latest commit{" "}
 											{latestCommit ? `in ${latestCommit.repoName}` : ""}
 										</p>
-										<p className="text-xs text-gray-600 dark:text-gray-400 line-clamp-1">
+										<p className="max-sm:text-[10px] text-xs text-gray-600 dark:text-gray-400 line-clamp-1">
 											{latestCommit?.message || "Loading..."}
 										</p>
 									</div>
