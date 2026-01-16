@@ -28,6 +28,7 @@ html {
 
 body {
   scroll-behavior: smooth !important;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Custom utility for cyber-grid background */
@@ -42,10 +43,6 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
 }
 
 h1,
@@ -71,6 +68,31 @@ h6 {
     linear-gradient(to bottom, #262626 1px, transparent 1px);
   background-size: 40px 40px;
   mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
+
+#tab-personal:checked~div .tabs-nav .label-personal,
+#tab-history:checked~div .tabs-nav .label-history {
+  color: #ef4444;
+  border-bottom-color: #ef4444;
+  text-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+}
+
+#tab-personal:checked~div .tab-content-personal,
+#tab-history:checked~div .tab-content-history {
+  display: block;
+  animation: slideUpFade 0.4s ease-out forwards;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes blink {
