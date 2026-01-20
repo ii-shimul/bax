@@ -1,5 +1,19 @@
+import { FaGithub } from "react-icons/fa6";
+import {
+	SiReact,
+	SiFirebase,
+	SiMui,
+	SiMongodb,
+	SiStripe,
+	SiExpress,
+	SiMysql,
+	SiFramer,
+	SiNodedotjs,
+	SiTailwindcss,
+} from "react-icons/si";
 import { BeforeEffectButton } from "../ui/before-effect-button";
 import projects from "@/data/projects.json";
+import { ReactNode } from "react";
 
 type Project = {
 	id: string;
@@ -10,6 +24,23 @@ type Project = {
 	liveLink: string;
 	repoLink: string;
 	keyFeatures?: string[];
+};
+
+const techIcons: Record<string, React.ReactNode> = {
+	React: <SiReact />,
+	Firebase: <SiFirebase />,
+	"Material UI": <SiMui />,
+	MongoDB: <SiMongodb />,
+	Stripe: <SiStripe />,
+	"Express.js": <SiExpress />,
+	MySQL: <SiMysql />,
+	Motion: <SiFramer />,
+	"Node.js": <SiNodedotjs />,
+	"Tailwind CSS": <SiTailwindcss />,
+};
+
+const getTechIcon = (tech: string): React.ReactNode => {
+	return techIcons[tech] || null;
 };
 
 const FeaturedCard = ({ project }: { project: Project }) => (
@@ -37,14 +68,24 @@ const FeaturedCard = ({ project }: { project: Project }) => (
 				<p className="text-gray-300 line-clamp-2 max-w-md font-light">
 					{project.description}
 				</p>
-				<a
-					className="h-12 w-12 shrink-0 flex items-center justify-center rounded-full bg-white text-black hover:bg-primary hover:text-white transition-colors"
-					href={project.liveLink}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<span className="material-symbols-outlined">arrow_outward</span>
-				</a>
+				<div className="flex gap-1.5">
+					<a
+						className="h-12 w-12 rounded-full border border-gray-200 dark:border-border-dark flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-colors text-gray-500 dark:text-gray-400"
+						href={project.repoLink}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FaGithub className="text-xl" />
+					</a>
+					<a
+						className="h-12 w-12 shrink-0 flex items-center justify-center rounded-full bg-white text-black hover:bg-primary hover:text-white transition-colors"
+						href={project.liveLink}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<span className="material-symbols-outlined">arrow_outward</span>
+					</a>
+				</div>
 			</div>
 		</div>
 	</article>
@@ -67,26 +108,39 @@ const ImageHeaderCard = ({ project }: { project: Project }) => (
 			</div>
 			<div className="flex justify-between items-end mt-6">
 				<div className="flex -space-x-2">
-					{project.technologies.slice(0, 3).map((tech) => (
-						<div
-							key={tech}
-							className="h-8 w-8 rounded-full border border-white dark:border-card-dark bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-[10px] text-gray-800 dark:text-white font-bold"
-							title={tech}
-						>
-							{tech.slice(0, 2).toUpperCase()}
-						</div>
-					))}
+					{project.technologies.slice(0, 3).map((tech) => {
+						const icon: ReactNode = getTechIcon(tech);
+						return (
+							<div
+								key={tech}
+								className="h-8 w-8 rounded-full border border-white dark:border-card-dark bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-base text-gray-800 dark:text-white font-bold"
+								title={tech}
+							>
+								{icon ? icon : tech.slice(0, 2).toUpperCase()}
+							</div>
+						);
+					})}
 				</div>
-				<a
-					className="h-10 w-10 rounded-full border border-gray-200 dark:border-border-dark flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-colors text-gray-500 dark:text-gray-400"
-					href={project.liveLink}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<span className="material-symbols-outlined text-sm">
-						arrow_forward
-					</span>
-				</a>
+				<div className="flex gap-1.5">
+					<a
+						className="h-10 w-10 rounded-full border border-gray-200 dark:border-border-dark flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-colors text-gray-500 dark:text-gray-400"
+						href={project.repoLink}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FaGithub className="text-xl" />
+					</a>
+					<a
+						className="h-10 w-10 rounded-full border border-gray-200 dark:border-border-dark flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-colors text-gray-500 dark:text-gray-400"
+						href={project.liveLink}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<span className="material-symbols-outlined text-sm">
+							arrow_forward
+						</span>
+					</a>
+				</div>
 			</div>
 		</div>
 	</article>

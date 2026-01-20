@@ -99,7 +99,14 @@ const TechStack = () => {
 		if (techTitle?.length) {
 			setCodeWith(techTitle);
 		} else {
-			setCodeWith(["purpose", "precision", "curiosity", "coffee"]);
+			setCodeWith([
+				"purpose",
+				"precision",
+				"curiosity",
+				"coffee",
+				"creativity",
+				"deadlines",
+			]);
 		}
 	};
 	return (

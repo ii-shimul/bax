@@ -1,3 +1,5 @@
+"use client"
+import { useState, useEffect } from "react";
 import blogs from "@/data/blogs.json";
 import {
 	Modal,
@@ -7,6 +9,17 @@ import {
 } from "../ui/animated-modal";
 
 const Blogs = () => {
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		const checkWidth = () => {
+			setIsMobile(window.innerWidth < 768);
+		};
+		checkWidth();
+		window.addEventListener("resize", checkWidth);
+		return () => window.removeEventListener("resize", checkWidth);
+	}, []);
+
 	return (
 		<section
 			className="py-5 md:py-16 px-4 md:px-10 max-w-240 mx-auto w-full"
@@ -32,9 +45,11 @@ const Blogs = () => {
 										{blog.excerpt}
 									</p>
 								</div>
-								<span className="material-symbols-outlined text-gray-400 dark:text-gray-600 group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100 self-center transform -translate-x-2.5 group-hover:translate-x-0 duration-300">
-									arrow_forward
-								</span>
+								{!isMobile && (
+									<span className="material-symbols-outlined text-gray-400 dark:text-gray-600 group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100 self-center transform -translate-x-2.5 group-hover:translate-x-0 duration-300">
+										arrow_forward
+									</span>
+								)}
 							</article>
 						</ModalTrigger>
 						<ModalBody>

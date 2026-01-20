@@ -89,9 +89,9 @@ const Hero = () => {
 						for people.
 					</ScrambledText>
 					<div className="flex flex-wrap gap-4 justify-center lg:justify-start py-3">
-						<a href="#contact">
+						<a href="#work">
 							<LiftButton className=" h-12 px-8 flex items-center justify-center rounded-md bg-primary text-white font-bold text-base ">
-								Start a Project
+								My Projects
 							</LiftButton>
 						</a>
 						<a

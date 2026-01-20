@@ -1,9 +1,28 @@
 import { FC } from "react";
 
+const softSkills = [
+	{
+		skill: "Problem Solving",
+		icon: "psychology",
+	},
+	{
+		skill: "Communication",
+		icon: "chat",
+	},
+	{
+		skill: "Teamwork",
+		icon: "group_work",
+	},
+	{
+		skill: "Attention to Details",
+		icon: "details",
+	},
+];
+
 export const About: FC = () => {
 	return (
 		<section
-			className="relative w-full py-24 px-4 md:px-10 max-w-6xl mx-auto overflow-hidden"
+			className="relative w-full py-5 md:pb-16 md:pt-10 px-4 md:px-10 max-w-6xl mx-auto overflow-hidden"
 			id="about"
 		>
 			<div className="absolute inset-0 pointer-events-none">
@@ -28,29 +47,29 @@ export const About: FC = () => {
 				type="radio"
 			/>
 			<div className="w-full relative z-10">
-				<div className="mb-10 text-center">
+				<div className="mb-6 text-center">
 					<div className="inline-block mb-4">
 						<span className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold tracking-wider uppercase">
 							Get to Know Me
 						</span>
 					</div>
-					<h2 className="text-4xl md:text-6xl font-black tracking-tight mb-4 cyber-glow-text bg-linear-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
+					<h2 className="text-4xl md:text-6xl font-black tracking-tight mb-4 cyber-glow-text bg-linear-to-r from-gray-900 via-gray-700 to-gray-900 dark:from-white dark:via-gray-200 dark:to-white bg-clip-text text-transparent">
 						Data Archives
 					</h2>
-					<p className="text-gray-400 text-lg max-w-2xl mx-auto">
-						Professional background and expertise in modern web development
+					<p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+						Professional background and expertise in modern development
 					</p>
 				</div>
-				<div className="tabs-nav flex gap-8 border-b border-border-dark mb-12 overflow-x-auto no-scrollbar justify-center">
+				<div className="tabs-nav flex gap-8 border-b border-gray-200 dark:border-border-dark mb-8 overflow-x-auto no-scrollbar justify-center">
 					<label
-						className="label-personal cursor-pointer pb-4 px-2 text-lg font-bold text-gray-500 border-b-2 border-transparent hover:text-white transition-all whitespace-nowrap relative group"
+						className="label-personal cursor-pointer pb-4 px-2 text-lg font-bold text-gray-500 border-b-2 border-transparent hover:text-gray-900 dark:hover:text-white transition-all whitespace-nowrap relative group"
 						htmlFor="tab-personal"
 					>
 						<span className="relative z-10">Overview</span>
 						<span className="absolute inset-0 bg-primary/5 rounded-t-lg scale-0 group-hover:scale-100 transition-transform"></span>
 					</label>
 					<label
-						className="label-history cursor-pointer pb-4 px-2 text-lg font-bold text-gray-500 border-b-2 border-transparent hover:text-white transition-all whitespace-nowrap relative group"
+						className="label-history cursor-pointer pb-4 px-2 text-lg font-bold text-gray-500 border-b-2 border-transparent hover:text-gray-900 dark:hover:text-white transition-all whitespace-nowrap relative group"
 						htmlFor="tab-history"
 					>
 						<span className="relative z-10">Experience</span>
@@ -58,101 +77,127 @@ export const About: FC = () => {
 					</label>
 				</div>
 
-				{/* Overview Tab */}
 				<div className="tab-content-personal hidden">
-					<div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-						{/* Bio Section - 8 columns */}
-						<div className="md:col-span-8 bg-linear-to-br from-card-dark to-card-dark/50 border border-border-dark p-8 rounded-2xl cyber-glow-box relative overflow-hidden group min-h-[300px]">
-							<div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
-							<div className="relative z-10">
-								<h3 className="text-2xl font-bold text-white font-display mb-3">
-									Professional Summary
-								</h3>
-								<p className="text-gray-300 leading-relaxed text-base">
-									My journey began with exploring technology fundamentals and
-									has evolved into creating scalable, user-centric solutions. I
-									specialize in full stack development with a strong focus on
-									performance optimization, accessibility standards, and
-									creating intuitive user experiences. I&apos;m committed to
-									writing clean, maintainable code and staying current with
-									industry best practices.
-								</p>
+					<div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+						<div className="md:col-span-8 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden hover:border-primary/50 transition-colors duration-300">
+							<h3 className="font-mono text-primary text-sm mb-4 tracking-widest border-b border-gray-200 dark:border-border-dark pb-2 inline-block">
+								MY_ORIGIN
+							</h3>
+							<p className="text-gray-700 dark:text-gray-300 leading-relaxed font-light text-base">
+								<span className="text-primary font-bold mr-2">&gt;</span>
+								My journey began with exploring technology fundamentals and has
+								evolved into creating scalable, user-centric solutions. I
+								specialize in full stack development with a strong focus on
+								performance optimization, accessibility standards, and creating
+								intuitive user experiences. I&apos;m committed to writing clean,
+								maintainable code and staying current with industry best
+								practices.
+							</p>
+							<div className="mt-4 pt-6 border-t border-gray-200 dark:border-border-dark/50 flex flex-wrap gap-4 md:gap-6 text-xs font-mono text-gray-500">
+								<span className="flex items-center gap-2">
+									<span className="material-symbols-outlined text-sm">
+										wifi
+									</span>{" "}
+									[STATUS: ONLINE]
+								</span>
+								<span className="flex items-center gap-2">
+									<span className="material-symbols-outlined text-sm">
+										location_on
+									</span>{" "}
+									[LOC: REMOTE_READY]
+								</span>
+								<span className="flex items-center gap-2">
+									<span className="material-symbols-outlined text-sm">
+										bolt
+									</span>{" "}
+									[ENERGY: MAX]
+								</span>
 							</div>
 						</div>
 
-						{/* Education Section - 4 columns */}
-						<div className="md:col-span-4 bg-linear-to-br from-card-dark to-card-dark/50 border border-border-dark p-8 rounded-2xl cyber-glow-box flex flex-col justify-center relative overflow-hidden group">
-							<div className="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors"></div>
-							<div className="relative z-10">
-								<h3 className="text-xl font-bold text-white font-display mb-3">
-									Education
-								</h3>
-								<div className="space-y-2">
-									<p className="text-xl font-bold text-white">
+						<div className="md:col-span-4 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden hover:border-primary/50 transition-colors duration-300 flex flex-col justify-center">
+							<h3 className="font-mono text-primary text-sm mb-4 tracking-widest border-b border-gray-200 dark:border-border-dark pb-2 inline-block w-fit">
+								ACADEMIC_STATUS
+							</h3>
+							<div className="space-y-4 relative z-10">
+								<div className="group/item">
+									<p className="text-[10px] text-gray-500 font-mono mb-1 uppercase tracking-widest">
+										Degree_Type
+									</p>
+									<p className="text-gray-900 dark:text-white font-bold text-lg font-display">
 										Bachelor&apos;s in Computer Science
 									</p>
-									<p className="text-primary font-mono text-base">
+								</div>
+								<div className="group/item">
+									<p className="text-[10px] text-gray-500 font-mono mb-1 uppercase tracking-widest">
+										Institution
+									</p>
+									<p className="text-gray-900 dark:text-white font-bold text-lg font-display">
 										Leading University, Sylhet
 									</p>
-									<p className="text-gray-400 text-sm mt-4">Expected in 2027</p>
+								</div>
+								<div>
+									<p className="text-[10px] text-gray-500 font-mono mb-1 uppercase tracking-widest">
+										Timeframe
+									</p>
+									<span className="font-mono text-xs bg-primary/5 inline-block px-2 py-1 rounded border border-primary/20">
+										2023 — 2027
+									</span>
 								</div>
 							</div>
+							<span className="material-symbols-outlined absolute -bottom-4 -right-4 text-9xl text-gray-900 dark:text-white opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none hidden md:block">
+								school
+							</span>
 						</div>
 
-						{/* Soft Skills Section - 12 columns */}
-						<div className="md:col-span-12 bg-linear-to-br from-card-dark to-card-dark/50 border border-border-dark p-8 rounded-2xl cyber-glow-box relative overflow-hidden group">
-							<div className="absolute top-0 left-1/2 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
-							<div className="relative z-10">
-								<div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12">
-									<h3 className="text-2xl font-bold text-white font-display whitespace-nowrap">
-										Core Competencies
-									</h3>
-									<div className="flex flex-wrap gap-4 w-full">
-										<div className="p-4 bg-background-dark/50 backdrop-blur-sm rounded-xl border border-border-dark text-center hover:border-primary/50 hover:bg-primary/5 transition-all duration-300">
-											<p className="text-sm font-bold text-white">
-												Problem Solving
-											</p>
-										</div>
-										<div className="p-4 bg-background-dark/50 backdrop-blur-sm rounded-xl border border-border-dark text-center hover:border-primary/50 hover:bg-primary/5 transition-all duration-300">
-											<p className="text-sm font-bold text-white">
-												Communication
-											</p>
-										</div>
-										<div className="p-4 bg-background-dark/50 backdrop-blur-sm rounded-xl border border-border-dark text-center hover:border-primary/50 hover:bg-primary/5 transition-all duration-300">
-											<p className="text-sm font-bold text-white">
-												Collaboration
-											</p>
-										</div>
-										<div className="p-4 bg-background-dark/50 backdrop-blur-sm rounded-xl border border-border-dark text-center hover:border-primary/50 hover:bg-primary/5 transition-all duration-300">
-											<p className="text-sm font-bold text-white">
-												Time Management
-											</p>
+						<div className="md:col-span-12 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden hover:border-primary/50 transition-colors duration-300">
+							<h3 className="font-mono text-primary text-sm mb-4 tracking-widest border-b border-gray-200 dark:border-border-dark pb-2 inline-block">
+								SOFT_SKILLS
+							</h3>
+							<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+								{softSkills.map((skill) => (
+									<div
+										key={skill.skill}
+										className="flex justify-start items-center gap-3 p-3 md:p-4 bg-gray-50 dark:bg-background-dark/50 border border-gray-200 dark:border-border-dark rounded-lg hover:border-primary/40 hover:bg-primary/5 transition-all group/item cursor-default"
+									>
+										<span className="material-symbols-outlined text-gray-400 group-hover/item:text-primary/60 transition-colors text-2xl">
+											{skill.icon}
+										</span>
+										<div>
+											<span className="font-bold text-gray-900 dark:text-white text-sm block">
+												{skill.skill}
+											</span>
+											<span className="text-[10px] text-gray-500 font-mono"></span>
 										</div>
 									</div>
-								</div>
+								))}
 							</div>
 						</div>
 					</div>
 				</div>
 
-				{/* Experience Tab */}
 				<div className="tab-content-history hidden">
-					<div className="bg-linear-to-br from-card-dark to-card-dark/50 border border-border-dark p-8 rounded-2xl cyber-glow-box relative overflow-hidden group">
-						<div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
-						<div className="relative z-10">
-							<h3 className="text-2xl font-bold text-white font-display mb-6">
-								Work Experience
-							</h3>
+					<div className="relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden hover:border-primary/50 transition-colors duration-300">
+						<h3 className="font-mono text-primary text-sm mb-6 tracking-widest border-b border-gray-200 dark:border-border-dark pb-2 inline-block">
+							WORK_EXPERIENCE
+						</h3>
 
-							<div className="p-6 bg-primary/5 border border-primary/20 rounded-xl mb-4">
-								<h4 className="text-xl font-bold text-white font-display mb-2">
-									404: Experience Not Found
-								</h4>
-								<p className="text-gray-300 leading-relaxed mb-4">
+						<div className="space-y-6">
+							<div className="p-6 bg-primary/5 border border-primary/20 rounded-lg">
+								<div className="flex items-center gap-3 mb-4">
+									<span className="material-symbols-outlined text-primary text-2xl">
+										error_outline
+									</span>
+									<h4 className="font-mono text-gray-900 dark:text-white text-lg">
+										404: Experience Not Found
+									</h4>
+								</div>
+								<p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 font-light">
+									<span className="text-primary font-bold mr-2">&gt;</span>
 									Looks like my professional experience is still loading... or
 									maybe it&apos;s stuck in an infinite loop. 🤔
 								</p>
-								<div className="bg-background-dark/50 p-4 rounded-lg border border-border-dark font-mono text-sm text-gray-400">
+								<div className="bg-gray-100 dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-border-dark font-mono text-sm text-gray-600 dark:text-gray-400">
 									<span className="text-primary">Error:</span> Cannot read
 									property &apos;experience&apos; of undefined
 									<br />
@@ -161,11 +206,17 @@ export const About: FC = () => {
 									</span>
 								</div>
 							</div>
-							<div className="p-6 bg-green-500/5 border border-green-500/20 rounded-xl">
-								<h4 className="text-lg font-bold text-green-400 mb-2">
-									Suggested Fix
-								</h4>
-								<div className="bg-background-dark/50 p-4 rounded-lg border border-border-dark font-mono text-sm text-gray-400 mb-3">
+
+							<div className="p-6 bg-green-500/5 border border-green-500/20 rounded-lg">
+								<div className="flex items-center gap-3 mb-4">
+									<span className="material-symbols-outlined text-green-400 text-2xl">
+										lightbulb
+									</span>
+									<h4 className="font-mono text-green-400 text-lg">
+										SUGGESTED_FIX
+									</h4>
+								</div>
+								<div className="bg-gray-100 dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-border-dark font-mono text-sm text-gray-600 dark:text-gray-400 mb-3">
 									<span className="text-green-400">+</span>{" "}
 									experience.push(yourCompany);
 									<br />
@@ -173,18 +224,23 @@ export const About: FC = () => {
 										{`// Your company could be the first entry here!`}
 									</span>
 								</div>
-								<p className="text-gray-400 text-sm leading-relaxed">
+								<p className="text-gray-400 text-sm leading-relaxed font-light">
+									<span className="text-green-400 font-bold mr-2">&gt;</span>
 									Want to help me fix this error? Let&apos;s connect! 🚀
 								</p>
 							</div>
-
-							<div className="mt-8 p-4 bg-linear-to-r from-primary/10 to-transparent border-l-4 border-primary rounded-r-lg">
-								<p className="text-gray-300 text-sm italic">
-									&quot;Every expert was once a beginner. Every master was once
-									a disaster.&quot; - T. Harv Eker
-								</p>
-							</div>
 						</div>
+
+						<div className="mt-8 p-4 bg-linear-to-r from-primary/10 to-transparent border-l-4 border-primary rounded-r-lg">
+							<p className="text-gray-700 dark:text-gray-300 text-sm italic">
+								&quot;Every expert was once a beginner. Every master was once a
+								disaster.&quot; - T. Harv Eker
+							</p>
+						</div>
+
+						<span className="material-symbols-outlined absolute -bottom-4 -right-4 text-9xl text-gray-900 dark:text-white opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none hidden md:block">
+							work
+						</span>
 					</div>
 				</div>
 			</div>
