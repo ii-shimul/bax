@@ -1,9 +1,23 @@
-import { FC } from "react";
+"use client";
+import { FC, useEffect, useRef, useState } from "react";
+import DragPill from "../ui/draggable-pill";
 
 const softSkills = [
 	{
 		skill: "Problem Solving",
 		icon: "psychology",
+	},
+	{
+		skill: "Creativity",
+		icon: "lightbulb",
+	},
+	{
+		skill: "Attention to Details",
+		icon: "details",
+	},
+	{
+		skill: "Adaptability",
+		icon: "plug_connect",
 	},
 	{
 		skill: "Communication",
@@ -13,13 +27,18 @@ const softSkills = [
 		skill: "Teamwork",
 		icon: "group_work",
 	},
-	{
-		skill: "Attention to Details",
-		icon: "details",
-	},
 ];
 
 export const About: FC = () => {
+	const containerRef = useRef<HTMLDivElement>(null);
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		const checkMobile = () => setIsMobile(window.innerWidth < 768);
+		checkMobile();
+		window.addEventListener("resize", checkMobile);
+		return () => window.removeEventListener("resize", checkMobile);
+	}, []);
 	return (
 		<section
 			className="relative w-full py-5 md:pb-16 md:pt-10 px-4 md:px-10 max-w-6xl mx-auto overflow-hidden"
@@ -79,11 +98,11 @@ export const About: FC = () => {
 
 				<div className="tab-content-personal hidden">
 					<div className="grid grid-cols-1 md:grid-cols-12 gap-5">
-						<div className="md:col-span-8 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden hover:border-primary/50 transition-colors duration-300">
+						<div className="lg:col-span-8 md:col-span-7 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden hover:border-primary/50 transition-colors duration-300">
 							<h3 className="font-mono text-primary text-sm mb-4 tracking-widest border-b border-gray-200 dark:border-border-dark pb-2 inline-block">
 								MY_ORIGIN
 							</h3>
-							<p className="text-gray-700 dark:text-gray-300 leading-relaxed font-light text-base">
+							<p className="text-gray-700 dark:text-gray-300 leading-relaxed font-light text-sm md:text-base">
 								<span className="text-primary font-bold mr-2">&gt;</span>
 								My journey began with exploring technology fundamentals and has
 								evolved into creating scalable, user-centric solutions. I
@@ -93,21 +112,19 @@ export const About: FC = () => {
 								maintainable code and staying current with industry best
 								practices.
 							</p>
-							<div className="mt-4 pt-6 border-t border-gray-200 dark:border-border-dark/50 flex flex-wrap gap-4 md:gap-6 text-xs font-mono text-gray-500">
-								<span className="flex items-center gap-2">
-									<span className="material-symbols-outlined text-sm">
-										wifi
-									</span>{" "}
+							<div className="mt-3 pt-3 md:pt-5 border-t border-gray-200 dark:border-border-dark/50 flex flex-wrap gap-3 lg:gap-6 text-xs font-mono text-gray-500">
+								<span className="flex items-center gap-2 max-lg:hidden">
+									<span className="material-symbols-outlined">wifi</span>{" "}
 									[STATUS: ONLINE]
 								</span>
 								<span className="flex items-center gap-2">
-									<span className="material-symbols-outlined text-sm">
+									<span className="material-symbols-outlined max-sm:text-[4px]">
 										location_on
 									</span>{" "}
 									[LOC: REMOTE_READY]
 								</span>
 								<span className="flex items-center gap-2">
-									<span className="material-symbols-outlined text-sm">
+									<span className="material-symbols-outlined max-sm:text-[4px]">
 										bolt
 									</span>{" "}
 									[ENERGY: MAX]
@@ -115,7 +132,7 @@ export const About: FC = () => {
 							</div>
 						</div>
 
-						<div className="md:col-span-4 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden hover:border-primary/50 transition-colors duration-300 flex flex-col justify-center">
+						<div className="lg:col-span-4 md:col-span-5 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden hover:border-primary/50 transition-colors duration-300 flex flex-col justify-center">
 							<h3 className="font-mono text-primary text-sm mb-4 tracking-widest border-b border-gray-200 dark:border-border-dark pb-2 inline-block w-fit">
 								ACADEMIC_STATUS
 							</h3>
@@ -150,28 +167,48 @@ export const About: FC = () => {
 							</span>
 						</div>
 
-						<div className="md:col-span-12 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden hover:border-primary/50 transition-colors duration-300">
-							<h3 className="font-mono text-primary text-sm mb-4 tracking-widest border-b border-gray-200 dark:border-border-dark pb-2 inline-block">
-								SOFT_SKILLS
-							</h3>
-							<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-								{softSkills.map((skill) => (
-									<div
-										key={skill.skill}
-										className="flex justify-start items-center gap-3 p-3 md:p-4 bg-gray-50 dark:bg-background-dark/50 border border-gray-200 dark:border-border-dark rounded-lg hover:border-primary/40 hover:bg-primary/5 transition-all group/item cursor-default"
-									>
-										<span className="material-symbols-outlined text-gray-400 group-hover/item:text-primary/60 transition-colors text-2xl">
-											{skill.icon}
-										</span>
-										<div>
-											<span className="font-bold text-gray-900 dark:text-white text-sm block">
-												{skill.skill}
-											</span>
-											<span className="text-[10px] text-gray-500 font-mono"></span>
-										</div>
-									</div>
-								))}
+						<div
+							ref={containerRef}
+							className="md:col-span-12 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden hover:border-primary/50 transition-colors duration-300 min-h-70"
+						>
+							<div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+								<span className="text-[3rem] md:text-[8rem] font-black text-gray-900 dark:text-white opacity-[0.03] tracking-widest whitespace-nowrap">
+									SOFT SKILLS
+								</span>
 							</div>
+							{softSkills.map((skill, index) => {
+								const mobilePositions = [
+									{ top: "10%", left: "5%", rotate: -3 },
+									{ top: "10%", left: "55%", rotate: 2 },
+									{ top: "35%", left: "7%", rotate: 3 },
+									{ top: "35%", left: "60%", rotate: -2 },
+									{ top: "70%", left: "5%", rotate: -4 },
+									{ top: "70%", left: "55%", rotate: 3 },
+								];
+								const desktopPositions = [
+									{ top: "10%", left: "5%", rotate: -4 },
+									{ top: "10%", left: "60%", rotate: 3 },
+									{ top: "40%", left: "25%", rotate: -3 },
+									{ top: "40%", left: "70%", rotate: 4 },
+									{ top: "70%", left: "10%", rotate: -5 },
+									{ top: "70%", left: "55%", rotate: 2 },
+								];
+								const positions = isMobile ? mobilePositions : desktopPositions;
+								const pos = positions[index % positions.length];
+								return (
+									<DragPill
+										key={skill.skill}
+										text={skill.skill}
+										icon={skill.icon}
+										containerRef={containerRef}
+										style={{
+											top: pos.top,
+											left: pos.left,
+											rotate: `${pos.rotate}deg`,
+										}}
+									/>
+								);
+							})}
 						</div>
 					</div>
 				</div>
@@ -182,22 +219,17 @@ export const About: FC = () => {
 							WORK_EXPERIENCE
 						</h3>
 
-						<div className="space-y-6">
-							<div className="p-6 bg-primary/5 border border-primary/20 rounded-lg">
+						<div className="space-y-3.5 md:space-y-5">
+							<div className="p-4 md:p-6 bg-primary/5 border border-primary/20 rounded-lg">
 								<div className="flex items-center gap-3 mb-4">
 									<span className="material-symbols-outlined text-primary text-2xl">
 										error_outline
 									</span>
-									<h4 className="font-mono text-gray-900 dark:text-white text-lg">
+									<h4 className="font-mono text-gray-900 dark:text-white md:text-lg">
 										404: Experience Not Found
 									</h4>
 								</div>
-								<p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 font-light">
-									<span className="text-primary font-bold mr-2">&gt;</span>
-									Looks like my professional experience is still loading... or
-									maybe it&apos;s stuck in an infinite loop. 🤔
-								</p>
-								<div className="bg-gray-100 dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-border-dark font-mono text-sm text-gray-600 dark:text-gray-400">
+								<div className="bg-gray-100 dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-border-dark font-mono text-sm max-sm:text-xs text-gray-600 dark:text-gray-400">
 									<span className="text-primary">Error:</span> Cannot read
 									property &apos;experience&apos; of undefined
 									<br />
@@ -207,16 +239,16 @@ export const About: FC = () => {
 								</div>
 							</div>
 
-							<div className="p-6 bg-green-500/5 border border-green-500/20 rounded-lg">
+							<div className="p-4 md:p-6 bg-green-500/5 border border-green-500/20 rounded-lg">
 								<div className="flex items-center gap-3 mb-4">
 									<span className="material-symbols-outlined text-green-400 text-2xl">
 										lightbulb
 									</span>
-									<h4 className="font-mono text-green-400 text-lg">
+									<h4 className="font-mono text-green-400 md:text-lg">
 										SUGGESTED_FIX
 									</h4>
 								</div>
-								<div className="bg-gray-100 dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-border-dark font-mono text-sm text-gray-600 dark:text-gray-400 mb-3">
+								<div className="bg-gray-100 dark:bg-background-dark/50 max-sm:text-xs p-4 rounded-lg border border-gray-200 dark:border-border-dark font-mono text-sm text-gray-600 dark:text-gray-400 mb-3">
 									<span className="text-green-400">+</span>{" "}
 									experience.push(yourCompany);
 									<br />
@@ -226,13 +258,16 @@ export const About: FC = () => {
 								</div>
 								<p className="text-gray-400 text-sm leading-relaxed font-light">
 									<span className="text-green-400 font-bold mr-2">&gt;</span>
-									Want to help me fix this error? Let&apos;s connect! 🚀
+									Want to help me fix this error?{" "}
+									<a href="#contact" className="hover:underline">
+										Let&apos;s connect! 🚀
+									</a>
 								</p>
 							</div>
 						</div>
 
-						<div className="mt-8 p-4 bg-linear-to-r from-primary/10 to-transparent border-l-4 border-primary rounded-r-lg">
-							<p className="text-gray-700 dark:text-gray-300 text-sm italic">
+						<div className="mt-4 md:mt-6 p-4 bg-linear-to-r from-primary/10 to-transparent border-l-4 border-primary rounded-r-lg">
+							<p className="text-gray-700 dark:text-gray-300 text-xs md:text-sm italic">
 								&quot;Every expert was once a beginner. Every master was once a
 								disaster.&quot; - T. Harv Eker
 							</p>
