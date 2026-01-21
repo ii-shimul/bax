@@ -43,6 +43,31 @@ const getTechIcon = (tech: string): React.ReactNode => {
 	return techIcons[tech] || null;
 };
 
+const LinkButtons = ({
+	repoLink,
+	liveLink,
+}: {
+	repoLink: string;
+	liveLink: string;
+}) => {
+	return (
+		<div className="flex gap-1.5">
+			<a href={repoLink} target="_blank" rel="noopener noreferrer">
+				<BeforeEffectButton className="h-10 w-10 p-0! rounded-full before:rounded-full border cursor-pointer border-gray-200 dark:border-border-dark flex items-center justify-center hover:text-primary hover:border-primary transition-colors text-gray-500 dark:text-gray-400 isolate">
+					<FaGithub className="text-xl" />
+				</BeforeEffectButton>
+			</a>
+			<a href={liveLink} target="_blank" rel="noopener noreferrer">
+				<BeforeEffectButton className="h-10 w-10 p-0! rounded-full before:rounded-full border cursor-pointer border-gray-200 dark:border-border-dark flex items-center justify-center hover:text-primary hover:border-primary transition-colors text-gray-500 dark:text-gray-400 isolate">
+					<span className="material-symbols-outlined text-sm">
+						arrow_forward
+					</span>
+				</BeforeEffectButton>
+			</a>
+		</div>
+	);
+};
+
 const FeaturedCard = ({ project }: { project: Project }) => (
 	<article className="lg:col-span-2 group relative overflow-hidden rounded-xl bg-background-light dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-all duration-300">
 		<div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent z-10 pointer-events-none"></div>
@@ -68,24 +93,10 @@ const FeaturedCard = ({ project }: { project: Project }) => (
 				<p className="text-gray-300 line-clamp-2 max-w-md font-light">
 					{project.description}
 				</p>
-				<div className="flex gap-1.5">
-					<a
-						className="h-12 w-12 rounded-full border border-gray-200 dark:border-border-dark flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-colors text-gray-500 dark:text-gray-400"
-						href={project.repoLink}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<FaGithub className="text-xl" />
-					</a>
-					<a
-						className="h-12 w-12 shrink-0 flex items-center justify-center rounded-full bg-white text-black hover:bg-primary hover:text-white transition-colors"
-						href={project.liveLink}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<span className="material-symbols-outlined">arrow_outward</span>
-					</a>
-				</div>
+				<LinkButtons
+					liveLink={project.liveLink}
+					repoLink={project.repoLink}
+				></LinkButtons>
 			</div>
 		</div>
 	</article>
@@ -121,26 +132,10 @@ const ImageHeaderCard = ({ project }: { project: Project }) => (
 						);
 					})}
 				</div>
-				<div className="flex gap-1.5">
-					<a
-						className="h-10 w-10 rounded-full border border-gray-200 dark:border-border-dark flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-colors text-gray-500 dark:text-gray-400"
-						href={project.repoLink}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<FaGithub className="text-xl" />
-					</a>
-					<a
-						className="h-10 w-10 rounded-full border border-gray-200 dark:border-border-dark flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-colors text-gray-500 dark:text-gray-400"
-						href={project.liveLink}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<span className="material-symbols-outlined text-sm">
-							arrow_forward
-						</span>
-					</a>
-				</div>
+				<LinkButtons
+					liveLink={project.liveLink}
+					repoLink={project.repoLink}
+				></LinkButtons>
 			</div>
 		</div>
 	</article>

@@ -16,7 +16,7 @@ export const BeforeEffectButton = ({
 	return (
 		<button
 			className={cn(
-				"relative before:content-[''] before:transform-gpu px-2 py-1 text-neutral-600 transition-colors before:absolute before:top-0 before:left-0 before:w-full hover:text-neutral-600/90 active:text-neutral-600/80 active:before:border-neutral-400/20",
+				"relative before:content-[''] before:transform-gpu px-2 py-1 text-neutral-600 transition-colors before:absolute before:top-0 before:left-0 before:w-full hover:text-neutral-600/90 active:text-neutral-600/80 active:before:border-neutral-400/20 duration-500",
 				// Before
 				hoverOnly
 					? "before:scale-0 before:opacity-0 hover:before:scale-100 hover:before:opacity-100"
