@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 import blogs from "@/data/blogs.json";
 import {
@@ -33,16 +33,16 @@ const Blogs = () => {
 				{blogs.map((blog) => (
 					<Modal key={blog.id}>
 						<ModalTrigger>
-							<article className="group flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 py-1 md:p-6 rounded-xl hover:bg-gray-50 dark:hover:bg-card-dark transition-colors cursor-pointer border border-transparent hover:border-gray-200 dark:hover:border-border-dark">
-								<span className="text-primary text-start font-mono text-sm font-bold min-w-25">
+							<article className="group flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 py-1 p-2 md:p-6 rounded-xl hover:bg-gray-50 dark:hover:bg-card-dark transition-colors cursor-pointer border border-transparent hover:border-gray-200 dark:hover:border-border-dark">
+								<span className="text-primary text-start font-mono text-sm font-bold min-w-35">
 									{blog.date}
 								</span>
-								<div className="flex-1">
+								<div className="flex-1 min-w-0">
 									<h3 className="text-xl font-bold text-start text-gray-900 dark:text-white transition-colors mb-2 font-display">
 										{blog.title}
 									</h3>
-									<p className="text-gray-600 text-start dark:text-gray-400 text-sm leading-relaxed">
-										{blog.excerpt}
+									<p className="text-gray-600 truncate text-start dark:text-gray-400 text-sm leading-relaxed">
+										{blog.body}
 									</p>
 								</div>
 								{!isMobile && (
@@ -61,9 +61,6 @@ const Blogs = () => {
 									<div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
 										<span className="font-mono text-primary">{blog.date}</span>
 									</div>
-									<p className="mt-3 text-gray-600 dark:text-gray-400 text-sm italic">
-										{blog.excerpt}
-									</p>
 								</header>
 
 								<article className="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed space-y-4">

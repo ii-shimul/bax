@@ -98,7 +98,7 @@ export const About: FC = () => {
 
 				<div className="tab-content-personal hidden">
 					<div className="grid grid-cols-1 md:grid-cols-12 gap-5">
-						<div className="lg:col-span-8 md:col-span-7 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden hover:border-primary/50 transition-colors duration-300">
+						<div className="lg:col-span-8 md:col-span-7 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-all duration-300">
 							<h3 className="font-mono text-primary text-sm mb-4 tracking-widest border-b border-gray-200 dark:border-border-dark pb-2 inline-block">
 								MY_ORIGIN
 							</h3>
@@ -132,7 +132,7 @@ export const About: FC = () => {
 							</div>
 						</div>
 
-						<div className="lg:col-span-4 md:col-span-5 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden hover:border-primary/50 transition-colors duration-300 flex flex-col justify-center">
+						<div className="lg:col-span-4 md:col-span-5 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-all duration-300 flex flex-col justify-center">
 							<h3 className="font-mono text-primary text-sm mb-4 tracking-widest border-b border-gray-200 dark:border-border-dark pb-2 inline-block w-fit">
 								ACADEMIC_STATUS
 							</h3>
@@ -169,7 +169,7 @@ export const About: FC = () => {
 
 						<div
 							ref={containerRef}
-							className="md:col-span-12 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden hover:border-primary/50 transition-colors duration-300 min-h-70"
+							className="md:col-span-12 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-all duration-300 min-h-70"
 						>
 							<div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
 								<span className="text-[3rem] md:text-[8rem] font-black text-gray-900 dark:text-white opacity-[0.03] tracking-widest whitespace-nowrap">
@@ -186,12 +186,12 @@ export const About: FC = () => {
 									{ top: "70%", left: "55%", rotate: 3 },
 								];
 								const desktopPositions = [
-									{ top: "10%", left: "5%", rotate: -4 },
-									{ top: "10%", left: "60%", rotate: 3 },
-									{ top: "40%", left: "25%", rotate: -3 },
-									{ top: "40%", left: "70%", rotate: 4 },
-									{ top: "70%", left: "10%", rotate: -5 },
-									{ top: "70%", left: "55%", rotate: 2 },
+									{ top: "10%", left: "10%", rotate: -4 },
+									{ top: "10%", left: "70%", rotate: 3 },
+									{ top: "40%", left: "30%", rotate: -3 },
+									{ top: "40%", left: "60%", rotate: 4 },
+									{ top: "70%", left: "15%", rotate: -5 },
+									{ top: "70%", left: "75%", rotate: 2 },
 								];
 								const positions = isMobile ? mobilePositions : desktopPositions;
 								const pos = positions[index % positions.length];
@@ -214,13 +214,13 @@ export const About: FC = () => {
 				</div>
 
 				<div className="tab-content-history hidden">
-					<div className="relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden hover:border-primary/50 transition-colors duration-300">
+					<div className="relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-all duration-300">
 						<h3 className="font-mono text-primary text-sm mb-6 tracking-widest border-b border-gray-200 dark:border-border-dark pb-2 inline-block">
 							WORK_EXPERIENCE
 						</h3>
 
 						<div className="space-y-3.5 md:space-y-5">
-							<div className="p-4 md:p-6 bg-primary/5 border border-primary/20 rounded-lg">
+							<div className="p-4 md:p-6 bg-primary/5 border border-primary/20 rounded-lg hover:border-primary/40 transition-colors">
 								<div className="flex items-center gap-3 mb-4">
 									<span className="material-symbols-outlined text-primary text-2xl">
 										error_outline
@@ -239,7 +239,7 @@ export const About: FC = () => {
 								</div>
 							</div>
 
-							<div className="p-4 md:p-6 bg-green-500/5 border border-green-500/20 rounded-lg">
+							<div className="p-4 md:p-6 bg-green-500/5 border border-green-500/20 rounded-lg hover:border-green-500/40 transition-colors">
 								<div className="flex items-center gap-3 mb-4">
 									<span className="material-symbols-outlined text-green-400 text-2xl">
 										lightbulb
