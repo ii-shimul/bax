@@ -85,7 +85,7 @@ const Hero = () => {
 						<span className="block text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-gray-900 dark:text-white">
 							Injamamul Islam
 						</span>
-						<span className="block text-7xl md:text-8xl xl:text-[110px] text-transparent bg-clip-text bg-linear-to-r from-primary to-red-400 mt-1">
+						<span className="block text-[64px] md:text-7xl xl:text-[100px] text-transparent bg-clip-text bg-linear-to-r from-primary to-red-400 mt-1">
 							SHIMUL
 							<span className="inline-block w-7 h-2 lg:w-10 xl:w-12 xl:h-3.5 md:h-2.5 lg:h-3 ml-1 bg-red-400 animate-caret-blink rounded-full translate-y-0.5  align-baseline"></span>
 						</span>
@@ -120,7 +120,7 @@ const Hero = () => {
 					<Socials />
 				</div>
 				<div className="relative order-1 lg:order-2 flex justify-center lg:justify-end">
-					<CometCard className="w-full max-w-125 lg:max-w-105">
+					<CometCard className="w-full max-w-115 lg:max-w-110">
 						{isMobile ?
 							<div className="relative w-full aspect-square lg:aspect-4/5 rounded-2xl overflow-hidden border border-gray-200 dark:border-border-dark group">
 								<div className="absolute inset-0 z-10"></div>
@@ -131,11 +131,11 @@ const Hero = () => {
 								/>
 								<div className="absolute bottom-6 left-6 right-6 bg-white/80 dark:bg-black/70 backdrop-blur-md border border-gray-200 dark:border-border-dark max-sm:p-2.5 p-4 rounded-xl z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
 									<div className="flex items-center gap-3">
-										<div className="h-10 w-10 rounded-full bg-gray-100 dark:bg-card-dark flex items-center justify-center border border-gray-200 dark:border-border-dark text-primary">
+										<div className="h-10 w-10 shrink-0 rounded-full bg-gray-100 dark:bg-card-dark flex items-center justify-center border border-gray-200 dark:border-border-dark text-primary">
 											<span className="material-symbols-outlined">code</span>
 										</div>
 										<div>
-											<p className="max-sm:text-xs text-sm font-bold text-gray-900 dark:text-white">
+											<p className="max-sm:text-xs text-sm font-bold text-gray-900 dark:text-white line-clamp-1">
 												Latest commit{" "}
 												{latestCommit ? `in ${latestCommit.repoName}` : ""}
 											</p>
@@ -157,11 +157,11 @@ const Hero = () => {
 									/>
 									<div className="absolute bottom-6 left-6 right-6 bg-white/80 dark:bg-black/70 backdrop-blur-md border border-gray-200 dark:border-border-dark max-sm:p-2.5 p-4 rounded-xl z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
 										<div className="flex items-center gap-3">
-											<div className="h-10 w-10 rounded-full bg-gray-100 dark:bg-card-dark flex items-center justify-center border border-gray-200 dark:border-border-dark text-primary">
+											<div className="h-10 w-10 shrink-0 rounded-full bg-gray-100 dark:bg-card-dark flex items-center justify-center border border-gray-200 dark:border-border-dark text-primary">
 												<span className="material-symbols-outlined">code</span>
 											</div>
 											<div>
-												<p className="max-sm:text-xs text-sm font-bold text-gray-900 dark:text-white">
+												<p className="max-sm:text-xs text-sm font-bold text-gray-900 dark:text-white line-clamp-1">
 													Latest commit{" "}
 													{latestCommit ? `in ${latestCommit.repoName}` : ""}
 												</p>

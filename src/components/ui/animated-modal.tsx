@@ -101,7 +101,7 @@ export const ModalBody = ({
 						data-lenis-prevent
 						ref={modalRef}
 						className={cn(
-							"h-auto max-h-[90%] max-w-[90%] lg:max-w-[40%] bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden",
+							"h-auto max-h-[90%] max-w-[90%] lg:max-w-[40%] bg-white dark:bg-neutral-950 border-4 border-primary/10 dark:border-neutral-800 rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden",
 							className
 						)}
 						initial={{
@@ -217,7 +217,6 @@ const CloseIcon = () => {
 };
 
 // Hook to detect clicks outside of a component.
-// Add it in a separate file, I've added here for simplicity
 export const useOutsideClick = (
 	ref: React.RefObject<HTMLDivElement | null>,
 	callback: (event: MouseEvent | TouchEvent) => void

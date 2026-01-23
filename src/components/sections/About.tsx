@@ -104,13 +104,14 @@ export const About: FC = () => {
 							</h3>
 							<p className="text-gray-700 dark:text-gray-300 leading-relaxed font-light text-sm md:text-base">
 								<span className="text-primary font-bold mr-2">&gt;</span>
-								My journey began with exploring technology fundamentals and has
-								evolved into creating scalable, user-centric solutions. I
-								specialize in full stack development with a strong focus on
-								performance optimization, accessibility standards, and creating
-								intuitive user experiences. I&apos;m committed to writing clean,
-								maintainable code and staying current with industry best
-								practices.
+								My journey started with a screwdriver in hand, fixing broken
+								electronics around the house just to see how they worked. That
+								tactile curiosity naturally evolved into a fascination with the
+								digital world. I wanted to know not just how devices were built,
+								but how the software inside them lived. Today, I channel that
+								same desire to deconstruct and rebuild into writing clean,
+								efficient code, backed by a strong foundation in mathematics and
+								logic.
 							</p>
 							<div className="mt-3 pt-3 md:pt-5 border-t border-gray-200 dark:border-border-dark/50 flex flex-wrap gap-3 lg:gap-6 text-xs font-mono text-gray-500">
 								<span className="flex items-center gap-2 max-lg:hidden">
@@ -172,7 +173,7 @@ export const About: FC = () => {
 							className="md:col-span-12 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-all duration-300 min-h-70"
 						>
 							<div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-								<span className="text-[3rem] md:text-[8rem] font-black text-gray-900 dark:text-white opacity-[0.03] tracking-widest whitespace-nowrap">
+								<span className="text-[3rem] md:text-[8rem] font-black text-black dark:text-white dark:opacity-[0.05] opacity-[0.09] tracking-widest whitespace-nowrap">
 									SOFT SKILLS
 								</span>
 							</div>

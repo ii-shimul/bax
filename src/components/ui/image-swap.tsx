@@ -17,7 +17,7 @@ const ImageSwap = React.forwardRef<HTMLDivElement, ImageSwapProps>(
 			<div
 				ref={ref}
 				className={cn(
-					"group relative overflow-hidden rounded-xl border bg-muted w-full h-full",
+					"group relative overflow-hidden rounded-xl border w-full h-full",
 					className,
 				)}
 				{...props}

@@ -1,11 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-import {
-	motion,
-	useMotionValue,
-	useSpring,
-	useTransform,
-} from "motion/react";
+import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { cn } from "@/lib/utils";
 
 export const CometCard = ({
@@ -30,23 +25,23 @@ export const CometCard = ({
 	const rotateX = useTransform(
 		mouseYSpring,
 		[-0.5, 0.5],
-		[`-${rotateDepth}deg`, `${rotateDepth}deg`]
+		[`-${rotateDepth}deg`, `${rotateDepth}deg`],
 	);
 	const rotateY = useTransform(
 		mouseXSpring,
 		[-0.5, 0.5],
-		[`${rotateDepth}deg`, `-${rotateDepth}deg`]
+		[`${rotateDepth}deg`, `-${rotateDepth}deg`],
 	);
 
 	const translateX = useTransform(
 		mouseXSpring,
 		[-0.5, 0.5],
-		[`-${translateDepth}px`, `${translateDepth}px`]
+		[`-${translateDepth}px`, `${translateDepth}px`],
 	);
 	const translateY = useTransform(
 		mouseYSpring,
 		[-0.5, 0.5],
-		[`${translateDepth}px`, `-${translateDepth}px`]
+		[`${translateDepth}px`, `-${translateDepth}px`],
 	);
 
 	const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -84,7 +79,7 @@ export const CometCard = ({
 					translateX,
 					translateY,
 					boxShadow:
-						"rgba(0, 0, 0, 0.01) 0px 520px 146px 0px, rgba(0, 0, 0, 0.04) 0px 333px 133px 0px, rgba(0, 0, 0, 0.26) 0px 83px 83px 0px, rgba(0, 0, 0, 0.29) 0px 21px 46px 0px",
+						"rgba(0, 0, 0, 0.007) 0px 520px 146px 0px, rgba(0, 0, 0, 0.028) 0px 333px 133px 0px, rgba(0, 0, 0, 0.18) 0px 83px 83px 0px, rgba(0, 0, 0, 0.2) 0px 21px 46px 0px",
 				}}
 				initial={{ scale: 1, z: 0 }}
 				whileHover={{
