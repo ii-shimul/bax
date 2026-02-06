@@ -10,6 +10,8 @@ import {
 	SiFramer,
 	SiNodedotjs,
 	SiTailwindcss,
+	SiTypescript,
+	SiMongoose,
 } from "react-icons/si";
 import { BeforeEffectButton } from "../ui/before-effect-button";
 import projects from "@/data/projects.json";
@@ -37,6 +39,8 @@ const techIcons: Record<string, React.ReactNode> = {
 	Motion: <SiFramer />,
 	"Node.js": <SiNodedotjs />,
 	"Tailwind CSS": <SiTailwindcss />,
+	TypeScript: <SiTypescript />,
+	Mongoose: <SiMongoose />,
 };
 
 const getTechIcon = (tech: string): React.ReactNode => {
@@ -72,7 +76,7 @@ const FeaturedCard = ({ project }: { project: Project }) => (
 	<article className="lg:col-span-2 group relative overflow-hidden rounded-xl bg-background-light dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-all duration-300">
 		<div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent z-10 pointer-events-none"></div>
 		<div
-			className="h-full w-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-transform duration-700 group-hover:scale-105"
+			className="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
 			style={{ backgroundImage: `url("${project.image}")` }}
 		></div>
 		<div className="absolute bottom-0 left-0 z-20 p-8 w-full">
@@ -105,7 +109,7 @@ const FeaturedCard = ({ project }: { project: Project }) => (
 const ImageHeaderCard = ({ project }: { project: Project }) => (
 	<article className="group relative overflow-hidden rounded-xl bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-all duration-300 flex flex-col">
 		<div
-			className="h-48 w-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500"
+			className="h-48 w-full bg-cover bg-center group-hover:scale-105 transition-all duration-500"
 			style={{ backgroundImage: `url("${project.image}")` }}
 		></div>
 		<div className="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-card-dark">
@@ -119,7 +123,7 @@ const ImageHeaderCard = ({ project }: { project: Project }) => (
 			</div>
 			<div className="flex justify-between items-end mt-6">
 				<div className="flex -space-x-2">
-					{project.technologies.slice(0, 3).map((tech) => {
+					{project.technologies.map((tech) => {
 						const icon: ReactNode = getTechIcon(tech);
 						return (
 							<div
@@ -145,7 +149,7 @@ const SplitCard = ({ project }: { project: Project }) => (
 	<article className="lg:col-span-2 group relative overflow-hidden rounded-xl bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-all duration-300 flex flex-col md:flex-row">
 		<div className="w-full md:w-1/2 p-8 flex flex-col justify-center relative z-10">
 			<div className="flex gap-2 mb-4 flex-wrap">
-				{project.technologies.map((tech) => (
+				{project.technologies.slice(0, 3).map((tech) => (
 					<span
 						key={tech}
 						className="px-3 py-1 rounded-full bg-primary/10 text-xs font-bold text-primary border border-primary/20"
@@ -181,7 +185,7 @@ const SplitCard = ({ project }: { project: Project }) => (
 			</div>
 		</div>
 		<div
-			className="w-full md:w-1/2 min-h-50 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500 relative"
+			className="w-full md:w-1/2 min-h-50 bg-cover bg-center group-hover:scale-105 transition-all duration-500 relative"
 			style={{ backgroundImage: `url("${project.image}")` }}
 		>
 			<div className="absolute inset-0 bg-linear-to-r from-white dark:from-card-dark to-transparent md:block hidden" />
