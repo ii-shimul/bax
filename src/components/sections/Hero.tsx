@@ -11,6 +11,7 @@ import { Highlight } from "../ui/hero-highlight";
 import Socials from "../shared/Socials";
 import { ImageSwap } from "../ui/image-swap";
 import { Lens } from "../ui/lens";
+import { BackgroundBeams } from "../ui/bg-beams";
 
 type GitHubPushEvent = {
 	type: string;
@@ -182,7 +183,8 @@ const Hero = () => {
 					keyboard_arrow_down
 				</span>
 			</div>
-			<div className="absolute inset-0 bg-[linear-gradient(to_right,#a0a0a040_1px,transparent_1px),linear-gradient(to_bottom,#a0a0a040_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-size-[35px_34px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+			{/* <div className="absolute inset-0 bg-[linear-gradient(to_right,#a0a0a040_1px,transparent_1px),linear-gradient(to_bottom,#a0a0a040_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-size-[35px_34px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div> */}
+			<BackgroundBeams />
 		</section>
 	);
 };

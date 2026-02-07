@@ -99,6 +99,9 @@ h6 {
   --primary: #e31116;
   --border: #e5e5e7;
   --ring: #a8a8b3;
+  --beam-color-1: #e31116;
+  --beam-color-2: #f97316;
+  --beam-color-3: #f43f5e;
 }
 
 .dark {
@@ -107,6 +110,9 @@ h6 {
   --foreground: #fbfbfb;
   --primary: #dc2626;
   --ring: #7c7c88;
+  --beam-color-1: #dc2626;
+  --beam-color-2: #fb7185;
+  --beam-color-3: #f97316;
 }
 
 @layer base {
