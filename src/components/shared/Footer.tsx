@@ -3,6 +3,14 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { LiftButton } from "../ui/lift-button";
 import Socials from "./Socials";
+import { motion } from "motion/react";
+import {
+	blurFadeUp,
+	fadeUp,
+	fadeIn,
+	staggerContainer,
+	viewportOnce,
+} from "@/lib/animations";
 
 const Footer = () => {
 	const year = new Date().getFullYear();
@@ -38,19 +46,41 @@ const Footer = () => {
 			id="contact"
 		>
 			<div className="px-4 md:px-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16">
-				<div className="flex flex-col gap-4">
-					<h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-gray-900 dark:text-white font-display">
+				<motion.div
+					className="flex flex-col gap-4"
+					variants={staggerContainer(0.12)}
+					initial="hidden"
+					whileInView="visible"
+					viewport={viewportOnce}
+				>
+					<motion.h2
+						className="text-5xl lg:text-6xl font-black tracking-tighter text-gray-900 dark:text-white font-display"
+						variants={blurFadeUp}
+					>
 						Let&apos;s work <br />
 						<span className="text-primary">together.</span>
-					</h2>
-					<p className="text-gray-600 dark:text-gray-400 max-w-sm text-lg">
+					</motion.h2>
+					<motion.p
+						className="text-gray-600 dark:text-gray-400 max-w-sm text-lg"
+						variants={fadeUp}
+					>
 						Have a project in mind? I&apos;m currently available for freelance
 						work and open to new opportunities.
-					</p>
-					<Socials />
-				</div>
-				<form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
-					<div className="grid grid-cols-2 gap-4">
+					</motion.p>
+					<motion.div variants={fadeUp}>
+						<Socials />
+					</motion.div>
+				</motion.div>
+				<motion.form
+					ref={form}
+					onSubmit={sendEmail}
+					className="flex flex-col gap-4"
+					variants={staggerContainer(0.1)}
+					initial="hidden"
+					whileInView="visible"
+					viewport={viewportOnce}
+				>
+					<motion.div className="grid grid-cols-2 gap-4" variants={fadeUp}>
 						<input
 							name="user_name"
 							className="w-full h-14 bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark rounded-lg px-6 text-gray-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-gray-400 dark:placeholder:text-gray-600"
@@ -65,13 +95,14 @@ const Footer = () => {
 							type="email"
 							required
 						/>
-					</div>
-					<textarea
+					</motion.div>
+					<motion.textarea
 						name="message"
 						className="w-full bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark rounded-xl p-6 text-gray-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-gray-400 dark:placeholder:text-gray-600 resize-none"
 						placeholder="Tell me about your project..."
 						rows={4}
 						required
+						variants={fadeUp}
 					/>
 					{status && (
 						<p
@@ -82,23 +113,29 @@ const Footer = () => {
 							{status}
 						</p>
 					)}
-					<LiftButton
-						className="mt-2 h-12 w-full md:w-auto self-start px-6 rounded-lg text-white font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
-						type="submit"
-						disabled={loading}
-					>
-						{loading ? (
-							<span className="flex items-center gap-2">
-								<span className="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-								Sending...
-							</span>
-						) : (
-							"Send Message"
-						)}
-					</LiftButton>
-				</form>
+					<motion.div variants={fadeUp}>
+						<LiftButton
+							className="mt-2 h-12 w-full md:w-auto self-start px-6 rounded-lg text-white font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+							type="submit"
+							disabled={loading}
+						>
+							{loading ?
+								<span className="flex items-center gap-2">
+									<span className="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+									Sending...
+								</span>
+							:	"Send Message"}
+						</LiftButton>
+					</motion.div>
+				</motion.form>
 			</div>
-			<div className="px-4 md:px-10 max-w-6xl mx-auto mt-5 md:mt-20 pt-8 border-t border-gray-200 dark:border-border-dark flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-600">
+			<motion.div
+				className="px-4 md:px-10 max-w-6xl mx-auto mt-5 md:mt-20 pt-8 border-t border-gray-200 dark:border-border-dark flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-600"
+				variants={fadeIn}
+				initial="hidden"
+				whileInView="visible"
+				viewport={viewportOnce}
+			>
 				<p>© {year} Bax. All rights reserved.</p>
 				<div className="flex gap-6 mt-4 md:mt-0">
 					<a className="hover:text-primary transition-colors" href="#">
@@ -108,7 +145,7 @@ const Footer = () => {
 						Terms of Service
 					</a>
 				</div>
-			</div>
+			</motion.div>
 		</footer>
 	);
 };

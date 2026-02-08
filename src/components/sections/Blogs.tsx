@@ -7,6 +7,14 @@ import {
 	ModalContent,
 	ModalTrigger,
 } from "../ui/animated-modal";
+import { motion } from "motion/react";
+import {
+	blurFadeUp,
+	fadeUp,
+	scaleY,
+	staggerContainer,
+	viewportOnce,
+} from "@/lib/animations";
 
 const Blogs = () => {
 	const [isMobile, setIsMobile] = useState(false);
@@ -25,15 +33,36 @@ const Blogs = () => {
 			className="py-5 md:py-16 px-4 md:px-10 max-w-240 mx-auto w-full"
 			id="blog"
 		>
-			<h2 className="text-3xl font-black tracking-tight mb-8 border-b border-gray-200 dark:border-border-dark pb-4 flex items-center gap-3 text-gray-900 dark:text-white">
-				<span className="w-2 h-8 bg-primary rounded-full" />
+			<motion.h2
+				className="text-3xl font-black tracking-tight mb-8 border-b border-gray-200 dark:border-border-dark pb-4 flex items-center gap-3 text-gray-900 dark:text-white"
+				variants={blurFadeUp}
+				initial="hidden"
+				whileInView="visible"
+				viewport={viewportOnce}
+			>
+				<motion.span
+					className="w-2 h-8 bg-primary rounded-full origin-bottom"
+					variants={scaleY}
+					initial="hidden"
+					whileInView="visible"
+					viewport={viewportOnce}
+				/>
 				Latest Thoughts
-			</h2>
-			<div className="flex flex-col gap-4">
+			</motion.h2>
+			<motion.div
+				className="flex flex-col gap-4"
+				variants={staggerContainer(0.1)}
+				initial="hidden"
+				whileInView="visible"
+				viewport={viewportOnce}
+			>
 				{blogs.map((blog) => (
 					<Modal key={blog.id}>
 						<ModalTrigger>
-							<article className="group flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 py-1 p-2 md:p-6 rounded-xl hover:bg-gray-50 dark:hover:bg-card-dark transition-colors cursor-pointer border border-transparent hover:border-gray-200 dark:hover:border-border-dark">
+							<motion.article
+								className="group flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 py-1 p-2 md:p-6 rounded-xl hover:bg-gray-50 dark:hover:bg-card-dark transition-colors cursor-pointer border border-transparent hover:border-gray-200 dark:hover:border-border-dark"
+								variants={fadeUp}
+							>
 								<span className="text-primary text-start font-mono text-sm font-bold min-w-35">
 									{blog.date}
 								</span>
@@ -50,7 +79,7 @@ const Blogs = () => {
 										arrow_forward
 									</span>
 								)}
-							</article>
+							</motion.article>
 						</ModalTrigger>
 						<ModalBody>
 							<ModalContent className="overflow-y-auto">
@@ -72,7 +101,7 @@ const Blogs = () => {
 						</ModalBody>
 					</Modal>
 				))}
-			</div>
+			</motion.div>
 		</section>
 	);
 };

@@ -1,3 +1,4 @@
+"use client";
 import { FaGithub } from "react-icons/fa6";
 import {
 	SiReact,
@@ -16,6 +17,17 @@ import {
 import { BeforeEffectButton } from "../ui/before-effect-button";
 import projects from "@/data/projects.json";
 import { ReactNode } from "react";
+import { motion } from "motion/react";
+import {
+	blurFadeUp,
+	fadeUp,
+	fadeIn,
+	scaleIn,
+	slideInLeft,
+	slideInRight,
+	staggerContainer,
+	viewportOnce,
+} from "@/lib/animations";
 
 type Project = {
 	id: string;
@@ -73,7 +85,11 @@ const LinkButtons = ({
 };
 
 const FeaturedCard = ({ project }: { project: Project }) => (
-	<article className="lg:col-span-2 group relative overflow-hidden rounded-xl bg-background-light dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-all duration-300">
+	<motion.article
+		className="lg:col-span-2 group relative overflow-hidden rounded-xl bg-background-light dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-all duration-300"
+		variants={scaleIn}
+		whileHover={{ y: -8, transition: { type: "spring", stiffness: 200 } }}
+	>
 		<div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent z-10 pointer-events-none"></div>
 		<div
 			className="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
@@ -103,11 +119,15 @@ const FeaturedCard = ({ project }: { project: Project }) => (
 				></LinkButtons>
 			</div>
 		</div>
-	</article>
+	</motion.article>
 );
 
 const ImageHeaderCard = ({ project }: { project: Project }) => (
-	<article className="group relative overflow-hidden rounded-xl bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-all duration-300 flex flex-col">
+	<motion.article
+		className="group relative overflow-hidden rounded-xl bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-all duration-300 flex flex-col"
+		variants={fadeUp}
+		whileHover={{ y: -8, transition: { type: "spring", stiffness: 200 } }}
+	>
 		<div
 			className="h-48 w-full bg-cover bg-center group-hover:scale-105 transition-all duration-500"
 			style={{ backgroundImage: `url("${project.image}")` }}
@@ -142,11 +162,15 @@ const ImageHeaderCard = ({ project }: { project: Project }) => (
 				></LinkButtons>
 			</div>
 		</div>
-	</article>
+	</motion.article>
 );
 
 const SplitCard = ({ project }: { project: Project }) => (
-	<article className="lg:col-span-2 group relative overflow-hidden rounded-xl bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-all duration-300 flex flex-col md:flex-row">
+	<motion.article
+		className="lg:col-span-2 group relative overflow-hidden rounded-xl bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-all duration-300 flex flex-col md:flex-row"
+		variants={fadeUp}
+		whileHover={{ y: -8, transition: { type: "spring", stiffness: 200 } }}
+	>
 		<div className="w-full md:w-1/2 p-8 flex flex-col justify-center relative z-10">
 			<div className="flex gap-2 mb-4 flex-wrap">
 				{project.technologies.slice(0, 3).map((tech) => (
@@ -191,7 +215,7 @@ const SplitCard = ({ project }: { project: Project }) => (
 			<div className="absolute inset-0 bg-linear-to-r from-white dark:from-card-dark to-transparent md:block hidden" />
 			<div className="absolute inset-0 bg-linear-to-t from-white dark:from-card-dark to-transparent md:hidden block" />
 		</div>
-	</article>
+	</motion.article>
 );
 
 const Works = () => {
@@ -202,28 +226,42 @@ const Works = () => {
 			className="py-10 lg:pt-20 lg:pb-12 px-4 md:px-10 max-w-6xl mx-auto w-full"
 			id="work"
 		>
-			<div className="flex flex-col md:flex-row justify-between md:items-end mb-5 lg:mb-12 gap-4">
-				<div>
+			<motion.div
+				className="flex flex-col md:flex-row justify-between md:items-end mb-5 lg:mb-12 gap-4"
+				variants={staggerContainer(0.12)}
+				initial="hidden"
+				whileInView="visible"
+				viewport={viewportOnce}
+			>
+				<motion.div variants={blurFadeUp}>
 					<h2 className="text-4xl md:text-5xl font-black tracking-tight mb-2 text-gray-900 dark:text-white cyber-glow-text">
 						Selected Works
 					</h2>
 					<p className="text-gray-600 dark:text-gray-400">
 						A curation of my recent digital products.
 					</p>
-				</div>
-				<BeforeEffectButton className="flex items-center self-end cursor-pointer pt-1.5 gap-1 text-gray-900 dark:text-white font-bold hover:text-primary transition-colors group">
-					View All Projects{" "}
-					<span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
-						arrow_forward
-					</span>
-				</BeforeEffectButton>
-			</div>
-			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-[minmax(320px,auto)]">
+				</motion.div>
+				<motion.div variants={fadeIn}>
+					<BeforeEffectButton className="flex items-center self-end cursor-pointer pt-1.5 gap-1 text-gray-900 dark:text-white font-bold hover:text-primary transition-colors group">
+						View All Projects{" "}
+						<span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
+							arrow_forward
+						</span>
+					</BeforeEffectButton>
+				</motion.div>
+			</motion.div>
+			<motion.div
+				className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-[minmax(320px,auto)]"
+				variants={staggerContainer(0.15)}
+				initial="hidden"
+				whileInView="visible"
+				viewport={viewportOnce}
+			>
 				<FeaturedCard project={typedProjects[0]} />
 				<ImageHeaderCard project={typedProjects[1]} />
 				<ImageHeaderCard project={typedProjects[2]} />
 				<SplitCard project={typedProjects[3]} />
-			</div>
+			</motion.div>
 		</section>
 	);
 };

@@ -6,10 +6,29 @@ import { Tooltip } from "../ui/tooltip-card";
 import logo from "../../app/favicon.ico";
 import logoRed from "../../../public/logo-red.png";
 import { AnimatedThemeToggler } from "../ui/theme-toggler";
+import { motion, useMotionValueEvent, useScroll } from "motion/react";
+import { useState } from "react";
 
 const Header = () => {
+	const { scrollY } = useScroll();
+	const [hidden, setHidden] = useState(false);
+
+	useMotionValueEvent(scrollY, "change", (latest) => {
+		const previous = scrollY.getPrevious() ?? 0;
+		if (latest > previous && latest > 150) {
+			setHidden(true);
+		} else {
+			setHidden(false);
+		}
+	});
+
 	return (
-		<header className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-border-dark bg-white/90 dark:bg-background-dark/80 backdrop-blur-md">
+		<motion.header
+			className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-border-dark bg-white/90 dark:bg-background-dark/80 backdrop-blur-md"
+			initial={{ y: -80, opacity: 0 }}
+			animate={{ y: hidden ? -80 : 0, opacity: hidden ? 0 : 1 }}
+			transition={{ type: "spring", stiffness: 120, damping: 20 }}
+		>
 			<div className="px-4 md:px-10 py-3 flex items-center justify-between max-w-6xl mx-auto w-full">
 				<Tooltip content="Bax: A codename extracted from Bombax ceiba, the scientific identity of the Shimul tree.">
 					<div className="flex justify-center items-center gap-2 group cursor-pointer">
@@ -50,7 +69,7 @@ const Header = () => {
 					</LiftButton>
 				</div>
 			</div>
-		</header>
+		</motion.header>
 	);
 };
 

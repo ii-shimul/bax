@@ -1,6 +1,14 @@
 "use client";
 import { FC, useEffect, useRef, useState } from "react";
 import DragPill from "../ui/draggable-pill";
+import { motion } from "motion/react";
+import {
+	staggerContainer,
+	fadeUp,
+	blurFadeUp,
+	scaleIn,
+	viewportOnce,
+} from "@/lib/animations";
 
 const softSkills = [
 	{
@@ -66,19 +74,31 @@ export const About: FC = () => {
 				type="radio"
 			/>
 			<div className="w-full relative z-10">
-				<div className="mb-6 text-center">
-					<div className="inline-block mb-4">
+				<motion.div
+					className="mb-6 text-center"
+					variants={staggerContainer(0.12)}
+					initial="hidden"
+					whileInView="visible"
+					viewport={viewportOnce}
+				>
+					<motion.div className="inline-block mb-4" variants={fadeUp}>
 						<span className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold tracking-wider uppercase">
 							Get to Know Me
 						</span>
-					</div>
-					<h2 className="text-4xl md:text-6xl font-black tracking-tight mb-4 cyber-glow-text bg-linear-to-r from-gray-900 via-gray-700 to-gray-900 dark:from-white dark:via-gray-200 dark:to-white bg-clip-text text-transparent">
+					</motion.div>
+					<motion.h2
+						className="text-4xl md:text-6xl font-black tracking-tight mb-4 cyber-glow-text bg-linear-to-r from-gray-900 via-gray-700 to-gray-900 dark:from-white dark:via-gray-200 dark:to-white bg-clip-text text-transparent"
+						variants={blurFadeUp}
+					>
 						Data Archives
-					</h2>
-					<p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+					</motion.h2>
+					<motion.p
+						className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto"
+						variants={fadeUp}
+					>
 						Professional background and expertise in modern development
-					</p>
-				</div>
+					</motion.p>
+				</motion.div>
 				<div className="tabs-nav flex gap-8 border-b border-gray-200 dark:border-border-dark mb-8 overflow-x-auto no-scrollbar justify-center">
 					<label
 						className="label-personal cursor-pointer pb-4 px-2 text-lg font-bold text-gray-500 border-b-2 border-transparent hover:text-gray-900 dark:hover:text-white transition-all whitespace-nowrap relative group"
@@ -97,8 +117,17 @@ export const About: FC = () => {
 				</div>
 
 				<div className="tab-content-personal hidden">
-					<div className="grid grid-cols-1 md:grid-cols-12 gap-5">
-						<div className="lg:col-span-8 md:col-span-7 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-all duration-300">
+					<motion.div
+						className="grid grid-cols-1 md:grid-cols-12 gap-5"
+						variants={staggerContainer(0.15)}
+						initial="hidden"
+						whileInView="visible"
+						viewport={viewportOnce}
+					>
+						<motion.div
+							className="lg:col-span-8 md:col-span-7 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-all duration-300"
+							variants={fadeUp}
+						>
 							<h3 className="font-mono text-primary text-sm mb-4 tracking-widest border-b border-gray-200 dark:border-border-dark pb-2 inline-block">
 								MY_ORIGIN
 							</h3>
@@ -131,9 +160,12 @@ export const About: FC = () => {
 									[ENERGY: MAX]
 								</span>
 							</div>
-						</div>
+						</motion.div>
 
-						<div className="lg:col-span-4 md:col-span-5 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-all duration-300 flex flex-col justify-center">
+						<motion.div
+							className="lg:col-span-4 md:col-span-5 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-all duration-300 flex flex-col justify-center"
+							variants={fadeUp}
+						>
 							<h3 className="font-mono text-primary text-sm mb-4 tracking-widest border-b border-gray-200 dark:border-border-dark pb-2 inline-block w-fit">
 								ACADEMIC_STATUS
 							</h3>
@@ -166,11 +198,12 @@ export const About: FC = () => {
 							<span className="material-symbols-outlined absolute -bottom-4 -right-4 text-9xl text-gray-900 dark:text-white opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none hidden md:block">
 								school
 							</span>
-						</div>
+						</motion.div>
 
-						<div
+						<motion.div
 							ref={containerRef}
 							className="md:col-span-12 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-all duration-300 min-h-70"
+							variants={fadeUp}
 						>
 							<div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
 								<span className="text-[3rem] md:text-[8rem] font-black text-black dark:text-white dark:opacity-[0.05] opacity-[0.09] tracking-widest whitespace-nowrap">
@@ -210,12 +243,18 @@ export const About: FC = () => {
 									/>
 								);
 							})}
-						</div>
-					</div>
+						</motion.div>
+					</motion.div>
 				</div>
 
 				<div className="tab-content-history hidden">
-					<div className="relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-all duration-300">
+					<motion.div
+						className="relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-all duration-300"
+						variants={scaleIn}
+						initial="hidden"
+						whileInView="visible"
+						viewport={viewportOnce}
+					>
 						<h3 className="font-mono text-primary text-sm mb-6 tracking-widest border-b border-gray-200 dark:border-border-dark pb-2 inline-block">
 							WORK_EXPERIENCE
 						</h3>
@@ -277,7 +316,7 @@ export const About: FC = () => {
 						<span className="material-symbols-outlined absolute -bottom-4 -right-4 text-9xl text-gray-900 dark:text-white opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none hidden md:block">
 							work
 						</span>
-					</div>
+					</motion.div>
 				</div>
 			</div>
 		</section>

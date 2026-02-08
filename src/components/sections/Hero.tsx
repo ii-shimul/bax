@@ -12,6 +12,13 @@ import Socials from "../shared/Socials";
 import { ImageSwap } from "../ui/image-swap";
 import { Lens } from "../ui/lens";
 import { BackgroundBeams } from "../ui/bg-beams";
+import { motion, useScroll, useTransform } from "motion/react";
+import {
+	staggerContainer,
+	fadeUp,
+	blurFadeUp,
+	scaleIn,
+} from "@/lib/animations";
 
 type GitHubPushEvent = {
 	type: string;
@@ -56,11 +63,25 @@ const Hero = () => {
 			})
 			.catch(console.error);
 	}, []);
+	const { scrollYProgress } = useScroll();
+	const beamsY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
 	return (
 		<section className="relative flex items-center pt-5 pb-5 md:pt-10 md:pb-16 min-h-[90vh] overflow-hidden">
-			<div className="max-w-6xl mx-auto w-full px-4 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10 items-center relative z-10">
-				<div className="flex flex-col text-center lg:text-left order-2 lg:order-1">
-					<div className="flex flex-wrap mb-5 items-center gap-3 justify-center lg:justify-start">
+			<motion.div
+				className="max-w-6xl mx-auto w-full px-4 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10 items-center relative z-10"
+				variants={staggerContainer(0.12, 0.1)}
+				initial="hidden"
+				animate="visible"
+			>
+				<motion.div
+					className="flex flex-col text-center lg:text-left order-2 lg:order-1"
+					variants={staggerContainer(0.1)}
+				>
+					<motion.div
+						className="flex flex-wrap mb-5 items-center gap-3 justify-center lg:justify-start"
+						variants={fadeUp}
+					>
 						<div className="inline-flex max-sm:hidden items-center gap-2 px-3 py-1 rounded-full border border-gray-200 dark:border-border-dark bg-white dark:bg-card-dark backdrop-blur-sm">
 							<span className="relative flex h-2 w-2">
 								<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
@@ -78,37 +99,55 @@ const Hero = () => {
 								Sylhet, Bangladesh
 							</span>
 						</div>
-					</div>
-					<h1 className=" font-black mb-2 leading-tight tracking-tighter cyber-glow-text">
-						<span className="block text-xl md:text-2xl xl:text-3xl tracking-tight font-medium text-gray-600 dark:text-gray-400 mb-2">
+					</motion.div>
+					<motion.h1
+						className=" font-black mb-2 leading-tight tracking-tighter cyber-glow-text"
+						variants={staggerContainer(0.12)}
+					>
+						<motion.span
+							className="block text-xl md:text-2xl xl:text-3xl tracking-tight font-medium text-gray-600 dark:text-gray-400 mb-2"
+							variants={blurFadeUp}
+						>
 							Hey there, I&apos;m
-						</span>
-						<span className="block text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-gray-900 dark:text-white">
+						</motion.span>
+						<motion.span
+							className="block text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-gray-900 dark:text-white"
+							variants={blurFadeUp}
+						>
 							Injamamul Islam
-						</span>
-						<span className="block text-[64px] md:text-7xl xl:text-[100px] text-transparent bg-clip-text bg-linear-to-r from-primary to-red-400 mt-1">
+						</motion.span>
+						<motion.span
+							className="block text-[64px] md:text-7xl xl:text-[100px] text-transparent bg-clip-text bg-linear-to-r from-primary to-red-400 mt-1"
+							variants={blurFadeUp}
+						>
 							SHIMUL
 							<span className="inline-block w-7 h-2 lg:w-10 xl:w-12 xl:h-3.5 md:h-2.5 lg:h-3 ml-1 bg-red-400 animate-caret-blink rounded-full translate-y-0.5  align-baseline"></span>
-						</span>
-					</h1>
-					<ScrambledText className="my-2 text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300">
-						A{" "}
-						<Highlight className="font-bold text-2xl md:text-3xl xl:text-4xl">
-							Full Stack Developer
-						</Highlight>{" "}
-						who loves turning ideas into clean, functional websites. I care
-						about the details and enjoy building things that actually work well
-						for people.
-					</ScrambledText>
-					<div className="flex flex-wrap gap-4 justify-center lg:justify-start py-3">
-						<a href="#work">
+						</motion.span>
+					</motion.h1>
+					<motion.div variants={fadeUp}>
+						<ScrambledText className="my-2 text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300">
+							A{" "}
+							<Highlight className="font-bold text-2xl md:text-3xl xl:text-4xl">
+								Full Stack Developer
+							</Highlight>{" "}
+							who loves turning ideas into clean, functional websites. I care
+							about the details and enjoy building things that actually work
+							well for people.
+						</ScrambledText>
+					</motion.div>
+					<motion.div
+						className="flex flex-wrap gap-4 justify-center lg:justify-start py-3"
+						variants={staggerContainer(0.1)}
+					>
+						<motion.a href="#work" variants={fadeUp}>
 							<LiftButton className=" h-12 px-8 flex items-center justify-center rounded-md bg-primary text-white font-bold text-base ">
 								My Projects
 							</LiftButton>
-						</a>
-						<a
+						</motion.a>
+						<motion.a
 							href="https://drive.google.com/file/d/1dk8RWrHrERC_i12qk3q1Edy7iX9_x_9L/view?usp=sharing"
 							target="blank"
+							variants={fadeUp}
 						>
 							<BeforeEffectButton className="h-12 px-8 flex items-center justify-center rounded-md border border-primary text-gray-900 dark:text-white font-bold text-base hover:bg-primary/10 cursor-pointer">
 								<span className="material-symbols-outlined mr-2 text-xl">
@@ -116,11 +155,16 @@ const Hero = () => {
 								</span>
 								Resume
 							</BeforeEffectButton>
-						</a>
-					</div>
-					<Socials />
-				</div>
-				<div className="relative order-1 lg:order-2 flex justify-center lg:justify-end">
+						</motion.a>
+					</motion.div>
+					<motion.div variants={fadeUp}>
+						<Socials />
+					</motion.div>
+				</motion.div>
+				<motion.div
+					className="relative order-1 lg:order-2 flex justify-center lg:justify-end"
+					variants={scaleIn}
+				>
 					<CometCard className="w-full max-w-115 lg:max-w-110">
 						{isMobile ?
 							<div className="relative w-full aspect-square lg:aspect-4/5 rounded-2xl overflow-hidden border border-gray-200 dark:border-border-dark group">
@@ -176,15 +220,22 @@ const Hero = () => {
 							</Lens>
 						}
 					</CometCard>
-				</div>
-			</div>
-			<div className="absolute max-lg:bottom-4 bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block text-gray-400 dark:text-gray-500">
+				</motion.div>
+			</motion.div>
+			<motion.div
+				className="absolute max-lg:bottom-4 bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block text-gray-400 dark:text-gray-500"
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ delay: 1.4, duration: 0.6 }}
+			>
 				<span className="material-symbols-outlined text-3xl">
 					keyboard_arrow_down
 				</span>
-			</div>
+			</motion.div>
 			{/* <div className="absolute inset-0 bg-[linear-gradient(to_right,#a0a0a040_1px,transparent_1px),linear-gradient(to_bottom,#a0a0a040_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-size-[35px_34px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div> */}
-			<BackgroundBeams />
+			<motion.div style={{ y: beamsY }}>
+				<BackgroundBeams />
+			</motion.div>
 		</section>
 	);
 };
