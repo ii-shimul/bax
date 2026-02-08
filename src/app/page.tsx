@@ -9,7 +9,10 @@ import { motion } from "motion/react";
 
 const sectionReveal = {
 	hidden: { opacity: 0.0 },
-	visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } },
+	visible: {
+		opacity: 1,
+		transition: { duration: 0.8, ease: "easeOut" as const },
+	},
 };
 
 const viewport = { once: true, margin: "-100px" as const };
