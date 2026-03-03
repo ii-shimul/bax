@@ -32,8 +32,10 @@ const Blogs = () => {
 		<section
 			className="py-5 md:py-16 px-4 md:px-10 max-w-240 mx-auto w-full"
 			id="blog"
+			aria-labelledby="blog-heading"
 		>
 			<motion.h2
+				id="blog-heading"
 				className="text-3xl font-black tracking-tight mb-8 border-b border-gray-200 dark:border-border-dark pb-4 flex items-center gap-3 text-gray-900 dark:text-white"
 				variants={blurFadeUp}
 				initial="hidden"

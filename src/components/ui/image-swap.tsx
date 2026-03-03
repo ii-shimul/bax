@@ -27,6 +27,7 @@ const ImageSwap = React.forwardRef<HTMLDivElement, ImageSwapProps>(
 					width={600}
 					height={750}
 					alt={alt}
+					priority
 					className={cn(
 						"block transition-all w-full h-full object-cover duration-700",
 						useExternalHover ?

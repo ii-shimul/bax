@@ -117,7 +117,11 @@ const TechStack = () => {
 		}
 	};
 	return (
-		<section className="w-full border-y border-gray-200 dark:border-border-dark bg-gray-50 dark:bg-card-dark pt-5 pb-5 md:pt-10 md:pb-16 overflow-hidden">
+		<section
+			className="w-full border-y border-gray-200 dark:border-border-dark bg-gray-50 dark:bg-card-dark pt-5 pb-5 md:pt-10 md:pb-16 overflow-hidden"
+			id="tech"
+			aria-labelledby="tech-heading"
+		>
 			<motion.div
 				className="max-w-6xl mx-auto px-4 md:px-10"
 				variants={staggerContainer(0.08)}
@@ -126,6 +130,7 @@ const TechStack = () => {
 				viewport={viewportOnce}
 			>
 				<motion.h3
+					id="tech-heading"
 					className="text-sm font-bold mb-5 md:mb-8 text-gray-600 dark:text-gray-500 uppercase tracking-widest font-display"
 					variants={blurFadeUp}
 				>

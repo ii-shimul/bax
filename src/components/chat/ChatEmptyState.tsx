@@ -3,9 +3,9 @@
 import { RiRobot2Line } from "react-icons/ri";
 
 const suggestedQuestions = [
-	"Tell me about Shimul's techstack",
 	"What is Shimul's role?",
 	"How can I contact Shimul?",
+	"Tell me about Shimul's techstack",
 ];
 
 interface ChatEmptyStateProps {

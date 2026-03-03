@@ -177,6 +177,20 @@
 			"role": "Full Stack Developer"
 		},
 		{
+			"id": "planetcare",
+			"title": "PlanetCare",
+			"description": "A volunteer management and donation platform for environmental initiatives. It connects volunteers with local cleanup events, tree plantation drives, and sustainability projects.",
+			"technologies": ["React", "TypeScript", "Mongoose", "Motion", "Stripe"],
+			"image": "/projects/planetcare.png",
+			"liveLink": "https://planetcare-bd.web.app/",
+			"repoLink": "https://github.com/ii-shimul/project-planetcare",
+			"keyFeatures": [
+				"Admins create and manage events; volunteers browse, register, and discuss in comment sections.",
+				"Secure Stripe payments with donor recognition wall featuring tiered badges by donation amount.",
+				"Volunteers and admins have separate dashboards to track events, donations, and users."
+			]
+		},
+		{
 			"id": "tourna",
 			"title": "Tourna - Tournament Manager",
 			"description": "A tournament management platform for creating and managing competitions where users can create teams and tournaments, and determine champions.",

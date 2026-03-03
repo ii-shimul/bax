@@ -51,6 +51,7 @@ export const About: FC = () => {
 		<section
 			className="relative w-full py-5 md:pb-16 md:pt-10 px-4 md:px-10 max-w-6xl mx-auto overflow-hidden"
 			id="about"
+			aria-labelledby="about-heading"
 		>
 			<div className="absolute inset-0 pointer-events-none">
 				<div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
@@ -87,6 +88,7 @@ export const About: FC = () => {
 						</span>
 					</motion.div>
 					<motion.h2
+						id="about-heading"
 						className="text-4xl md:text-6xl font-black tracking-tight mb-4 cyber-glow-text bg-linear-to-r from-gray-900 via-gray-700 to-gray-900 dark:from-white dark:via-gray-200 dark:to-white bg-clip-text text-transparent"
 						variants={blurFadeUp}
 					>

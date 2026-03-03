@@ -26,7 +26,7 @@ const Footer = () => {
 
 		emailjs
 			.sendForm("portfolio", "portfolio-template", form.current, {
-				publicKey: "2R3alK2GIRs9GRCJF",
+				publicKey: process.env.NEXT_PUBLIC_EMAILJS_KEY!,
 			})
 			.then(() => {
 				setLoading(false);
@@ -44,6 +44,7 @@ const Footer = () => {
 		<footer
 			className="mt-auto border-t border-gray-200 dark:border-border-dark bg-background-light/50 dark:bg-[#050505] py-6 md:pt-24 md:pb-10"
 			id="contact"
+			aria-labelledby="contact-heading"
 		>
 			<div className="px-4 md:px-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16">
 				<motion.div
@@ -54,6 +55,7 @@ const Footer = () => {
 					viewport={viewportOnce}
 				>
 					<motion.h2
+						id="contact-heading"
 						className="text-5xl lg:text-6xl font-black tracking-tighter text-gray-900 dark:text-white font-display"
 						variants={blurFadeUp}
 					>

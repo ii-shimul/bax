@@ -54,12 +54,30 @@ const Header = () => {
 								</div>
 							</div>
 						</div>
-						<h1 className="text-xl font-extrabold tracking-tighter uppercase text-gray-900 dark:text-white group-hover:text-primary dark:group-hover:text-primary transition-colors font-display leading-none translate-y-0.5">
+						<span className="text-xl font-extrabold tracking-tighter uppercase text-gray-900 dark:text-white group-hover:text-primary dark:group-hover:text-primary transition-colors font-display leading-none translate-y-0.5">
 							Bax
-						</h1>
+						</span>
 					</div>
 				</Tooltip>
-				<div className="flex items-center gap-4">
+				<nav aria-label="Main navigation" className="flex items-center gap-4">
+					<a
+						href="#about"
+						className="hidden md:inline-block text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary transition-colors"
+					>
+						About
+					</a>
+					<a
+						href="#work"
+						className="hidden md:inline-block text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary transition-colors"
+					>
+						Work
+					</a>
+					<a
+						href="#blog"
+						className="hidden md:inline-block text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary transition-colors"
+					>
+						Blog
+					</a>
 					<AnimatedThemeToggler className="border-2 cursor-pointer bg-primary/15 rounded-full border-primary/60 p-2.5" />
 					<LiftButton
 						className="flex h-10 items-center justify-center rounded-md bg-primary px-6 text-sm font-bold text-white hover:bg-primary-dark hover:shadow-[0_0_15px_rgba(239,68,68,0.5)] transition-all duration-300"
@@ -67,7 +85,7 @@ const Header = () => {
 					>
 						Contact Me
 					</LiftButton>
-				</div>
+				</nav>
 			</div>
 		</motion.header>
 	);

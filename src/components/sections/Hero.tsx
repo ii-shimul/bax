@@ -146,7 +146,8 @@ const Hero = () => {
 						</motion.a>
 						<motion.a
 							href="https://drive.google.com/file/d/1dk8RWrHrERC_i12qk3q1Edy7iX9_x_9L/view?usp=sharing"
-							target="blank"
+							target="_blank"
+							rel="noopener noreferrer"
 							variants={fadeUp}
 						>
 							<BeforeEffectButton className="h-12 px-8 flex items-center justify-center rounded-md border border-primary text-gray-900 dark:text-white font-bold text-base hover:bg-primary/10 cursor-pointer">

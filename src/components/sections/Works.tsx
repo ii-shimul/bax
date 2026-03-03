@@ -17,6 +17,7 @@ import {
 import { BeforeEffectButton } from "../ui/before-effect-button";
 import projects from "@/data/projects.json";
 import { ReactNode } from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
 import {
 	blurFadeUp,
@@ -68,12 +69,22 @@ const LinkButtons = ({
 }) => {
 	return (
 		<div className="flex gap-1.5">
-			<a href={repoLink} target="_blank" rel="noopener noreferrer">
+			<a
+				href={repoLink}
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="View source code on GitHub"
+			>
 				<BeforeEffectButton className="h-10 w-10 p-0! rounded-full before:rounded-full border cursor-pointer border-gray-200 dark:border-border-dark flex items-center justify-center hover:text-primary hover:border-primary transition-colors text-gray-500 dark:text-gray-400 isolate">
 					<FaGithub className="text-xl" />
 				</BeforeEffectButton>
 			</a>
-			<a href={liveLink} target="_blank" rel="noopener noreferrer">
+			<a
+				href={liveLink}
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="View live demo"
+			>
 				<BeforeEffectButton className="h-10 w-10 p-0! rounded-full before:rounded-full border cursor-pointer border-gray-200 dark:border-border-dark flex items-center justify-center hover:text-primary hover:border-primary transition-colors text-gray-500 dark:text-gray-400 isolate">
 					<span className="material-symbols-outlined text-sm">
 						arrow_forward
@@ -91,10 +102,13 @@ const FeaturedCard = ({ project }: { project: Project }) => (
 		whileHover={{ y: -8, transition: { type: "spring", stiffness: 200 } }}
 	>
 		<div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent z-10 pointer-events-none"></div>
-		<div
-			className="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-			style={{ backgroundImage: `url("${project.image}")` }}
-		></div>
+		<Image
+			src={project.image}
+			alt={`Screenshot of ${project.title}`}
+			fill
+			sizes="(max-width: 768px) 100vw, (max-width: 1024px) 66vw, 66vw"
+			className="object-cover transition-transform duration-700 group-hover:scale-105"
+		/>
 		<div className="absolute bottom-0 left-0 z-20 p-8 w-full">
 			<div className="flex gap-2 mb-4 flex-wrap">
 				{project.technologies.slice(0, 3).map((tech) => (
@@ -128,10 +142,15 @@ const ImageHeaderCard = ({ project }: { project: Project }) => (
 		variants={fadeUp}
 		whileHover={{ y: -8, transition: { type: "spring", stiffness: 200 } }}
 	>
-		<div
-			className="h-48 w-full bg-cover bg-center group-hover:scale-105 transition-all duration-500"
-			style={{ backgroundImage: `url("${project.image}")` }}
-		></div>
+		<div className="relative h-48 w-full overflow-hidden">
+			<Image
+				src={project.image}
+				alt={`Screenshot of ${project.title}`}
+				fill
+				sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+				className="object-cover group-hover:scale-105 transition-all duration-500"
+			/>
+		</div>
 		<div className="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-card-dark">
 			<div>
 				<h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 font-display">
@@ -208,10 +227,14 @@ const SplitCard = ({ project }: { project: Project }) => (
 				</a>
 			</div>
 		</div>
-		<div
-			className="w-full md:w-1/2 min-h-50 bg-cover bg-center group-hover:scale-105 transition-all duration-500 relative"
-			style={{ backgroundImage: `url("${project.image}")` }}
-		>
+		<div className="w-full md:w-1/2 min-h-50 relative overflow-hidden">
+			<Image
+				src={project.image}
+				alt={`Screenshot of ${project.title}`}
+				fill
+				sizes="(max-width: 768px) 100vw, 50vw"
+				className="object-cover group-hover:scale-105 transition-all duration-500"
+			/>
 			<div className="absolute inset-0 bg-linear-to-r from-white dark:from-card-dark to-transparent md:block hidden" />
 			<div className="absolute inset-0 bg-linear-to-t from-white dark:from-card-dark to-transparent md:hidden block" />
 		</div>
@@ -225,6 +248,7 @@ const Works = () => {
 		<section
 			className="py-10 lg:pt-20 lg:pb-12 px-4 md:px-10 max-w-6xl mx-auto w-full"
 			id="work"
+			aria-labelledby="work-heading"
 		>
 			<motion.div
 				className="flex flex-col md:flex-row justify-between md:items-end mb-5 lg:mb-12 gap-4"
@@ -234,7 +258,10 @@ const Works = () => {
 				viewport={viewportOnce}
 			>
 				<motion.div variants={blurFadeUp}>
-					<h2 className="text-4xl md:text-5xl font-black tracking-tight mb-2 text-gray-900 dark:text-white cyber-glow-text">
+					<h2
+						id="work-heading"
+						className="text-4xl md:text-5xl font-black tracking-tight mb-2 text-gray-900 dark:text-white cyber-glow-text"
+					>
 						Selected Works
 					</h2>
 					<p className="text-gray-600 dark:text-gray-400">

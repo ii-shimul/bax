@@ -1,0 +1,7 @@
+# https://www.shimul.codes
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://www.shimul.codes/sitemap.xml
