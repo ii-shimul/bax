@@ -140,11 +140,11 @@ const Footer = () => {
 			>
 				<p>© {year} Bax. All rights reserved.</p>
 				<div className="flex gap-6 mt-4 md:mt-0">
-					<a className="hover:text-primary transition-colors" href="#">
-						Privacy Policy
+					<a className="hover:text-primary transition-colors" href="#about">
+						About
 					</a>
-					<a className="hover:text-primary transition-colors" href="#">
-						Terms of Service
+					<a className="hover:text-primary transition-colors" href="#contact">
+						Contact
 					</a>
 				</div>
 			</motion.div>

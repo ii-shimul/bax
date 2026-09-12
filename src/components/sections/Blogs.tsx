@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import blogs from "@/data/blogs.json";
+import Link from "next/link";
 import {
 	Modal,
 	ModalBody,
@@ -99,6 +100,18 @@ const Blogs = () => {
 										<p key={idx}>{para}</p>
 									))}
 								</article>
+
+								<footer className="mt-8 pt-4 border-t border-gray-100 dark:border-neutral-800 flex justify-between items-center">
+									<Link
+										href={`/blog/${blog.id}`}
+										className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+									>
+										Open dedicated page
+										<span className="material-symbols-outlined text-xs">
+											open_in_new
+										</span>
+									</Link>
+								</footer>
 							</ModalContent>
 						</ModalBody>
 					</Modal>

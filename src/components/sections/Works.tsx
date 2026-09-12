@@ -24,8 +24,6 @@ import {
 	fadeUp,
 	fadeIn,
 	scaleIn,
-	slideInLeft,
-	slideInRight,
 	staggerContainer,
 	viewportOnce,
 } from "@/lib/animations";
@@ -63,9 +61,11 @@ const getTechIcon = (tech: string): React.ReactNode => {
 const LinkButtons = ({
 	repoLink,
 	liveLink,
+	title,
 }: {
 	repoLink: string;
 	liveLink: string;
+	title: string;
 }) => {
 	return (
 		<div className="flex gap-1.5">
@@ -73,7 +73,7 @@ const LinkButtons = ({
 				href={repoLink}
 				target="_blank"
 				rel="noopener noreferrer"
-				aria-label="View source code on GitHub"
+				aria-label={`View source code for ${title} on GitHub`}
 			>
 				<BeforeEffectButton className="h-10 w-10 p-0! rounded-full before:rounded-full border cursor-pointer border-gray-200 dark:border-border-dark flex items-center justify-center hover:text-primary hover:border-primary transition-colors text-gray-500 dark:text-gray-400 isolate">
 					<FaGithub className="text-xl" />
@@ -83,7 +83,7 @@ const LinkButtons = ({
 				href={liveLink}
 				target="_blank"
 				rel="noopener noreferrer"
-				aria-label="View live demo"
+				aria-label={`View live demo for ${title}`}
 			>
 				<BeforeEffectButton className="h-10 w-10 p-0! rounded-full before:rounded-full border cursor-pointer border-gray-200 dark:border-border-dark flex items-center justify-center hover:text-primary hover:border-primary transition-colors text-gray-500 dark:text-gray-400 isolate">
 					<span className="material-symbols-outlined text-sm">
@@ -130,6 +130,7 @@ const FeaturedCard = ({ project }: { project: Project }) => (
 				<LinkButtons
 					liveLink={project.liveLink}
 					repoLink={project.repoLink}
+					title={project.title}
 				></LinkButtons>
 			</div>
 		</div>
@@ -178,6 +179,7 @@ const ImageHeaderCard = ({ project }: { project: Project }) => (
 				<LinkButtons
 					liveLink={project.liveLink}
 					repoLink={project.repoLink}
+					title={project.title}
 				></LinkButtons>
 			</div>
 		</div>
@@ -213,6 +215,7 @@ const SplitCard = ({ project }: { project: Project }) => (
 					href={project.liveLink}
 					target="_blank"
 					rel="noopener noreferrer"
+					aria-label={`View live demo for ${project.title}`}
 				>
 					Live Demo{" "}
 					<span className="material-symbols-outlined text-sm">open_in_new</span>
@@ -222,6 +225,7 @@ const SplitCard = ({ project }: { project: Project }) => (
 					href={project.repoLink}
 					target="_blank"
 					rel="noopener noreferrer"
+					aria-label={`View source code for ${project.title} on GitHub`}
 				>
 					Code <span className="material-symbols-outlined text-sm">code</span>
 				</a>
@@ -269,12 +273,19 @@ const Works = () => {
 					</p>
 				</motion.div>
 				<motion.div variants={fadeIn}>
-					<BeforeEffectButton className="flex items-center self-end cursor-pointer pt-1.5 gap-1 text-gray-900 dark:text-white font-bold hover:text-primary transition-colors group">
-						View All Projects{" "}
-						<span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
-							arrow_forward
-						</span>
-					</BeforeEffectButton>
+					<a
+						href="https://github.com/ii-shimul?tab=repositories"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="View all projects on GitHub"
+					>
+						<BeforeEffectButton className="flex items-center self-end cursor-pointer pt-1.5 gap-1 text-gray-900 dark:text-white font-bold hover:text-primary transition-colors group">
+							View All Projects{" "}
+							<span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
+								arrow_forward
+							</span>
+						</BeforeEffectButton>
+					</a>
 				</motion.div>
 			</motion.div>
 			<motion.div

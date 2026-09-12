@@ -123,6 +123,7 @@ const Hero = () => {
 							SHIMUL
 							<span className="inline-block w-7 h-2 lg:w-10 xl:w-12 xl:h-3.5 md:h-2.5 lg:h-3 ml-1 bg-red-400 animate-caret-blink rounded-full translate-y-0.5  align-baseline"></span>
 						</motion.span>
+						<span className="sr-only"> - Full Stack Developer</span>
 					</motion.h1>
 					<motion.div variants={fadeUp}>
 						<ScrambledText className="my-2 text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300">

@@ -129,7 +129,7 @@ const TechStack = () => {
 				whileInView="visible"
 				viewport={viewportOnce}
 			>
-				<motion.h3
+				<motion.h2
 					id="tech-heading"
 					className="text-sm font-bold mb-5 md:mb-8 text-gray-600 dark:text-gray-500 uppercase tracking-widest font-display"
 					variants={blurFadeUp}
@@ -139,7 +139,7 @@ const TechStack = () => {
 						words={codeWIth}
 						className="bg-primary/30 px-1 rounded-sm transform transition duration-200"
 					/>
-				</motion.h3>
+				</motion.h2>
 				<motion.div variants={fadeUp}>
 					<HoverEffect items={techItems} updateCodeWith={updateCodeWith} />
 				</motion.div>

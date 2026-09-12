@@ -5,7 +5,7 @@ import Blogs from "@/components/sections/Blogs";
 import Hero from "@/components/sections/Hero";
 import TechStack from "@/components/sections/TechStack";
 import Works from "@/components/sections/Works";
-import { motion } from "motion/react";
+import { motion, MotionConfig } from "motion/react";
 
 const sectionReveal = {
 	hidden: { opacity: 0.0 },
@@ -19,7 +19,7 @@ const viewport = { once: true, margin: "-100px" as const };
 
 export default function Home() {
 	return (
-		<>
+		<MotionConfig reducedMotion="user">
 			<Hero />
 			<motion.div
 				variants={sectionReveal}
@@ -53,6 +53,6 @@ export default function Home() {
 			>
 				<Blogs />
 			</motion.div>
-		</>
+		</MotionConfig>
 	);
 }

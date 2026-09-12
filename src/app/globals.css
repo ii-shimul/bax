@@ -25,6 +25,13 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    scroll-behavior: auto !important;
+  }
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

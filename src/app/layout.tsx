@@ -1,36 +1,42 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import ReactLenis from "lenis/react";
 import { Analytics } from "@vercel/analytics/next";
 import Chatbot from "@/components/chat/Chatbot";
-import Script from "next/script";
+import { safeJsonLd } from "@/lib/utils";
 
 const inter = Inter({
 	variable: "--font-inter",
 	subsets: ["latin"],
 });
 
+const spaceGrotesk = Space_Grotesk({
+	variable: "--font-display",
+	subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
 	metadataBase: new URL("https://www.shimul.codes/"),
 	title: {
-		default: "Bax | Full Stack Developer",
-		template: "%s | Bax",
+		default: "Injamamul Islam Shimul (Bax) | Full Stack Developer",
+		template: "%s | Injamamul Islam Shimul",
 	},
 	description:
-		"Portfolio of Injamamul Islam Shimul, a Full Stack Developer specializing in building exceptional digital experiences, scalable web applications, and intuitive user interfaces. Explore my latest projects and technical expertise.",
+		"Full Stack Developer portfolio of Injamamul Islam Shimul (Bax). Specializing in React, Next.js, TypeScript, and scalable web applications.",
 	alternates: {
 		canonical: "https://www.shimul.codes/",
 	},
 	icons: {
 		icon: "/favicon.ico",
-		apple: "/me.png",
+		apple: "/apple-icon.png",
 	},
 	keywords: [
 		"Bax",
 		"Shimul",
+		"Injamamul Islam",
 		"Full Stack Developer",
 		"Software Engineer",
 		"Frontend Developer",
@@ -43,7 +49,7 @@ export const metadata: Metadata = {
 	],
 	authors: [
 		{
-			name: "Shimul",
+			name: "Injamamul Islam Shimul",
 			url: "https://www.shimul.codes/",
 		},
 	],
@@ -52,26 +58,26 @@ export const metadata: Metadata = {
 		type: "website",
 		locale: "en_US",
 		url: "https://www.shimul.codes/",
-		title: "Shimul | Full Stack Developer",
+		title: "Injamamul Islam Shimul (Bax) | Full Stack Developer",
 		description:
-			"Portfolio of Shimul, a Full Stack Developer specializing in building exceptional digital experiences. Explore my latest projects and technical expertise.",
+			"Full Stack Developer portfolio of Injamamul Islam Shimul (Bax). Specializing in React, Next.js, TypeScript, and scalable web applications.",
 		siteName: "Shimul - A developer with taste",
 		images: [
 			{
-				url: "/me.png",
-				width: 1696,
-				height: 1847,
-				alt: "Shimul - Full Stack Developer Portfolio",
+				url: "/og-image.png",
+				width: 1200,
+				height: 630,
+				alt: "Injamamul Islam Shimul (Bax) - Full Stack Developer Portfolio",
 			},
 		],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Shimul | Full Stack Developer",
+		title: "Injamamul Islam Shimul (Bax) | Full Stack Developer",
 		description:
-			"Portfolio of Shimul, a Full Stack Developer specializing in building exceptional digital experiences.",
+			"Full Stack Developer portfolio of Injamamul Islam Shimul (Bax). Specializing in React, Next.js, TypeScript, and scalable web applications.",
 		creator: "@islamshimul27",
-		images: ["/me.png"],
+		images: ["/og-image.png"],
 	},
 	robots: {
 		index: true,
@@ -119,13 +125,12 @@ export default function RootLayout({
 				/>
 			</head>
 			<body
-				className={`${inter.variable} ${inter.className} antialiased bg-background-light dark:bg-background-dark text-card-dark dark:text-white transition-colors duration-300`}
+				className={`${inter.variable} ${spaceGrotesk.variable} ${inter.className} antialiased bg-background-light dark:bg-background-dark text-card-dark dark:text-white transition-colors duration-300`}
 			>
-				<Script
-					id="json-ld-person"
+				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{
-						__html: JSON.stringify({
+						__html: safeJsonLd({
 							"@context": "https://schema.org",
 							"@type": "ProfilePage",
 							mainEntity: {
@@ -140,7 +145,7 @@ export default function RootLayout({
 									"https://linkedin.com/in/ii-shimul",
 									"https://facebook.com/zahannami",
 								],
-								email: "islamshimul27@email.com",
+								email: "islamshimul27@gmail.com",
 								address: {
 									"@type": "PostalAddress",
 									addressLocality: "Sylhet",
@@ -160,21 +165,97 @@ export default function RootLayout({
 						}),
 					}}
 				/>
-				<Script
-					id="json-ld-website"
+				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{
-						__html: JSON.stringify({
+						__html: safeJsonLd({
 							"@context": "https://schema.org",
 							"@type": "WebSite",
 							name: "Shimul — Full Stack Developer Portfolio",
 							url: "https://www.shimul.codes",
 							description:
-								"Portfolio of Shimul, a Full Stack Developer specializing in building exceptional digital experiences.",
+								"Full Stack Developer portfolio of Injamamul Islam Shimul (Bax). Specializing in React, Next.js, TypeScript, and scalable web applications.",
 							author: {
 								"@type": "Person",
 								name: "Injamamul Islam Shimul",
 							},
+						}),
+					}}
+				/>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: safeJsonLd({
+							"@context": "https://schema.org",
+							"@type": "ItemList",
+							name: "Featured Projects by Injamamul Islam Shimul",
+							itemListElement: [
+								{
+									"@type": "ListItem",
+									position: 1,
+									item: {
+										"@type": "SoftwareApplication",
+										name: "HostelMate",
+										description:
+											"Meal management system where users browse, order, and review meals with admin dashboards and Stripe integration.",
+										url: "https://hostelmate-b7e8e.web.app/",
+										applicationCategory: "WebApplication",
+										operatingSystem: "All",
+									},
+								},
+								{
+									"@type": "ListItem",
+									position: 2,
+									item: {
+										"@type": "SoftwareApplication",
+										name: "Tourna - Tournament Manager",
+										description:
+											"Tournament management platform where users create teams, manage brackets, and determine champions.",
+										url: "https://tourna-nine.vercel.app/",
+										applicationCategory: "WebApplication",
+										operatingSystem: "All",
+									},
+								},
+								{
+									"@type": "ListItem",
+									position: 3,
+									item: {
+										"@type": "SoftwareApplication",
+										name: "SharePlate",
+										description:
+											"Community food sharing platform connecting individuals to share excess food and reduce waste.",
+										url: "https://shareplate-72dea.web.app/",
+										applicationCategory: "WebApplication",
+										operatingSystem: "All",
+									},
+								},
+								{
+									"@type": "ListItem",
+									position: 4,
+									item: {
+										"@type": "SoftwareApplication",
+										name: "PlanetCare",
+										description:
+											"Volunteer management and donation platform for environmental cleanup events and sustainability drives.",
+										url: "https://planetcare-bd.web.app/",
+										applicationCategory: "WebApplication",
+										operatingSystem: "All",
+									},
+								},
+								{
+									"@type": "ListItem",
+									position: 5,
+									item: {
+										"@type": "SoftwareApplication",
+										name: "Ocean Xplorer",
+										description:
+											"Interactive animated frontend experience showcasing modern motion design and typography.",
+										url: "https://ocean-xplorer.web.app/",
+										applicationCategory: "WebApplication",
+										operatingSystem: "All",
+									},
+								},
+							],
 						}),
 					}}
 				/>
