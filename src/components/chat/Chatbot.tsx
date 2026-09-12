@@ -67,7 +67,7 @@ export default function Chatbot() {
 							</span>
 						</div>
 					</div>
-					<div className="text-gray-400 dark:text-neutral-400 hover:text-gray-900 dark:hover:text-white transition-all p-1 hover:bg-gray-100 dark:hover:bg-neutral-800 rounded-lg">
+					<div className="text-gray-400 dark:text-neutral-400 hover:text-gray-900 dark:hover:text-white transition-colors p-1 hover:bg-gray-100 dark:hover:bg-neutral-800 rounded-lg">
 						{isOpen ? (
 							<IoChevronUp className="text-xl transition-transform duration-300" />
 						) : (

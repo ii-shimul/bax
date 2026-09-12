@@ -103,14 +103,14 @@ export const About: FC = () => {
 				</motion.div>
 				<div className="tabs-nav flex gap-8 border-b border-gray-200 dark:border-border-dark mb-8 overflow-x-auto no-scrollbar justify-center">
 					<label
-						className="label-personal cursor-pointer pb-4 px-2 text-lg font-bold text-gray-500 border-b-2 border-transparent hover:text-gray-900 dark:hover:text-white transition-all whitespace-nowrap relative group"
+						className="label-personal cursor-pointer pb-4 px-2 text-lg font-bold text-gray-500 border-b-2 border-transparent hover:text-gray-900 dark:hover:text-white transition-colors whitespace-nowrap relative group"
 						htmlFor="tab-personal"
 					>
 						<span className="relative z-10">Overview</span>
 						<span className="absolute inset-0 bg-primary/5 rounded-t-lg scale-0 group-hover:scale-100 transition-transform"></span>
 					</label>
 					<label
-						className="label-history cursor-pointer pb-4 px-2 text-lg font-bold text-gray-500 border-b-2 border-transparent hover:text-gray-900 dark:hover:text-white transition-all whitespace-nowrap relative group"
+						className="label-history cursor-pointer pb-4 px-2 text-lg font-bold text-gray-500 border-b-2 border-transparent hover:text-gray-900 dark:hover:text-white transition-colors whitespace-nowrap relative group"
 						htmlFor="tab-history"
 					>
 						<span className="relative z-10">Experience</span>
@@ -127,7 +127,7 @@ export const About: FC = () => {
 						viewport={viewportOnce}
 					>
 						<motion.div
-							className="lg:col-span-8 md:col-span-7 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-all duration-300"
+							className="lg:col-span-8 md:col-span-7 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-[border-color,box-shadow] duration-300"
 							variants={fadeUp}
 						>
 							<h3 className="font-mono text-primary text-sm mb-4 tracking-widest border-b border-gray-200 dark:border-border-dark pb-2 inline-block">
@@ -165,7 +165,7 @@ export const About: FC = () => {
 						</motion.div>
 
 						<motion.div
-							className="lg:col-span-4 md:col-span-5 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-all duration-300 flex flex-col justify-center"
+							className="lg:col-span-4 md:col-span-5 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-[border-color,box-shadow] duration-300 flex flex-col justify-center"
 							variants={fadeUp}
 						>
 							<h3 className="font-mono text-primary text-sm mb-4 tracking-widest border-b border-gray-200 dark:border-border-dark pb-2 inline-block w-fit">
@@ -204,7 +204,7 @@ export const About: FC = () => {
 
 						<motion.div
 							ref={containerRef}
-							className="md:col-span-12 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-all duration-300 min-h-70"
+							className="md:col-span-12 relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-[border-color,box-shadow] duration-300 min-h-70"
 							variants={fadeUp}
 						>
 							<div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
@@ -251,7 +251,7 @@ export const About: FC = () => {
 
 				<div className="tab-content-history hidden">
 					<motion.div
-						className="relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-all duration-300"
+						className="relative group bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark p-5 md:p-8 rounded-xl overflow-hidden cyber-glow-box transition-[border-color,box-shadow] duration-300"
 						variants={scaleIn}
 						initial="hidden"
 						whileInView="visible"

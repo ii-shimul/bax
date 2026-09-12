@@ -20,17 +20,10 @@ import {
 	scaleIn,
 } from "@/lib/animations";
 
-type GitHubPushEvent = {
-	type: string;
-	repo: { name: string };
-	created_at: string;
-};
+import { useLatestCommit } from "@/hooks/useLatestCommit";
 
 const Hero = () => {
-	const [latestCommit, setLatestCommit] = useState<{
-		repoName: string | undefined;
-		message: string;
-	} | null>(null);
+	const latestCommit = useLatestCommit();
 	const [hovering, setHovering] = useState<boolean>(false);
 	const [isMobile, setIsMobile] = useState<boolean>(false);
 
@@ -41,28 +34,6 @@ const Hero = () => {
 		return () => window.removeEventListener("resize", checkMobile);
 	}, []);
 
-	useEffect(() => {
-		let repoName: string | undefined;
-		fetch("https://api.github.com/users/ii-shimul/events/public")
-			.then((res) => res.json())
-			.then((events: GitHubPushEvent[]) => {
-				repoName = events.find((e) => e.type === "PushEvent")?.repo.name;
-				if (!repoName) return;
-				return fetch(
-					`https://api.github.com/repos/${repoName}/commits?per_page=1`,
-				);
-			})
-			.then((res) => res?.json())
-			.then((data) => {
-				if (data?.[0]?.commit?.message) {
-					setLatestCommit({
-						repoName: repoName,
-						message: data[0].commit.message,
-					});
-				}
-			})
-			.catch(console.error);
-	}, []);
 	const { scrollYProgress } = useScroll();
 	const beamsY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 

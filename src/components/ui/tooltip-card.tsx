@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
 
@@ -13,20 +13,13 @@ export const Tooltip = ({
   containerClassName?: string;
 }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [mouse, setMouse] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
-  const [height, setHeight] = useState(0);
+  const [, setMouse] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [position, setPosition] = useState<{ x: number; y: number }>({
     x: 0,
     y: 0,
   });
   const contentRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (isVisible && contentRef.current) {
-      setHeight(contentRef.current.scrollHeight);
-    }
-  }, [isVisible, content]);
 
   const calculatePosition = (mouseX: number, mouseY: number) => {
     if (!contentRef.current || !containerRef.current)
@@ -136,13 +129,12 @@ export const Tooltip = ({
     }
   };
 
-  // Update position when tooltip becomes visible or content changes
-  useEffect(() => {
-    if (isVisible && contentRef.current) {
-      const newPosition = calculatePosition(mouse.x, mouse.y);
-      setPosition(newPosition);
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      setIsVisible((prev) => !prev);
     }
-  }, [isVisible, height, mouse.x, mouse.y]);
+  };
 
   return (
     <div
@@ -154,21 +146,25 @@ export const Tooltip = ({
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       onClick={handleClick}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      aria-label="Toggle info tooltip"
     >
       {children}
       <AnimatePresence>
         {isVisible && (
           <motion.div
-            key={String(isVisible)}
-            initial={{ height: 0, opacity: 1 }}
-            animate={{ height, opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+            key="tooltip-card"
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.95, opacity: 0 }}
             transition={{
               type: "spring",
-              stiffness: 200,
-              damping: 20,
+              stiffness: 250,
+              damping: 25,
             }}
-            className="pointer-events-none absolute z-50 min-w-60 overflow-hidden rounded-md border border-transparent bg-white shadow-sm ring-1 shadow-black/5 ring-black/5 dark:bg-neutral-900 dark:shadow-white/10 dark:ring-white/5"
+            className="pointer-events-none absolute z-50 min-w-60 overflow-hidden rounded-md border border-transparent bg-white shadow-sm ring-1 shadow-black/5 ring-black/5 dark:bg-neutral-900 dark:shadow-white/10 dark:ring-white/5 origin-top-left"
             style={{
               top: position.y,
               left: position.x,

@@ -6,6 +6,7 @@ import React, {
 	createContext,
 	useContext,
 	useEffect,
+	useMemo,
 	useRef,
 	useState,
 } from "react";
@@ -19,9 +20,10 @@ const ModalContext = createContext<ModalContextType | undefined>(undefined);
 
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
 	const [open, setOpen] = useState(false);
+	const value = useMemo(() => ({ open, setOpen }), [open]);
 
 	return (
-		<ModalContext.Provider value={{ open, setOpen }}>
+		<ModalContext.Provider value={value}>
 			{children}
 		</ModalContext.Provider>
 	);
@@ -195,6 +197,7 @@ const CloseIcon = () => {
 		<button
 			onClick={() => setOpen(false)}
 			className="absolute top-4 right-4 group"
+			aria-label="Close modal"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"

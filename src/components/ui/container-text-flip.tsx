@@ -59,7 +59,7 @@ export function ContainerTextFlip({
 					{words.length > 1 ? (
 						words[currentWordIndex].split("").map((letter, index) => (
 							<motion.span
-								key={index}
+								key={`${id}-${words[currentWordIndex]}-char-${index}-${letter}`}
 								initial={{
 									opacity: 0,
 									filter: "blur(10px)",

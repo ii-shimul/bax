@@ -2,14 +2,8 @@
 import { FaFacebook, FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
 import { SocialButton } from "../ui/social-button";
-import { useEffect, useState } from "react";
 
 const Socials = () => {
-	const [width, setWidth] = useState<number | undefined>();
-	useEffect(() => {
-		setWidth(document.documentElement.clientWidth);
-	}, []);
-
 	return (
 		<div className="flex flex-wrap gap-4 justify-center lg:justify-start">
 			<SocialButton
@@ -36,17 +30,13 @@ const Socials = () => {
 				hoverBgColor="rgb(37, 211, 102)"
 				href="https://wa.me/8801756651557"
 			/>
-			{width && width > 700 ? (
-				<SocialButton
-					className="hidden md:block"
-					icon={<FaFacebook />}
-					label="Facebook"
-					hoverBgColor="rgb(24, 119, 242)"
-					href="https://facebook.com/zahannami"
-				/>
-			) : (
-				""
-			)}
+			<SocialButton
+				className="hidden md:block"
+				icon={<FaFacebook />}
+				label="Facebook"
+				hoverBgColor="rgb(24, 119, 242)"
+				href="https://facebook.com/zahannami"
+			/>
 		</div>
 	);
 };

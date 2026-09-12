@@ -29,9 +29,9 @@ export function ChatEmptyState({ onSuggestionClick }: ChatEmptyStateProps) {
 				Try asking:
 			</p>
 			<div className="flex flex-col gap-2 w-full">
-				{suggestedQuestions.map((question, index) => (
+				{suggestedQuestions.map((question) => (
 					<button
-						key={index}
+						key={question}
 						onClick={() => onSuggestionClick(question)}
 						className="w-full text-left px-4 py-3 bg-gray-100 dark:bg-neutral-900 hover:bg-gray-200 dark:hover:bg-neutral-800 border border-gray-200 dark:border-neutral-800 rounded-xl text-sm text-gray-900 dark:text-neutral-200 transition-colors"
 					>

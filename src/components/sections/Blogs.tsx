@@ -96,8 +96,8 @@ const Blogs = () => {
 								</header>
 
 								<article className="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed space-y-4">
-									{blog.body.split("\n\n").map((para, idx) => (
-										<p key={idx}>{para}</p>
+									{blog.body.split("\n\n").map((para) => (
+										<p key={`blog-p-${blog.id}-${para.slice(0, 32)}`}>{para}</p>
 									))}
 								</article>
 

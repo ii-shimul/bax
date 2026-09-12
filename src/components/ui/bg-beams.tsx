@@ -3,22 +3,31 @@ import React from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
+interface BeamConfig {
+	id: string;
+	d: string;
+	y2: string;
+	duration: number;
+	delay: number;
+}
+
+const BEAM_CONFIGS: BeamConfig[] = [
+	{ id: "beam-0", d: "M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875", y2: "96%", duration: 14.5, delay: 0.8 },
+	{ id: "beam-1", d: "M-359 -213C-359 -213 -291 192 173 319C637 446 705 851 705 851", y2: "98%", duration: 18.2, delay: 2.5 },
+	{ id: "beam-2", d: "M-338 -237C-338 -237 -270 168 194 295C658 422 726 827 726 827", y2: "94%", duration: 12.8, delay: 1.5 },
+	{ id: "beam-3", d: "M-317 -261C-317 -261 -249 144 215 271C679 398 747 803 747 803", y2: "99%", duration: 19.1, delay: 3.2 },
+	{ id: "beam-4", d: "M-296 -285C-296 -285 -228 120 236 247C700 374 768 779 768 779", y2: "95%", duration: 15.6, delay: 0.3 },
+	{ id: "beam-5", d: "M-275 -309C-275 -309 -207 96 257 223C721 350 789 755 789 755", y2: "97%", duration: 13.9, delay: 4.1 },
+	{ id: "beam-6", d: "M-254 -333C-254 -333 -186 72 278 199C742 326 810 731 810 731", y2: "96%", duration: 17.4, delay: 1.9 },
+	{ id: "beam-7", d: "M-233 -357C-233 -357 -165 48 299 175C763 302 831 707 831 707", y2: "98%", duration: 14.1, delay: 3.7 },
+	{ id: "beam-8", d: "M-212 -381C-212 -381 -144 24 320 151C784 278 852 683 852 683", y2: "94%", duration: 18.8, delay: 0.5 },
+	{ id: "beam-9", d: "M-191 -405C-191 -405 -123 0 341 127C805 254 873 659 873 659", y2: "99%", duration: 16.2, delay: 2.1 },
+	{ id: "beam-10", d: "M-170 -429C-170 -429 -102 -24 362 103C826 230 894 635 894 635", y2: "95%", duration: 13.3, delay: 4.8 },
+	{ id: "beam-11", d: "M-149 -453C-149 -453 -81 -48 383 79C847 206 915 611 915 611", y2: "97%", duration: 17.9, delay: 1.1 },
+];
+
 export const BackgroundBeams = React.memo(
 	({ className }: { className?: string }) => {
-		const paths = [
-			"M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875",
-			"M-359 -213C-359 -213 -291 192 173 319C637 446 705 851 705 851",
-			"M-338 -237C-338 -237 -270 168 194 295C658 422 726 827 726 827",
-			"M-317 -261C-317 -261 -249 144 215 271C679 398 747 803 747 803",
-			"M-296 -285C-296 -285 -228 120 236 247C700 374 768 779 768 779",
-			"M-275 -309C-275 -309 -207 96 257 223C721 350 789 755 789 755",
-			"M-254 -333C-254 -333 -186 72 278 199C742 326 810 731 810 731",
-			"M-233 -357C-233 -357 -165 48 299 175C763 302 831 707 831 707",
-			"M-212 -381C-212 -381 -144 24 320 151C784 278 852 683 852 683",
-			"M-191 -405C-191 -405 -123 0 341 127C805 254 873 659 873 659",
-			"M-170 -429C-170 -429 -102 -24 362 103C826 230 894 635 894 635",
-			"M-149 -453C-149 -453 -81 -48 383 79C847 206 915 611 915 611",
-		];
 		return (
 			<div
 				className={cn(
@@ -41,20 +50,20 @@ export const BackgroundBeams = React.memo(
 						strokeWidth="0.3"
 					></path>
 
-					{paths.map((path, index) => (
+					{BEAM_CONFIGS.map((beam) => (
 						<motion.path
-							key={`path-` + index}
-							d={path}
-							stroke={`url(#linearGradient-${index})`}
+							key={beam.id}
+							d={beam.d}
+							stroke={`url(#${beam.id})`}
 							strokeOpacity="0.4"
 							strokeWidth="0.5"
 						></motion.path>
 					))}
 					<defs>
-						{paths.map((path, index) => (
+						{BEAM_CONFIGS.map((beam) => (
 							<motion.linearGradient
-								id={`linearGradient-${index}`}
-								key={`gradient-${index}`}
+								id={beam.id}
+								key={`gradient-${beam.id}`}
 								initial={{
 									x1: "0%",
 									x2: "0%",
@@ -65,13 +74,13 @@ export const BackgroundBeams = React.memo(
 									x1: ["0%", "100%"],
 									x2: ["0%", "95%"],
 									y1: ["0%", "100%"],
-									y2: ["0%", `${93 + Math.random() * 8}%`],
+									y2: ["0%", beam.y2],
 								}}
 								transition={{
-									duration: Math.random() * 10 + 10,
+									duration: beam.duration,
 									ease: "easeInOut",
 									repeat: Infinity,
-									delay: Math.random() * 10,
+									delay: beam.delay,
 								}}
 							>
 								<stop stopColor="var(--beam-color-1)" stopOpacity="0"></stop>

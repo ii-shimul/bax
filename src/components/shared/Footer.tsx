@@ -85,23 +85,26 @@ const Footer = () => {
 					<motion.div className="grid grid-cols-2 gap-4" variants={fadeUp}>
 						<input
 							name="user_name"
-							className="w-full h-14 bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark rounded-lg px-6 text-gray-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-gray-400 dark:placeholder:text-gray-600"
+							className="w-full h-14 bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark rounded-lg px-6 text-gray-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors placeholder:text-gray-400 dark:placeholder:text-gray-600"
 							placeholder="Name"
+							aria-label="Your Name"
 							type="text"
 							required
 						/>
 						<input
 							name="user_email"
-							className="w-full h-14 bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark rounded-lg px-6 text-gray-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-gray-400 dark:placeholder:text-gray-600"
+							className="w-full h-14 bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark rounded-lg px-6 text-gray-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors placeholder:text-gray-400 dark:placeholder:text-gray-600"
 							placeholder="Email"
+							aria-label="Your Email"
 							type="email"
 							required
 						/>
 					</motion.div>
 					<motion.textarea
 						name="message"
-						className="w-full bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark rounded-xl p-6 text-gray-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-gray-400 dark:placeholder:text-gray-600 resize-none"
+						className="w-full bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark rounded-xl p-6 text-gray-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors placeholder:text-gray-400 dark:placeholder:text-gray-600 resize-none"
 						placeholder="Tell me about your project..."
+						aria-label="Your Message"
 						rows={4}
 						required
 						variants={fadeUp}

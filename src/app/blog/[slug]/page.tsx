@@ -130,8 +130,8 @@ export default async function BlogPostPage({ params }: PageProps) {
 				</header>
 
 				<div className="text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed space-y-6 font-light">
-					{blog.body.split("\n\n").map((paragraph, index) => (
-						<p key={index}>{paragraph}</p>
+					{blog.body.split("\n\n").map((paragraph) => (
+						<p key={`para-${paragraph.slice(0, 32)}`}>{paragraph}</p>
 					))}
 				</div>
 

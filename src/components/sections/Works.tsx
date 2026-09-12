@@ -97,7 +97,7 @@ const LinkButtons = ({
 
 const FeaturedCard = ({ project }: { project: Project }) => (
 	<motion.article
-		className="lg:col-span-2 group relative overflow-hidden rounded-xl bg-background-light dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-all duration-300"
+		className="lg:col-span-2 group relative overflow-hidden rounded-xl bg-background-light dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-[border-color,box-shadow] duration-300"
 		variants={scaleIn}
 		whileHover={{ y: -8, transition: { type: "spring", stiffness: 200 } }}
 	>
@@ -139,7 +139,7 @@ const FeaturedCard = ({ project }: { project: Project }) => (
 
 const ImageHeaderCard = ({ project }: { project: Project }) => (
 	<motion.article
-		className="group relative overflow-hidden rounded-xl bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-all duration-300 flex flex-col"
+		className="group relative overflow-hidden rounded-xl bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-[border-color,box-shadow] duration-300 flex flex-col"
 		variants={fadeUp}
 		whileHover={{ y: -8, transition: { type: "spring", stiffness: 200 } }}
 	>
@@ -149,7 +149,7 @@ const ImageHeaderCard = ({ project }: { project: Project }) => (
 				alt={`Screenshot of ${project.title}`}
 				fill
 				sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-				className="object-cover group-hover:scale-105 transition-all duration-500"
+				className="object-cover group-hover:scale-105 transition-transform duration-500"
 			/>
 		</div>
 		<div className="p-6 flex-1 flex flex-col justify-between bg-white dark:bg-card-dark">
@@ -188,7 +188,7 @@ const ImageHeaderCard = ({ project }: { project: Project }) => (
 
 const SplitCard = ({ project }: { project: Project }) => (
 	<motion.article
-		className="lg:col-span-2 group relative overflow-hidden rounded-xl bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-all duration-300 flex flex-col md:flex-row"
+		className="lg:col-span-2 group relative overflow-hidden rounded-xl bg-white dark:bg-card-dark border border-gray-200 dark:border-border-dark cyber-glow-box transition-[border-color,box-shadow] duration-300 flex flex-col md:flex-row"
 		variants={fadeUp}
 		whileHover={{ y: -8, transition: { type: "spring", stiffness: 200 } }}
 	>
@@ -237,7 +237,7 @@ const SplitCard = ({ project }: { project: Project }) => (
 				alt={`Screenshot of ${project.title}`}
 				fill
 				sizes="(max-width: 768px) 100vw, 50vw"
-				className="object-cover group-hover:scale-105 transition-all duration-500"
+				className="object-cover group-hover:scale-105 transition-transform duration-500"
 			/>
 			<div className="absolute inset-0 bg-linear-to-r from-white dark:from-card-dark to-transparent md:block hidden" />
 			<div className="absolute inset-0 bg-linear-to-t from-white dark:from-card-dark to-transparent md:hidden block" />
